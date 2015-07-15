@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<a class="icon export"
+   href="{{add_route}}"
+   batch_size="{{batch_size}}"
+   product_id="{{product_id}}"
+   js-data-ajax="1"
+   type="add"
+   title="Add Batch ({{batch_size}})">Add Batch ({{batch_size}})
+    <img style="width: 16px; height: 16px;"
+         src="{% static "/static/order/img/add.png" %}"
+    />
+</a>
+----
+<a class="icon export"
+   href="{{update_route}}"
+   batch_size="{{batch_size}}"
+   product_id="{{product_id}}"
+   js-data-ajax="2"
+   type="remove"
+   title="Remove Batch ({{batch_size}})">Remove Batch ({{batch_size}})
+    <img style="width: 16px; height: 16px;"
+         src="{% static "/static/order/img/delete.png" %}"
+    />
+</a>
