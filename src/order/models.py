@@ -2,6 +2,7 @@ from django.db import models
 from django_extensions.db.fields import (ModificationDateTimeField,
                                          CreationDateTimeField)
 from django.utils.translation import ugettext_lazy as _
+from main.utils import *
 
 
 class TimeStampedModel(models.Model):
@@ -26,13 +27,7 @@ class Order(TimeStampedModel):
     order_date = models.DateField(verbose_name=_('Order / Delivery date'),
                                   auto_now_add=False, default=None, null=True)
 
-    DEFAULT_ORDER = _('Regular')
-    LEFT_BEHIND_ORDER = _('Left with customer')
-    TYPE_OF_ORDER = (
-        (DEFAULT_ORDER, 'Regular'),
-        (LEFT_BEHIND_ORDER, _('Left with customer')),
-    )
-    type = models.CharField(max_length=255, choices=TYPE_OF_ORDER, default=DEFAULT_ORDER)
+    type = models.CharField(max_length=255, choices=TYPE_OF_ORDER, default=ORDER_INV_TO_CUSTOMER)
 
     class Meta:
         verbose_name = _("Order")

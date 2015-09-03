@@ -1,4 +1,5 @@
 from django.contrib import admin
+from main.utils import TYPE_OF_ORDER_DICT
 from order.models import Order, Product, Customer
 from django.core.urlresolvers import reverse
 from django.template.loader import get_template
@@ -7,7 +8,20 @@ from django.utils.html import format_html
 
 class OrderAdmin(admin.ModelAdmin):
     fields = ('quantity', 'product', 'order_date', 'type', 'customer', )
-    list_display = ('id', 'batch_size', 'product', 'order_date', 'created', 'type', 'customer_custom', )
+    list_display = ('id', 'batch_size', 'product_html', 'order_date', 'created', 'order_type', 'customer_custom', )
+
+    def product_html(self, obj):
+        name = obj.product.name
+        if 'xs4all' in name:
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg"/>{}'.format(name)
+        if 'kpn' in name:
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.gsmstunts.nl/images/provider/kpn-info-icon.jpg">{}'.format(name)
+        return name
+    product_html.allow_tags = True
+
+    @staticmethod
+    def order_type(obj):
+        return TYPE_OF_ORDER_DICT[obj.type.strip()].__str__()
 
     def batch_size(self, obj):
         return obj.quantity
@@ -21,6 +35,7 @@ class OrderAdmin(admin.ModelAdmin):
     customer_custom.allow_tags = True
     customer_custom.short_description = 'Customer'
 
+
 class OrderInline(admin.TabularInline):
     model = Order
     fields = ('quantity', )
@@ -32,7 +47,7 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = (OrderInline, )
     fields = ('name', 'quantity', 'description', 'code', )
     exclude = ('order', 'update_batch_10', 'update_batch_5', 'update_batch_1', )
-    list_display = ('name', 'quantity', 'description_custom', 'code', 'update_batch_10', 'update_batch_5', 'update_batch_1', )
+    list_display = ('name', 'quantity', 'description_custom', 'code', )#'update_batch_10', 'update_batch_5', 'update_batch_1', )
 
     def description_custom(self, obj):
         if not obj.description:

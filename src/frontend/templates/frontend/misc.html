@@ -1,0 +1,15 @@
+{% extends 'frontend/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    Miscellaneous
+{% endblock %}
+
+{% block content %}
+
+    {% bootstrap_button 'button' size='lg' %}
+
+    {% bootstrap_alert "Something went wrong" alert_type='danger' %}
+
+{% endblock %}

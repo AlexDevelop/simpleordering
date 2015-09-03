@@ -1,0 +1,8 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+{% block bootstrap3_extra_head %}
+    <link href="/static/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    {{ form.media }}
+{% endblock %}
+
+{% block bootstrap3_title %}{% block title %}{% endblock %}{% endblock %}

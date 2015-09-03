@@ -1,0 +1,40 @@
+{% extends 'frontend/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    Formset
+{% endblock %}
+
+{% block content %}
+    {% if view.custom_success == '1' %}
+        <div class="alert alert-success" role="alert">
+            <strong>Success</strong> You successfully added the product, amount
+          </div>
+    {% endif %}
+    {% if view.custom_success == '2' %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Faillure</strong> We were not able to add the product, amount
+          </div>
+    {% endif %}
+{#    {% bootstrap_formset_errors form %}#}
+    <form role="form" class="formset" method="post" action="/formset">
+        {% csrf_token %}
+        {% bootstrap_formset form %}
+{#        {% buttons submit='OK - Submit product / order' reset="Cancel - to be removed" %}{% endbuttons %}#}
+        {% buttons %}
+            <button type="submit" value='submit' class="btn btn-primary">
+                {% bootstrap_icon "floppy-save" %} Submit
+            </button>
+            <button type="reset" value='reset' class="btn btn-warning">
+                {% bootstrap_icon "minus" %} Reset
+            </button>
+        {% endbuttons %}
+    </form>
+    <div>
+    {% for item in api_response %}
+        {{ item }}
+    {% endfor %}
+    </div>
+
+{% endblock %}

@@ -47,9 +47,13 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
 
     'rest_framework',
+    'bootstrap3',
+    'bootstrap3_datetime',
 
     # Custom
     'order',
+    'frontend',
+    'authtoken',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -190,3 +194,16 @@ SUIT_CONFIG = {
 #         'rest_framework.permissions.AllowAny',
 #     ]
 # }
+
+REST_FRAMEWORK_RENDERERS = (
+    'rest_framework.renderers.JSONRenderer',
+    'rest_framework.renderers.BrowsableAPIRenderer',
+)
+
+# Settings for django-bootstrap3
+BOOTSTRAP3 = {
+    'set_required': False,
+    'error_css_class': 'bootstrap3-error',
+    'required_css_class': 'bootstrap3-required',
+    'javascript_in_head': True,
+}
