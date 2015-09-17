@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFou
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
+from main.utils import TYPE_OF_ORDER_DICT, ORDER_INV_TO_CUSTOMER, ORDER_CUSTOMER_TO_INV, \
+    ORDER_GUIDION_TO_INV, ORDER_INV_TO_GUIDION
 from order.models import Order, Product
 
 from django.contrib.auth.models import User, Group
@@ -41,17 +43,11 @@ def adjust_order(request, **kwargs):
         return HttpResponseBadRequest('Bad Request')
 
     update_or_add = None
-    if request.resolver_match.view_name == 'add_order':
-        update_or_add = 'add'
-
-    if request.resolver_match.view_name == 'adjust_order':
-        update_or_add = 'add'
-
-    if request.resolver_match.view_name == 'update_order':
+    if TYPE_OF_ORDER_DICT[type] == ORDER_INV_TO_CUSTOMER or TYPE_OF_ORDER_DICT[type] == ORDER_INV_TO_GUIDION:
         update_or_add = 'remove'
 
-    if retour_defect == True:
-        update_or_add = 'remove'
+    if TYPE_OF_ORDER_DICT[type] == ORDER_GUIDION_TO_INV or TYPE_OF_ORDER_DICT[type] == ORDER_CUSTOMER_TO_INV:
+        update_or_add = 'add'
 
     # Updating quantity of product
     try:
