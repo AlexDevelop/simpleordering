@@ -11,11 +11,13 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('id', 'batch_size', 'product_html', 'order_date', 'created', 'order_type', 'customer_custom', )
 
     def product_html(self, obj):
-        name = obj.product.name
+        name = obj.product.code.lower()
         if 'xs4all' in name:
             return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg"/>{}'.format(name)
         if 'kpn' in name:
             return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.gsmstunts.nl/images/provider/kpn-info-icon.jpg">{}'.format(name)
+        if 'telfort' in name:
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="https://pbs.twimg.com/profile_images/789889749/icon_normal.png">{}'.format(name)
         return name
     product_html.allow_tags = True
 
@@ -47,7 +49,18 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = (OrderInline, )
     fields = ('name', 'quantity', 'description', 'code', )
     exclude = ('order', 'update_batch_10', 'update_batch_5', 'update_batch_1', )
-    list_display = ('name', 'quantity', 'description_custom', 'code', )#'update_batch_10', 'update_batch_5', 'update_batch_1', )
+    list_display = ('name_html', 'quantity', 'description_custom', 'code', )#'update_batch_10', 'update_batch_5', 'update_batch_1', )
+
+    def name_html(self, obj):
+        name = obj.code.lower()
+        if 'xs4all' in name:
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg"/>{}'.format(name)
+        if 'kpn' in name:
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.gsmstunts.nl/images/provider/kpn-info-icon.jpg">{}'.format(name)
+        if 'telfort' in name:
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="https://pbs.twimg.com/profile_images/789889749/icon_normal.png">{}'.format(name)
+        return name
+    name_html.allow_tags = True
 
     def description_custom(self, obj):
         if not obj.description:

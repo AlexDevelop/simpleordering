@@ -16,6 +16,10 @@ $( document ).ready(function() {
 
     var production_select = $('select').first();
     select_items_height = (production_select.children().length * production_select.children().height()) + 20;
+    console.log(select_items_height);
+    if (select_items_height > 150) {
+        select_items_height = 150;
+    }
     $(production_select).height(select_items_height);
 
 });

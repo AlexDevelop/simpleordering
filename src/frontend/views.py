@@ -77,8 +77,8 @@ class MainView(FormView):
 
 class APIClient(object):
     protocol = 'http://'
-    base_url = 'localhost'
-    port = '5555'
+    base_url = '0.0.0.0'
+    port = '8080'
     content_type = {
         'Content-Type': 'application/json'
     }
