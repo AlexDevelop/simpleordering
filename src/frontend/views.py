@@ -39,7 +39,7 @@ def loginview(request):
 
         if user and user.is_active:
             login(request, user)
-            return redirect('formset_default')
+            return redirect('formset_default_success')
             #context['login'] = 'Success'
             #return render(request, template_name='frontend/login.html', context=context)
         else:
