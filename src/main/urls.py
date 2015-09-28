@@ -37,7 +37,7 @@ urlpatterns = patterns('',
 
     # API Related
     url(r'^api/?', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^/?$', DefaultFormsetView.as_view(login_url='test',), name='formset_default_success'),
+    url(r'^/?$', DefaultFormsetView.as_view(), name='formset_default_success'),
     url(r'^', include(router.urls)),
     url(r'^admin/?', include(admin.site.urls)),
 )

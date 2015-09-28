@@ -39,3 +39,7 @@ a.right {
 .dd-selected-text, .dd-option-text {
     line-height: 20px !important;
 }
+
+img.dd-option-image {
+    max-width: 32px;
+}

@@ -18,8 +18,17 @@ $( document ).ready(function() {
     var product_selections = $("#id_form-0-products option");
     for (var i = 0; i < product_selections.length; i++) {
         var selection = $(product_selections[i]);
-        product_name = $(selection).html();)
-        $(selection).attr('data-imagesrc', 'http://domainsigma.com/favicon/xs4all.nl.ico');//$(selection).html());
+        product_name = $(selection).html().toLowerCase();
+        console.log(product_name.search('xs4all'));
+        if (product_name.search('xs4all') != -1) {
+            $(selection).attr('data-imagesrc', 'http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg');
+        }
+        if (product_name.search('kpn') != -1) {
+            $(selection).attr('data-imagesrc', 'http://www.gsmstunts.nl/images/provider/kpn-info-icon.jpg');
+        }
+        if (product_name.search('telfort') != -1) {
+            $(selection).attr('data-imagesrc', 'https://pbs.twimg.com/profile_images/789889749/icon_normal.png');
+        }
     }
     
     product.ddslick({

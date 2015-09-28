@@ -66,11 +66,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+LOGIN_URL = '/adminlogin'
 LOGIN_REDIRECT_URL = '/api/orders/'
 
 ROOT_URLCONF = 'main.urls'
 
 WSGI_APPLICATION = 'main.wsgi.application'
+
+
 
 
 # Database
