@@ -23,7 +23,7 @@ class HomePageView(TemplateView):
         return context
 
 
-# @login_required
+@login_required
 def loginview(request):
     context = {
         'form': LoginForm,
@@ -131,11 +131,17 @@ class APIClient(object):
     def add_product(self, data):
         return self.post('order', data)
 
+class LoginRequiredMixin(object):
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+        return login_required(view, cls.login_url)
 
-class DefaultFormsetView(MainView):
+class DefaultFormsetView(LoginRequiredMixin, MainView):
     template_name = 'frontend/formset.html'
     form_class = OrderFormSet
     success_url = reverse_lazy('formset_default_success', kwargs={'success': 1})
+    login_url = reverse_lazy('login')
 
     def get_form(self, form_class=None):
         form = super(DefaultFormsetView, self).get_form(form_class)

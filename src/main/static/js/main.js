@@ -13,13 +13,28 @@ $( document ).ready(function() {
             'width': '45%'
         }
     );
-
-    var production_select = $('select').first();
-    select_items_height = (production_select.children().length * production_select.children().height()) + 20;
-    console.log(select_items_height);
-    if (select_items_height > 150) {
-        select_items_height = 150;
+    
+    var product = $("#id_form-0-products");
+    var product_selections = $("#id_form-0-products option");
+    for (var i = 0; i < product_selections.length; i++) {
+        var selection = $(product_selections[i]);
+        product_name = $(selection).html();)
+        $(selection).attr('data-imagesrc', 'http://domainsigma.com/favicon/xs4all.nl.ico');//$(selection).html());
     }
-    $(production_select).height(select_items_height);
+    
+    product.ddslick({
+        width: "100%",
+        onSelected: function(selectedData){
+            //callback function: do something with selectedData;
+        }   
+    });
+
+    // var production_select = $('select').first();
+    // select_items_height = (production_select.children().length * production_select.children().height()) + 20;
+    // console.log(select_items_height);
+    // if (select_items_height > 150) {
+    //     select_items_height = 150;
+    // }
+    // $(production_select).height(select_items_height);
 
 });

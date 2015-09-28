@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^order/(?P<order_id>[0-9]+)/add/(?P<batch_size>[0-9]+)/?$', 'order.views.adjust_order', name='add_order'),
     url(r'^order/(?P<order_id>[0-9]+)/remove/(?P<batch_size>[0-9]+)/?$', 'order.views.adjust_order', name='update_order'),
 
-   url(r'^login/?', loginview),
+   url(r'^login/?', loginview, name='login'),
 
     # Frontend
     # url(r'^home/?$', 'frontend.views.home', name='home'),
@@ -37,6 +37,7 @@ urlpatterns = patterns('',
 
     # API Related
     url(r'^api/?', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^/?$', DefaultFormsetView.as_view(login_url='test',), name='formset_default_success'),
     url(r'^', include(router.urls)),
     url(r'^admin/?', include(admin.site.urls)),
 )

@@ -48,7 +48,7 @@ class OrderForm(forms.Form):
 
     required_css_class = 'bootstrap3-req'
 
-    products = forms.MultipleChoiceField(
+    products = forms.ChoiceField(
         choices=MEDIA_CHOICES,
     )
 
