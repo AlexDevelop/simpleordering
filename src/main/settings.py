@@ -66,7 +66,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-LOGIN_URL = '/adminlogin'
+
+
+LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/api/orders/'
 
 ROOT_URLCONF = 'main.urls'
@@ -210,3 +212,10 @@ BOOTSTRAP3 = {
     'required_css_class': 'bootstrap3-required',
     'javascript_in_head': True,
 }
+
+PORT = '8080'
+
+try:
+    from main.params import *
+except ImportError:
+    pass

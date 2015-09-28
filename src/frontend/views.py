@@ -13,6 +13,8 @@ import requests
 from rest_framework.exceptions import APIException
 from rest_framework.reverse import reverse_lazy, reverse
 
+from main.settings import PORT
+
 
 class HomePageView(TemplateView):
     template_name = 'frontend/home.html'
@@ -78,7 +80,7 @@ class MainView(FormView):
 class APIClient(object):
     protocol = 'http://'
     base_url = '0.0.0.0'
-    port = '8080'
+    port = PORT if PORT else '8080'
     content_type = {
         'Content-Type': 'application/json'
     }
