@@ -43,3 +43,7 @@ a.right {
 img.dd-option-image {
     max-width: 32px;
 }
+
+.page.login {
+    margin-top: 20px;
+}

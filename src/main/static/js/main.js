@@ -29,6 +29,9 @@ $( document ).ready(function() {
         if (product_name.search('telfort') != -1) {
             $(selection).attr('data-imagesrc', 'https://pbs.twimg.com/profile_images/789889749/icon_normal.png');
         }
+        if (product_name.search('reggefiber') != -1) {
+            $(selection).attr('data-imagesrc', 'http://www.klachtenkompas.nl/sites/default/files/styles/icon_large_logo/public/reggefiber.png');
+        }
     }
     
     product.ddslick({

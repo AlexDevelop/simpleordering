@@ -36,7 +36,6 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=255, min_length=6)
     password = forms.CharField(max_length=20, min_length=6, widget=forms.PasswordInput)
 
-
 class OrderForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
