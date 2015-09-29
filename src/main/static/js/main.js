@@ -34,12 +34,13 @@ $( document ).ready(function() {
         }
     }
     
-    product.ddslick({
-        width: "100%",
-        onSelected: function(selectedData){
-            //callback function: do something with selectedData;
-        }   
-    });
+    // product.ddslick({
+    //     width: "100%",
+    //     onSelected: function(selectedData){
+    //         //callback function: do something with selectedData;
+    //     }   
+    // });
+
 
     // var production_select = $('select').first();
     // select_items_height = (production_select.children().length * production_select.children().height()) + 20;
