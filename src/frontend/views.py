@@ -80,7 +80,7 @@ class MainView(FormView):
 class APIClient(object):
     protocol = 'http://'
     base_url = '0.0.0.0'
-    port = PORT if PORT else '8080'
+    port = PORT if PORT else '8000'
     content_type = {
         'Content-Type': 'application/json'
     }

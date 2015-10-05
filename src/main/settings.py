@@ -213,7 +213,7 @@ BOOTSTRAP3 = {
     'javascript_in_head': True,
 }
 
-PORT = '8080'
+PORT = '8000'
 
 try:
     from main.params import *
