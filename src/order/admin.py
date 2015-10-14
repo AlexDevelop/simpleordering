@@ -1,5 +1,6 @@
 from django.contrib import admin
 from main.utils import TYPE_OF_ORDER_DICT
+from order.forms import OrderChangeForm
 from order.models import Order, Product, Customer
 from django.core.urlresolvers import reverse
 from django.template.loader import get_template
@@ -8,7 +9,8 @@ from django.utils.html import format_html
 
 class OrderAdmin(admin.ModelAdmin):
     fields = ('quantity', 'product', 'order_date', 'type', 'customer', )
-    list_display = ('id', 'batch_size', 'product_html', 'order_date', 'created', 'order_type', 'customer_custom', )
+    list_display = ('id', 'batch_size', 'product_html', 'order_date', 'order_date_custom', 'created', 'order_type', 'customer_custom', )
+    form = OrderChangeForm
 
     def product_html(self, obj):
         name = obj.product.code.lower()
@@ -36,6 +38,11 @@ class OrderAdmin(admin.ModelAdmin):
         return format_html('<a href={url}>{name}</>'.format(url=url, name=obj.customer))
     customer_custom.allow_tags = True
     customer_custom.short_description = 'Customer'
+
+    def order_date_custom(self, obj):
+        if not obj.order_date:
+            return 'no date'
+        return obj.order_date
 
 
 class OrderInline(admin.TabularInline):

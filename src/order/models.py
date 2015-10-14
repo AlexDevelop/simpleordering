@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django_extensions.db.fields import (ModificationDateTimeField,
                                          CreationDateTimeField)
@@ -24,10 +26,9 @@ class Order(TimeStampedModel):
     product = models.ForeignKey(to='Product', related_name="product")
     customer = models.ForeignKey(to='Customer', related_name="customer",
                                  blank=True, null=True)
-    order_date = models.DateField(verbose_name=_('Order / Delivery date'),
-                                  auto_now_add=False, default=None, null=True)
+    order_date = models.DateTimeField(verbose_name=_('Order / Delivery date'), default=datetime.now(), )
 
-    type = models.CharField(max_length=255, choices=TYPE_OF_ORDER, default=ORDER_INV_TO_CUSTOMER)
+    type = models.CharField(max_length=255, choices=TYPE_OF_ORDER_STRING, default=ORDER_INV_TO_CUSTOMER)
 
     class Meta:
         verbose_name = _("Order")
