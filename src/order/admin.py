@@ -15,12 +15,12 @@ class OrderAdmin(admin.ModelAdmin):
     def product_html(self, obj):
         name = obj.product.code.lower()
         if 'xs4all' in name:
-            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg"/>{}'.format(name)
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg"/>{}'.format(obj.product)
         if 'kpn' in name:
-            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.gsmstunts.nl/images/provider/kpn-info-icon.jpg">{}'.format(name)
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.gsmstunts.nl/images/provider/kpn-info-icon.jpg">{}'.format(obj.product)
         if 'telfort' in name:
-            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="https://pbs.twimg.com/profile_images/789889749/icon_normal.png">{}'.format(name)
-        return name
+            return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="https://pbs.twimg.com/profile_images/789889749/icon_normal.png">{}'.format(obj.product)
+        return obj.product
     product_html.allow_tags = True
 
     @staticmethod
