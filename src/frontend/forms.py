@@ -36,12 +36,13 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=255, min_length=6)
     password = forms.CharField(max_length=20, min_length=6, widget=forms.PasswordInput)
 
+
 class OrderForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(OrderForm, self).__init__(*args, **kwargs)
         self.fields['date'].widget.attrs['class'] = 'input-lg'
-        self.fields['products'].widget.attrs['class'] = 'input-lg'
+        self.fields['products'].widget.attrs['class'] = 'input-lg'  # See html
         self.fields['type_order'].widget.attrs['class'] = 'input-lg'
         self.fields['amount_select'].widget.attrs['class'] = 'input-lg'
 

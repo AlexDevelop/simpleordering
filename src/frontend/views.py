@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.views.generic import FormView, TemplateView
-from frontend.forms import ContactFormSet, ContactForm, FilesForm, OrderFormSet, LoginForm
+from frontend.forms import ContactFormSet, ContactForm, FilesForm, OrderFormSet, LoginForm, OrderForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
@@ -117,15 +117,17 @@ class APIClient(object):
         return self.get('products')
 
     def add_products(self, form):
-        form = form.cleaned_data.pop()
-        data = {
-            'batch_size': form['amount_select'],
-            'type': form['type_order'],
-            'date': form['date'].strftime('%Y-%m-%d'),
-        }
         added_orders = []
-        for product_id in form['products']:
-            data.update(order_id=product_id)
+        if form.cleaned_data:
+            form = form.cleaned_data
+            data = {
+                'batch_size': form['amount_select'],
+                'type': form['type_order'],
+                'date': form['date'].strftime('%Y-%m-%d'),
+            }
+
+            #for product_id in form['products']:
+            data.update(product_id=form['products'])
             response = self.add_product(data)
             added_orders.append(response)
         return added_orders
@@ -133,15 +135,17 @@ class APIClient(object):
     def add_product(self, data):
         return self.post('order', data)
 
+
 class LoginRequiredMixin(object):
     @classmethod
     def as_view(cls, **initkwargs):
         view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
         return login_required(view)
 
+
 class DefaultFormsetView(LoginRequiredMixin, MainView):
     template_name = 'frontend/formset.html'
-    form_class = OrderFormSet
+    form_class = OrderForm
     success_url = reverse_lazy('formset_default_success', kwargs={'success': 1})
 
     def get_form(self, form_class=None):
@@ -153,7 +157,7 @@ class DefaultFormsetView(LoginRequiredMixin, MainView):
         ]
         for product in products:
             choices.append((product['id'], product['name']),)
-        form.form.declared_fields['products'].choices = choices
+        form.declared_fields['products'].choices = choices
         return form
 
     def get(self, request, *args, **kwargs):

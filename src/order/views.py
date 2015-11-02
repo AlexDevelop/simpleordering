@@ -33,8 +33,10 @@ def adjust_order(request, **kwargs):
             type = body['type']
         if 'date' in body:
             date = body['date']
+        if 'product_id' in body:
+            product_id = body['product_id']
 
-    if order_id is None or batch_size is None:
+    if batch_size is None:
         return HttpResponseBadRequest('Bad Request')
 
     try:
@@ -51,7 +53,7 @@ def adjust_order(request, **kwargs):
 
     # Updating quantity of product
     try:
-        product = Product.objects.get(pk=order_id)
+        product = Product.objects.get(pk=product_id)
 
         order = Order(product=product)
         order.quantity = batch_size
