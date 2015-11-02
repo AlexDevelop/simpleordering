@@ -13,7 +13,7 @@ class OrderAdmin(admin.ModelAdmin):
     form = OrderChangeForm
 
     def product_html(self, obj):
-        name = obj.product.lower()
+        name = obj.product.name.lower()
         if 'xs4all' in name:
             return '<img style="width: 16px; margin-right: 5px; margin-top: -2px;" src="http://www.furorteutonicus.eu/wp-content/uploads/2013/06/XS4ALL_avatar.jpg"/>{}'.format(obj.product)
         if 'kpn' in name:
