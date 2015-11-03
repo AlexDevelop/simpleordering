@@ -206,3 +206,7 @@ i { font-style: italic; }
 .menu .right {
   margin-left: 10px;
 }
+
+.menu p {
+  max-width: none;
+}
