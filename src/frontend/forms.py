@@ -84,6 +84,14 @@ class OrderForm(forms.Form):
                                        "pickTime": False}))
 
 
+class OverviewForm(forms.Form):
+    date_start = forms.DateField(
+        input_formats=['%Y-%m-%d', '%d-%m-%Y'],
+        initial=datetime.now().date(),
+        widget=DateTimePicker(options={"format": "DD-MM-YYYY",
+                                       "pickTime": False}))
+
+
 class ContactForm(TestForm):
     pass
 

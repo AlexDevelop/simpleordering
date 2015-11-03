@@ -5,11 +5,12 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.views.generic import FormView, TemplateView
-from frontend.forms import ContactFormSet, ContactForm, FilesForm, OrderFormSet, LoginForm, OrderForm
+from frontend.forms import ContactFormSet, ContactForm, FilesForm, OrderFormSet, LoginForm, OrderForm, OverviewForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
 import requests
+from main.utils import TYPE_OF_ORDER_STRING
 from rest_framework.exceptions import APIException
 from rest_framework.reverse import reverse_lazy, reverse
 
@@ -55,6 +56,7 @@ class MainView(FormView):
     def get_context_data(self, **kwargs):
         context_data = super(MainView, self).get_context_data(**kwargs)
         context_data['api_response'] = APIClient().get_products()
+        context_data['api_response'] = APIClient().get_products()
         return context_data
 
     def get(self, request, *args, **kwargs):
@@ -97,11 +99,11 @@ class APIClient(object):
 
         return headers
 
-    def get(self, url):
+    def get(self, url, **kwargs):
         url = self.get_url(url=url)
         headers = self.get_headers()
 
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, **kwargs)
         return response.json()
 
     def post(self, url, data=None):
@@ -113,8 +115,11 @@ class APIClient(object):
             return True
         return False
 
-    def get_products(self):
-        return self.get('products')
+    def get_products(self, **kwargs):
+        return self.get('products', **kwargs)
+
+    def get_orders(self, **kwargs):
+        return self.get('orders', **kwargs)
 
     def add_products(self, form):
         added_orders = []
@@ -141,6 +146,20 @@ class LoginRequiredMixin(object):
     def as_view(cls, **initkwargs):
         view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
         return login_required(view)
+
+
+class OverviewView(LoginRequiredMixin, MainView):
+    template_name = 'frontend/overview.html'
+    form_class = OverviewForm
+
+    def get_context_data(self, **kwargs):
+        context_data = super(MainView, self).get_context_data(**kwargs)
+        params = {'params': {}}
+        for param in self.request.GET.iteritems():
+            params['params'][param[0]] = param[1]
+        context_data['orders'] = APIClient().get_orders(**params)
+        context_data['order_types'] = TYPE_OF_ORDER_STRING
+        return context_data
 
 
 class DefaultFormsetView(LoginRequiredMixin, MainView):

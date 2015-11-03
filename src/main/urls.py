@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from frontend.views import DefaultFormsetView, DefaultFormView, DefaultFormByFieldView, \
     FormHorizontalView, FormInlineView, FormWithFilesView, PaginationView, MiscView, HomePageView, \
-    loginview
+    loginview, OverviewView
 from main import settings
 from order import views as OrderProductViews
 from rest_framework.routers import DefaultRouter
@@ -27,6 +27,7 @@ urlpatterns = patterns('',
     url(r'^home/?$', HomePageView.as_view(), name='home'),
     url(r'^formset/?$', DefaultFormsetView.as_view(), name='formset_default'),
     url(r'^formset/(?P<success>[0,1,2]+)/?$', DefaultFormsetView.as_view(), name='formset_default_success'),
+    url(r'^overview', OverviewView.as_view(), name='overview'),
     url(r'^form/?$', DefaultFormView.as_view(), name='form_default'),
     url(r'^form_by_field/?$', DefaultFormByFieldView.as_view(), name='form_by_field'),
     url(r'^form_horizontal/?$', FormHorizontalView.as_view(), name='form_horizontal'),

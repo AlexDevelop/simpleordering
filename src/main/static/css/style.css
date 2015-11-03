@@ -202,3 +202,7 @@ i { font-style: italic; }
   padding-left: 27px;
   text-decoration: none;
 }
+
+.menu .right {
+  margin-left: 10px;
+}

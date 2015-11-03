@@ -70,12 +70,6 @@ def adjust_order(request, **kwargs):
     except Product.DoesNotExist:
         return HttpResponseNotFound('Product Not Found')
 
-    # html = html + ' - Q: {quantity} - Name: {name} - Product Q: {product_quantity}'.format(
-    #     quantity=order.quantity,
-    #     name=order.product.name,
-    #     product_quantity=product.quantity
-    # )
-
     html = order.pk
 
     return HttpResponse(html)
@@ -87,6 +81,16 @@ class OrderViewSet(viewsets.ModelViewSet):
     """
     queryset = Order.objects.all().order_by('-modified')
     serializer_class = OrderSerializer
+
+    def get_queryset(self):
+        qs = super(OrderViewSet, self).get_queryset()
+        date_start = datetime.datetime.strftime(datetime.datetime.today(), '%Y-%m-%d')
+        if 'date_start' in self.request.QUERY_PARAMS:
+            date_start = self.request.QUERY_PARAMS['date_start']
+            date_start = datetime.datetime.strptime(date_start, '%d-%m-%Y')
+
+        qs = qs.filter(created__gte=date_start)
+        return qs
 
 
 class ProductViewSet(viewsets.ModelViewSet):

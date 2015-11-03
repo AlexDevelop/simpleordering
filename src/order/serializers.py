@@ -19,7 +19,7 @@ class TimeStampedSerializer(serializers.Serializer):
 
 
 class OrderSerializer(TimeStampedSerializer):
-    order_date = serializers.DateField(read_only=True)
+    order_date = serializers.DateTimeField(read_only=True)
     product = serializers.CharField(read_only=True)
     quantity = serializers.IntegerField(read_only=True)
     type = serializers.ChoiceField(TYPE_OF_ORDER)

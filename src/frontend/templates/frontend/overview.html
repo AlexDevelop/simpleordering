@@ -1,0 +1,86 @@
+{% extends 'frontend/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block content %}
+    {% if view.custom_success == '1' %}
+        <div class="alert alert-success" role="alert">
+            <strong>Success</strong> You successfully added the product, amount
+          </div>
+    {% endif %}
+    {% if view.custom_success == '2' %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Faillure</strong> We were not able to add the product, amount
+          </div>
+    {% endif %}
+{#    {% bootstrap_formset_errors form %}#}
+    <form role="form" class="formset" method="GET" action="/overview">
+        {% csrf_token %}
+{#        {% bootstrap_formset form %}#}
+        {% for field in form %}
+            {% if field.auto_id == 'id_products' %}
+                <div class="container-parents-chosen">
+                    <select data-placeholder="Zoek product / Search product" class="form-control input-lg chosen-select" id="id_products"
+                            name="products" title="" tabindex="6">
+                        <option value=""></option>
+                        {% for product in api_response %}
+                            <option value="{{ product.id }}">{{ product.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% else %}
+                {% bootstrap_field field %}
+            {% endif %}
+            {{ field.errors }}
+        {% endfor %}
+
+        {{ form.non_field_errors }}
+{#        {% buttons submit='OK - Submit product / order' reset="Cancel - to be removed" %}{% endbuttons %}#}
+        {% buttons %}
+            <button type="submit" value='submit' class="btn btn-primary">
+                {% bootstrap_icon "floppy-save" %} Submit
+            </button>
+            <button type="reset" value='reset' class="btn btn-warning">
+                {% bootstrap_icon "minus" %} Reset
+            </button>
+        {% endbuttons %}
+    </form>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+         <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Created</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+        {% for order in orders %}
+        <tr>
+            <th scope="row">{{ order.id }}</th>
+            <td>{{ order.product }}</td>
+            <td>{{ order.created }}</td>
+            <td>{{ order.quantity }} -
+                {% if order.type == 0 %}
+                    {{ order_types.0.1 }}
+                {% elif order.type == 1 %}
+                    {{ order_types.1.1 }}
+                {% elif order.type == 2 %}
+                    {{ order_types.2.1 }}
+                {% elif order.type == 3 %}
+                    {{ order_types.3.1 }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    </div>
+
+{% endblock %}
