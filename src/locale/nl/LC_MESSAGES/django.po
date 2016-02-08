@@ -143,17 +143,17 @@ msgstr "Geef alleen cijfers gescheiden met komma's"
 #: venv/lib/python2.7/site-packages/django/core/validators.py:272
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr "Waarde moet tussen %(limit_value) en het is %(show_value)."
+msgstr "Waarde moet tussen %(limit_value)s (het is %(show_value)s)."
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:298
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr "Waarde moet lager of gelijk zijn aan %(limit_value)."
+msgstr "Waarde moet lager of gelijk zijn aan %(limit_value)s."
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:305
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr "Waarde moet hoger of gelijk zijn aan %(limit_value)."
+msgstr "Waarde moet hoger of gelijk zijn aan %(limit_value)s."
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:314
 #, python-format
