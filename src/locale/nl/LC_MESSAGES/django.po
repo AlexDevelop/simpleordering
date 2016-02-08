@@ -80,7 +80,7 @@ msgstr "Klant"
 
 #: venv/lib/python2.7/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
-msgstr ""
+msgstr "Berichten"
 
 #: venv/lib/python2.7/site-packages/django/contrib/sitemaps/apps.py:7
 msgid "Site Maps"
@@ -100,20 +100,20 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:20
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Geef een geldige waarde"
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:87
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:712
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Geef een geldige URL"
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:130
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "Geef een geheel getal"
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:141
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Geef een geldig e-mail adres"
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:215
 msgid ""
@@ -138,22 +138,22 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/core/validators.py:263
 #: venv/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1144
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Geef alleen cijfers gescheiden met komma's"
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:272
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
+msgstr "Waarde moet tussen %(limit_value) en het is %(show_value)."
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:298
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Waarde moet lager of gelijk zijn aan %(limit_value)."
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:305
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Waarde moet hoger of gelijk zijn aan %(limit_value)."
 
 #: venv/lib/python2.7/site-packages/django/core/validators.py:314
 #, python-format
@@ -307,7 +307,7 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1705
 msgid "Email address"
-msgstr ""
+msgstr "E-mail adres"
 
 #: venv/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1729
 msgid "File path"
@@ -431,7 +431,7 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:280
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:317
 msgid "Enter a number."
-msgstr ""
+msgstr "Geef een getal"
 
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:319
 #, python-format
@@ -459,16 +459,16 @@ msgstr[1] ""
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:438
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:1193
 msgid "Enter a valid date."
-msgstr ""
+msgstr "Geef een geldige datum"
 
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:462
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:1194
 msgid "Enter a valid time."
-msgstr ""
+msgstr "Geef een geldige tijd"
 
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:484
 msgid "Enter a valid date/time."
-msgstr ""
+msgstr "Geef een geldige datum en tijd"
 
 #: venv/lib/python2.7/site-packages/django/forms/fields.py:525
 msgid "Enter a valid duration."
@@ -693,116 +693,116 @@ msgid "AM"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dateformat.py:151
-msgid "midnight"
+msgid "middernacht"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dateformat.py:153
-msgid "noon"
+msgid "middag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:6
-msgid "Monday"
+msgid "Maandag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:6
-msgid "Tuesday"
+msgid "Dinsdag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:6
-msgid "Wednesday"
+msgid "Woensdag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:6
-msgid "Thursday"
+msgid "Donderdag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:6
-msgid "Friday"
+msgid "Vrijdag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:7
-msgid "Saturday"
+msgid "Zaterdag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:7
-msgid "Sunday"
+msgid "Zondag"
 msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Mon"
-msgstr ""
+msgstr "Maa"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Tue"
-msgstr ""
+msgstr "Din"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Wed"
-msgstr ""
+msgstr "Woe"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Thu"
-msgstr ""
+msgstr "Don"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Fri"
-msgstr ""
+msgstr "Vri"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:11
 msgid "Sat"
-msgstr ""
+msgstr "Zat"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:11
 msgid "Sun"
-msgstr ""
+msgstr "Zon"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "January"
-msgstr ""
+msgstr "Januari"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "February"
-msgstr ""
+msgstr "Februari"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "March"
-msgstr ""
+msgstr "Maart"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "May"
-msgstr ""
+msgstr "Mei"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "August"
-msgstr ""
+msgstr "Augustus"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "September"
-msgstr ""
+msgstr "September"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "November"
-msgstr ""
+msgstr "November"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:20
 msgid "December"
-msgstr ""
+msgstr "December"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "jan"
@@ -822,7 +822,7 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "may"
-msgstr ""
+msgstr "mei"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "jun"
@@ -842,7 +842,7 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "oct"
-msgstr ""
+msgstr "okt"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "nov"
@@ -875,17 +875,17 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:35
 msgctxt "abbrev. month"
 msgid "May"
-msgstr ""
+msgstr "Mei"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:36
 msgctxt "abbrev. month"
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:37
 msgctxt "abbrev. month"
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:38
 msgctxt "abbrev. month"
@@ -900,7 +900,7 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:40
 msgctxt "abbrev. month"
 msgid "Oct."
-msgstr ""
+msgstr "Okt."
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:41
 msgctxt "abbrev. month"
@@ -915,17 +915,17 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:45
 msgctxt "alt. month"
 msgid "January"
-msgstr ""
+msgstr "Januari"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:46
 msgctxt "alt. month"
 msgid "February"
-msgstr ""
+msgstr "Februari"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:47
 msgctxt "alt. month"
 msgid "March"
-msgstr ""
+msgstr "Maart"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:48
 msgctxt "alt. month"
@@ -935,17 +935,17 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:49
 msgctxt "alt. month"
 msgid "May"
-msgstr ""
+msgstr "Mei"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:50
 msgctxt "alt. month"
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:51
 msgctxt "alt. month"
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:52
 msgctxt "alt. month"
@@ -960,7 +960,7 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:54
 msgctxt "alt. month"
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #: venv/lib/python2.7/site-packages/django/utils/dates.py:55
 msgctxt "alt. month"
@@ -1950,14 +1950,14 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/add_form.html:8
 msgid "Enter a username and password."
-msgstr ""
+msgstr "Geef een gebruikersnaam en wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:32
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:75
 #: venv/lib/python2.7/site-packages/suit/templates/admin/base.html:77
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:19
 msgid "Change password"
-msgstr ""
+msgstr "Wijzig wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:45
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_form.html:140
@@ -1969,45 +1969,45 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:44
 msgid "Please correct the error below."
 msgid_plural " Please correct the errors below."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Verbeter de fout."
+msgstr[1] "Verbeter de fouten."
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:48
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
-msgstr ""
+msgstr "Geef een nieuwe wachtwoord voor de gebruiker <strong>%(username)s</strong>."
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:54
 #: venv/lib/python2.7/site-packages/suit/templates/admin/login.html:48
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:64
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:77
 msgid "Password (again)"
-msgstr ""
+msgstr "Wachtwoord (nog een keer)"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/auth/user/change_password.html:68
 msgid "Enter the same password as above, for verification."
-msgstr ""
+msgstr "Geeft het wachtwoord nogmaals."
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/base.html:66
 msgid "Welcome,"
-msgstr ""
+msgstr "Welkom"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/base.html:74
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:15
 msgid "Documentation"
-msgstr ""
+msgstr "Documentatie"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/base.html:79
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:21
 msgid "Log out"
-msgstr ""
+msgstr "Afmelden"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_form.html:21
 msgid "You have unsaved changes"
-msgstr ""
+msgstr "Je hebt niet bewaarde wijzigingen"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_form.html:50
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_form.html:76
@@ -2051,11 +2051,11 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_list.html:110
 msgid "Nothing found"
-msgstr ""
+msgstr "Niets gevonden"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_list.html:112
 msgid "Reset search and filters"
-msgstr ""
+msgstr "Reset zoek en filters"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/change_list.html:114
 #, python-format
@@ -2081,7 +2081,7 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/cms/page/change_form.html:64
 msgid "Confirm delete"
-msgstr ""
+msgstr "Bevestig verwijderen"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/cms/page/change_form.html:65
 msgid "Remove delete request"
@@ -2679,11 +2679,11 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/login.html:56
 msgid "Forgotten your password or username?"
-msgstr ""
+msgstr "Gebruikersnaam of wachtwoord vergeten?"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/login.html:60
 msgid "Log in"
-msgstr ""
+msgstr "Meld aan"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/object_history.html:27
 #: venv/lib/python2.7/site-packages/suit/templates/reversion/object_history.html:15
@@ -2694,7 +2694,7 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/suit/templates/admin/object_history.html:28
 #: venv/lib/python2.7/site-packages/suit/templates/reversion/object_history.html:16
 msgid "User"
-msgstr ""
+msgstr "Gebruiker"
 
 #: venv/lib/python2.7/site-packages/suit/templates/admin/object_history.html:29
 msgid "Action"
@@ -2753,12 +2753,12 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/registration/logged_out.html:12
 msgid "Log in again"
-msgstr ""
+msgstr "Meld nog een keer aan"
 
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:28
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:32
 msgid "Password change"
-msgstr ""
+msgstr "Wijzig wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:40
 msgid ""
@@ -2768,15 +2768,15 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:55
 msgid "Old password"
-msgstr ""
+msgstr "Oud wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:66
 msgid "New password"
-msgstr ""
+msgstr "Nieuwe wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/registration/password_change_form.html:88
 msgid "Change my password"
-msgstr ""
+msgstr "Wijzige het wachtwoord"
 
 #: venv/lib/python2.7/site-packages/suit/templates/reversion/object_history.html:8
 msgid ""
@@ -2816,11 +2816,11 @@ msgstr ""
 
 #: venv/lib/python2.7/site-packages/suit/templates/suit/error_base.html:90
 msgid "Go back"
-msgstr ""
+msgstr "Ga terug"
 
 #: venv/lib/python2.7/site-packages/suit/templates/suit/error_base.html:93
 msgid "Go to admin home"
-msgstr ""
+msgstr "Ga naar admin home"
 
 #: venv/lib/python2.7/site-packages/suit/widgets.py:104
 msgid "Date:"
