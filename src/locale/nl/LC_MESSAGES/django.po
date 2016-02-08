@@ -8,72 +8,72 @@ msgstr ""
 
 #: main/utils.py:3
 msgid "Inventory naar Klant"
-msgstr ""
+msgstr "Voorraad naar klant"
 
 #: main/utils.py:4
 msgid "Klant naar Inventory"
-msgstr ""
+msgstr "Van klant naar voorraad"
 
 #: main/utils.py:5
 msgid "Guidion naar Inventory"
-msgstr ""
+msgstr "Van Guidion naar voorraad"
 
 #: main/utils.py:6
 msgid "Inventory naar Guidion"
-msgstr ""
+msgstr "Van Voorraad Naar Guidion"
 
 #: order/models.py:15
 msgid "created"
-msgstr ""
+msgstr "Aangemaakt"
 
 #: order/models.py:16
 msgid "modified"
-msgstr ""
+msgstr "Gewijzigd"
 
 #: order/models.py:25 order/models.py:48
 msgid "Order Quantity"
-msgstr ""
+msgstr "Bestelaantal"
 
 #: order/models.py:29
 msgid "Order / Delivery date"
-msgstr ""
+msgstr "Datum"
 
 #: order/models.py:39
 msgid "Order"
-msgstr ""
+msgstr "Voorraadmutatie"
 
 #: order/models.py:46
 msgid "name"
-msgstr ""
+msgstr "Naam"
 
 #: order/models.py:47
 msgid "code"
-msgstr ""
+msgstr "code"
 
 #: order/models.py:49
 msgid "description"
-msgstr ""
+msgstr "Omschrijving"
 
 #: order/models.py:52
 msgid "Product"
-msgstr ""
+msgstr "Product"
 
 #: order/models.py:59
 msgid "fullname"
-msgstr ""
+msgstr "Volledige naam"
 
 #: order/models.py:60
 msgid "postalcode"
-msgstr ""
+msgstr "Postcode"
 
 #: order/models.py:61
 msgid "housenumber"
-msgstr ""
+msgstr "Huisnummer"
 
 #: order/models.py:62
 msgid "housenumber addition"
-msgstr ""
+msgstr "Huisnr toevoeging"
 
 #: order/models.py:66
 msgid "Customer"
-msgstr ""
+msgstr "Klant"
