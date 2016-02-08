@@ -1,0 +1,79 @@
+#: main/settings.py:124
+msgid "Nederlands"
+msgstr ""
+
+#: main/settings.py:125
+msgid "English"
+msgstr ""
+
+#: main/utils.py:3
+msgid "Inventory naar Klant"
+msgstr ""
+
+#: main/utils.py:4
+msgid "Klant naar Inventory"
+msgstr ""
+
+#: main/utils.py:5
+msgid "Guidion naar Inventory"
+msgstr ""
+
+#: main/utils.py:6
+msgid "Inventory naar Guidion"
+msgstr ""
+
+#: order/models.py:15
+msgid "created"
+msgstr ""
+
+#: order/models.py:16
+msgid "modified"
+msgstr ""
+
+#: order/models.py:25 order/models.py:48
+msgid "Order Quantity"
+msgstr ""
+
+#: order/models.py:29
+msgid "Order / Delivery date"
+msgstr ""
+
+#: order/models.py:39
+msgid "Order"
+msgstr ""
+
+#: order/models.py:46
+msgid "name"
+msgstr ""
+
+#: order/models.py:47
+msgid "code"
+msgstr ""
+
+#: order/models.py:49
+msgid "description"
+msgstr ""
+
+#: order/models.py:52
+msgid "Product"
+msgstr ""
+
+#: order/models.py:59
+msgid "fullname"
+msgstr ""
+
+#: order/models.py:60
+msgid "postalcode"
+msgstr ""
+
+#: order/models.py:61
+msgid "housenumber"
+msgstr ""
+
+#: order/models.py:62
+msgid "housenumber addition"
+msgstr ""
+
+#: order/models.py:66
+msgid "Customer"
+msgstr ""

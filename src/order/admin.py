@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin.actions import delete_selected
 from main.utils import TYPE_OF_ORDER_DICT
 from order.forms import OrderChangeForm
 from order.models import Order, Product, Customer
@@ -8,9 +9,20 @@ from django.utils.html import format_html
 
 
 class OrderAdmin(admin.ModelAdmin):
-    fields = ('quantity', 'product', 'order_date', 'type', 'customer', )
-    list_display = ('id', 'batch_size', 'product_html', 'order_date', 'order_date_custom', 'created', 'order_type', 'customer_custom', )
+    fields = ('quantity', 'product', 'order_date', 'type', 'customer', 'deleted')
+    list_display = ('id', 'batch_size', 'product_html', 'order_date', 'order_date_custom', 'created', 'order_type', 'customer_custom', 'deleted')
     form = OrderChangeForm
+    actions = ['set_deleted_true', 'set_deleted_false']
+
+    delete_selected.short_description = 'Actually delete the record from the database'
+
+    def set_deleted_true(self, request, queryset):
+        queryset.update(deleted=True)
+    set_deleted_true.short_description = "Mark selected items as deleted"
+
+    def set_deleted_false(self, request, queryset):
+        queryset.update(deleted=False)
+    set_deleted_false.short_description = "Mark selected items as new items"
 
     def product_html(self, obj):
         name = obj.product.name.lower()

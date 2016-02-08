@@ -27,7 +27,7 @@ class OrderSerializer(TimeStampedSerializer):
 
     class Meta:
         model = Order
-        fields = ('id', 'order', 'quantity', 'type',)
+        fields = ('id', 'order', 'quantity', 'type', 'deleted', )
 
 
 class ProductSerializer(TimeStampedSerializer):
