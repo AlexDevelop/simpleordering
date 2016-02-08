@@ -114,6 +114,16 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+LOCALE_PATHS = (
+    PROJECT_ROOT + '/locale',
+)
+
+LANGUAGES = (
+    ('nl', _(u'Nederlands')),
+    ('en', _(u'English')),
+)
+
+
 # ######################## End Locale and Languages settings ######################## #
 
 
