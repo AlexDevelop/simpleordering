@@ -1,0 +1,24 @@
+{% extends 'frontend/bootstrap.html' %}
+
+{% load url from future %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+    <div class="container">
+        <h1>{% block title %}(no title){% endblock %}</h1>
+
+        <div class="menu">
+            <p>
+                <a href="{% url 'admin:login' %}">Admin</a>
+                <a href="{% url 'formset_default_success' %}" class="right">Order</a>
+                <a href="{% url 'overview' %}" class="right">Daily view</a>
+            </p>
+        </div>
+
+        {% bootstrap_messages %}
+
+        {% block content %}(no content){% endblock %}
+    </div>
+
+{% endblock %}

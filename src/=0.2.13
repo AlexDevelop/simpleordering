@@ -1,0 +1,11 @@
+Downloading/unpacking django-suit from https://pypi.python.org/packages/source/d/django-suit/django-suit-0.2.14.tar.gz#md5=585f7a496596b39a4da12432d090440a
+  Running setup.py (path:/home/ubuntu/workspace/venv/build/django-suit/setup.py) egg_info for package django-suit
+    
+Installing collected packages: django-suit
+  Found existing installation: django-suit 0.2.13
+    Uninstalling django-suit:
+      Successfully uninstalled django-suit
+  Running setup.py install for django-suit
+    
+Successfully installed django-suit
+Cleaning up...

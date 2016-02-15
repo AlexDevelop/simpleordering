@@ -1,0 +1,49 @@
+#id_form-0-date_picker .glyphicon-calendar.glyphicon{
+    width: 100px;
+}
+
+select[multiple]#id_form-0-products  {
+    #min-height: 170px;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    min-width: 330px;
+    line-height: 25px;
+}
+.bootstrap-datetimepicker-widget table th.next, .bootstrap-datetimepicker-widget table th.prev {
+    font-size: 35px;
+}
+
+.formset .checkbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.formset .checkbox {
+    display: inline-block;
+}
+
+.formset [type=checkbox] {
+    width: 30px;
+    height: 30px;
+    margin: -4px 0 0;
+}
+
+.formset .form-group {
+    margin-bottom: 5px;
+}
+a.right {
+    float: right;
+}
+
+.dd-selected-text, .dd-option-text {
+    line-height: 20px !important;
+}
+
+img.dd-option-image {
+    max-width: 32px;
+}
+
+.page.login {
+    margin-top: 20px;
+}

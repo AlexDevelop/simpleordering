@@ -1,0 +1,81 @@
+{% extends 'frontend/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    Ordering
+{% endblock %}
+
+{% block content %}
+    {% if view.custom_success == '1' %}
+        <div class="alert alert-success" role="alert">
+            <strong>Success</strong> You successfully added the product, amount
+          </div>
+    {% endif %}
+    {% if view.custom_success == '2' %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Faillure</strong> We were not able to add the product, amount
+          </div>
+    {% endif %}
+{#    {% bootstrap_formset_errors form %}#}
+    <form role="form" class="formset" method="post" action="/formset">
+        {% csrf_token %}
+{#        {% bootstrap_formset form %}#}
+        {% for field in form %}
+            {% if field.auto_id == 'id_products' %}
+                <div class="container-parents-chosen">
+                    <select data-placeholder="Zoek product / Search product" class="form-control input-lg chosen-select" id="id_products"
+                            name="products" title="" tabindex="6">
+                        <option value=""></option>
+                        {% for product in api_response %}
+                            <option value="{{ product.id }}">{{ product.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% else %}
+                {% bootstrap_field field %}
+            {% endif %}
+            {{ field.errors }}
+        {% endfor %}
+
+        {{ form.non_field_errors }}
+{#        {% buttons submit='OK - Submit product / order' reset="Cancel - to be removed" %}{% endbuttons %}#}
+        {% buttons %}
+            <button type="submit" value='submit' class="btn btn-primary">
+                {% bootstrap_icon "floppy-save" %} Submit
+            </button>
+            <button type="reset" value='reset' class="btn btn-warning">
+                {% bootstrap_icon "minus" %} Reset
+            </button>
+        {% endbuttons %}
+    </form>
+
+
+        
+    <script src="/static/js/chosen.jquery.js" type="text/javascript"></script>
+    <script src="/static/js/prism.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    jQuery(document).ready(function() {
+        {#        setTimeout(function() {#}
+        var config = {
+            '.chosen-select': {},
+            '.chosen-selectt': {}
+        };
+
+        for (var selector in config) {
+            $(selector).chosen(config[selector]).change(
+                    function (e) {
+                        var product_id = e.target.value;
+                        console.log(e);
+                        console.log(product_id);
+                        if (product_id.length > 0) {
+                            $('#id_products').val(product_id);
+                        }
+                    }
+            );
+        }
+    });
+    </script>
+
+{% endblock %}
