@@ -43,14 +43,18 @@ class SingleDsl(APIView):
         response = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
 
         if response.status_code is 200:
-            existing_dsl_service_id, name, length_last_distributor, length_mdf = self.retrieve_parse_xml(response.content)
+            existing_dsl_service_id, name, length_last_distributor, length_mdf, PostalCode, City, Street, HouseNumber = self.retrieve_parse_xml(response.content)
 
             data = {
                 "existing_dsl_service_id": str(existing_dsl_service_id),
                 "name": str(name),
                 "length_last_distributor": str(length_last_distributor),
                 "length_mdf": str(length_mdf),
-                "content": response.content,
+                "PostalCode": str(PostalCode),
+                "City": str(City),
+                "Street": str(Street),
+                "HouseNumber": str(HouseNumber),
+                #"content": response.content,
             }
             return Response(data=data)
 
@@ -80,4 +84,18 @@ class SingleDsl(APIView):
         except KeyError:
             length_mdf = None
 
-        return existing_dsl_service_id, name, length_last_distributor, length_mdf
+        try:
+            PostalCode = tree.findall('Response')[0].findall('Address')[0].attrib['PostalCode']
+            City = tree.findall('Response')[0].findall('Address')[0].attrib['City']
+            Street = tree.findall('Response')[0].findall('Address')[0].attrib['Street']
+            HouseNumber = tree.findall('Response')[0].findall('Address')[0].attrib['HouseNumber']
+        except KeyError:
+            PostalCode = None
+            City = None
+            Street = None
+            HouseNumber = None
+
+
+        #<Address PostalCode="1354JE" City="ALMERE" HouseNumber="49" Street="Schoolwerf">
+
+        return existing_dsl_service_id, name, length_last_distributor, length_mdf, PostalCode, City, Street, HouseNumber
