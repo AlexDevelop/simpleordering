@@ -1,0 +1,1654 @@
+<?xml version="1.0"?>
+<PqccResponseWithDebugInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" WebServerName="NL-WEBFARM1">
+  <Response>
+    <OriginalRequest PostalCode="1354JE" HouseNumber="49" ApplicationName="PQCC" Source="80.101.234.92" QueryDate="2016-02-16T18:33:23.24475+01:00" SharingPhonenumberToValidate="" />
+    <Address PostalCode="1354JE" City="ALMERE" HouseNumber="49" Street="Schoolwerf">
+      <PossibleHouseNumberAdditions>
+        <Addition />
+      </PossibleHouseNumberAdditions>
+    </Address>
+    <Cgb Name="Alr-Hvn" LengthLastDistributor="125" NetNumber="036" LengthMdf="1539" />
+    <DeliverableProducts>
+      <DeliverableProduct Network="KpnWbaA" Technology="Adsl2_Pots" CanShare="Pots" OrderableDownKbps="20000" DistributionPoint="Alr-Hvn" Tv="false" OrderableUpKbps="1024" />
+      <DeliverableProduct Network="KpnWbaA" Technology="Adsl2_Isdn" CanShare="Isdn" OrderableDownKbps="20000" DistributionPoint="Alr-Hvn" Tv="false" OrderableUpKbps="1024" />
+      <DeliverableProduct Network="KpnWbaE" Technology="Adsl2_Pots" CanShare="Pots" OrderableDownKbps="20000" DistributionPoint="Alr-Hvn" Tv="false" OrderableUpKbps="1024" />
+      <DeliverableProduct Network="KpnWbaE" Technology="Adsl2_Pots" Dlm="Sc" CanShare="Pots" ExpectedDownKbps="10000" OrderableDownKbps="20000" DistributionPoint="Alr-Hvn" Tv="true" OrderableUpKbps="1024" />
+      <DeliverableProduct Network="KpnWbaE" Technology="Vdsl2_Pots" Dlm="Sc" CanShare="Pots" ExpectedDownKbps="22000" OrderableDownKbps="50000" DistributionPoint="Alr-Hvn" Tv="true" OrderableUpKbps="5000" />
+    </DeliverableProducts>
+    <ExistingSituation ExistingDslServiceId="CDG54583" FtuType="Unknown">
+      <Remarks>
+        <Remark RemarkCode="9054" RemarkTextEng="Free copper pares exist besides one active service" RemarkTextNed="Free copper pares exist besides one active service" />
+        <Remark RemarkCode="9063" RemarkTextEng="Broadband is already provisioned on this line" RemarkTextNed="Broadband is already provisioned on this line" />
+      </Remarks>
+    </ExistingSituation>
+    <Errors />
+    <DistributionPoints />
+  </Response>
+  <DebugObjects>
+    <DebugObject TypeName="OwnNetworkV7Result">
+      <Object>
+        <row xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Postcode="1354JE" Huisnr="49" ErrorCode="0" Colo="Alr-Hvn" Street="Schoolwerf" City="ALMERE" QueryDate="2016-02-16T18:33:23.203" Proceed="0" Netnumber="036" LengteCgb="1539" LengteLaatsteVerdeler="125">
+          <Additions>
+            <Addition />
+          </Additions>
+        </row>
+      </Object>
+    </DebugObject>
+    <DebugObject TypeName="WbaBbcResponse">
+      <Object>
+        <bsabroadcheck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <messageheader>
+            <originator>BUBN</originator>
+            <recipient>BBRR</recipient>
+            <messagetype>BROADBAND_CHECK</messagetype>
+            <messageversion>10</messageversion>
+            <timestamp>20160216183325</timestamp>
+          </messageheader>
+          <messagebody>
+            <phoneinfo>
+              <currenttelephonetype />
+            </phoneinfo>
+            <distributionpoint>
+              <distribution-point>Alrh-SW/2</distribution-point>
+              <access-area-id>AA/9</access-area-id>
+              <technologyavailability>
+                <technology-type>ADSL_ISDN</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL_POTS</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_ISDN</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_POTS</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>EoF</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>100000</bandwidth-up>
+                <bandwidth-down>100000</bandwidth-down>
+                <min-bandwidth-up>100000</min-bandwidth-up>
+                <min-bandwidth-down>100000</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>GoF</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1000000</bandwidth-up>
+                <bandwidth-down>1000000</bandwidth-down>
+                <min-bandwidth-up>1000000</min-bandwidth-up>
+                <min-bandwidth-down>1000000</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2_POTS</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <accessclassavailability>
+                <access-class>E2E</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2A</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2AE</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2E</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2Ei</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_only</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_shared</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Fiber</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+            </distributionpoint>
+            <distributionpoint>
+              <distribution-point>Alr-Hvn</distribution-point>
+              <access-area-id>AA/9</access-area-id>
+              <technologyavailability>
+                <technology-type>ADSL_ISDN</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>8000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>1024</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL_POTS</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>8000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>1024</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_ISDN</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>20000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>4512</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_POTS</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>20000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>4512</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>EoF</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>GoF</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2_POTS</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <bandwidth-up>2048</bandwidth-up>
+                <bandwidth-down>20480</bandwidth-down>
+                <min-bandwidth-up>1024</min-bandwidth-up>
+                <min-bandwidth-down>15000</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <accessclassavailability>
+                <access-class>A2E</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2AE</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>E2E</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2Ei</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2A</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_only</carrier-type>
+                <availability>O</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_shared</carrier-type>
+                <availability>O</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Fiber</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+            </distributionpoint>
+            <broadbandinfo>
+              <xdf-access-serviceid>CDG54583</xdf-access-serviceid>
+            </broadbandinfo>
+            <errorinfo>
+              <errorcode>0</errorcode>
+              <commentcode>9054,9063</commentcode>
+            </errorinfo>
+          </messagebody>
+        </bsabroadcheck>
+      </Object>
+    </DebugObject>
+    <DebugObject TypeName="BsaZipcodeResponse44">
+      <Object>
+        <bsazipcodecheck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <messageheader>
+            <originator>BUBN</originator>
+            <recipient>BBRR</recipient>
+            <messagetype>ZIPCODE_CHECK</messagetype>
+            <messageversion>44</messageversion>
+            <timestamp>20160216183325</timestamp>
+          </messageheader>
+          <messagebody>
+            <portfolio-id>W-ADSL-ZF</portfolio-id>
+            <enduserinfo>
+              <requested-housenumber>49</requested-housenumber>
+              <requested-housenrext />
+              <requested-zipcode>1354JE</requested-zipcode>
+            </enduserinfo>
+            <distributionpoint>
+              <distribution-point>Alrh-SW/2</distribution-point>
+              <distribution-point-vendor-id>BSA</distribution-point-vendor-id>
+              <carrier-vendor-id>REGG</carrier-vendor-id>
+              <access-area-id>AA/9</access-area-id>
+              <technologyavailability>
+                <technology-type>ADSL_ISDN</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL_POTS</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_ISDN</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_POTS</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>EoF</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>100000</bandwidth-up>
+                <bandwidth-down>100000</bandwidth-down>
+                <min-bandwidth-up>100000</min-bandwidth-up>
+                <min-bandwidth-down>100000</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>GoF</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1000000</bandwidth-up>
+                <bandwidth-down>1000000</bandwidth-down>
+                <min-bandwidth-up>1000000</min-bandwidth-up>
+                <min-bandwidth-down>1000000</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2_POTS</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <accessclassavailability>
+                <access-class>E2E</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2A</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2AE</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2E</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2Ei</access-class>
+                <availability>C</availability>
+                <plandate />
+              </accessclassavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_only</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_shared</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Fiber</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+            </distributionpoint>
+            <distributionpoint>
+              <distribution-point>Alr-Hvn</distribution-point>
+              <distribution-point-vendor-id>BSA</distribution-point-vendor-id>
+              <carrier-vendor-id>MDF</carrier-vendor-id>
+              <access-area-id>AA/9</access-area-id>
+              <technologyavailability>
+                <technology-type>ADSL_ISDN</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>8000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>1024</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL_POTS</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>8000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>1024</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_ISDN</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>20000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>4512</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>ADSL2+_POTS</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <serviceable>Green</serviceable>
+                <bandwidth-up>1024</bandwidth-up>
+                <bandwidth-down>20000</bandwidth-down>
+                <min-bandwidth-up>256</min-bandwidth-up>
+                <min-bandwidth-down>4512</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>EoF</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>GoF</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2</technology-type>
+                <availability>C</availability>
+                <plandate />
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <technologyavailability>
+                <technology-type>VDSL2_POTS</technology-type>
+                <availability>O</availability>
+                <plandate />
+                <bandwidth-up>2048</bandwidth-up>
+                <bandwidth-down>20480</bandwidth-down>
+                <min-bandwidth-up>1024</min-bandwidth-up>
+                <min-bandwidth-down>15000</min-bandwidth-down>
+                <Plandate xsi:nil="true" />
+              </technologyavailability>
+              <accessclassavailability>
+                <access-class>A2E</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2AE</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>E2E</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2Ei</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <accessclassavailability>
+                <access-class>A2A</access-class>
+                <availability>O</availability>
+                <plandate />
+              </accessclassavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_only</carrier-type>
+                <availability>O</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Copper_shared</carrier-type>
+                <availability>O</availability>
+              </carriertypeavailability>
+              <carriertypeavailability>
+                <carrier-type>Fiber</carrier-type>
+                <availability>C</availability>
+              </carriertypeavailability>
+            </distributionpoint>
+            <errorinfo>
+              <errorcode>0</errorcode>
+            </errorinfo>
+          </messagebody>
+        </bsazipcodecheck>
+      </Object>
+    </DebugObject>
+    <DebugObject TypeName="BsafpicheckType">
+      <Object>
+        <BsafpicheckType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <messageheader xmlns="http://xdsl.kpn.com/fpi/11/response">
+            <originator>BUBN</originator>
+            <recipient>BBRR</recipient>
+            <timestamp>20160216183325</timestamp>
+          </messageheader>
+          <messagebody xmlns="http://xdsl.kpn.com/fpi/11/response">
+            <portfolio-id>DLM-ZF</portfolio-id>
+            <requested-housenumber>49</requested-housenumber>
+            <requested-housenrext />
+            <requested-zipcode>1354JE</requested-zipcode>
+            <xdf-access-serviceid />
+            <distributionpoint>
+              <distribution-point>Alr-Hvn</distribution-point>
+              <distribution-point-type>CGB</distribution-point-type>
+              <carrier-vendor-id>MDF</carrier-vendor-id>
+              <access-area-id>AA/9</access-area-id>
+              <package>
+                <package-id>42001</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42002</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42003</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42004</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42005</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42006</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42007</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42008</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42010</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42020</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>42030</package-id>
+                <availability>O</availability>
+                <reliability>98</reliability>
+              </package>
+              <package>
+                <package-id>42040</package-id>
+                <availability>O</availability>
+                <reliability>95</reliability>
+              </package>
+              <package>
+                <package-id>42050</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>42060</package-id>
+                <availability>O</availability>
+                <reliability>84</reliability>
+              </package>
+              <package>
+                <package-id>42070</package-id>
+                <availability>O</availability>
+                <reliability>70</reliability>
+              </package>
+              <package>
+                <package-id>43001</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43002</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43003</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43004</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43005</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43006</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43007</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43008</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43010</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43020</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>43030</package-id>
+                <availability>O</availability>
+                <reliability>96</reliability>
+              </package>
+              <package>
+                <package-id>43040</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>43050</package-id>
+                <availability>O</availability>
+                <reliability>83</reliability>
+              </package>
+              <package>
+                <package-id>43060</package-id>
+                <availability>O</availability>
+                <reliability>65</reliability>
+              </package>
+              <package>
+                <package-id>44010</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>44020</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>44021</package-id>
+                <availability>O</availability>
+                <reliability>97</reliability>
+              </package>
+              <package>
+                <package-id>44030</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>44031</package-id>
+                <availability>O</availability>
+                <reliability>95</reliability>
+              </package>
+              <package>
+                <package-id>44040</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>44041</package-id>
+                <availability>O</availability>
+                <reliability>93</reliability>
+              </package>
+              <package>
+                <package-id>44050</package-id>
+                <availability>O</availability>
+                <reliability>98</reliability>
+              </package>
+              <package>
+                <package-id>44051</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>44060</package-id>
+                <availability>O</availability>
+                <reliability>97</reliability>
+              </package>
+              <package>
+                <package-id>44061</package-id>
+                <availability>O</availability>
+                <reliability>90</reliability>
+              </package>
+              <package>
+                <package-id>44070</package-id>
+                <availability>O</availability>
+                <reliability>95</reliability>
+              </package>
+              <package>
+                <package-id>44071</package-id>
+                <availability>O</availability>
+                <reliability>84</reliability>
+              </package>
+              <package>
+                <package-id>44080</package-id>
+                <availability>O</availability>
+                <reliability>93</reliability>
+              </package>
+              <package>
+                <package-id>44081</package-id>
+                <availability>O</availability>
+                <reliability>77</reliability>
+              </package>
+              <package>
+                <package-id>44090</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>44091</package-id>
+                <availability>O</availability>
+                <reliability>70</reliability>
+              </package>
+              <package>
+                <package-id>44100</package-id>
+                <availability>O</availability>
+                <reliability>90</reliability>
+              </package>
+              <package>
+                <package-id>44101</package-id>
+                <availability>O</availability>
+                <reliability>60</reliability>
+              </package>
+              <package>
+                <package-id>44110</package-id>
+                <availability>O</availability>
+                <reliability>84</reliability>
+              </package>
+              <package>
+                <package-id>44120</package-id>
+                <availability>O</availability>
+                <reliability>77</reliability>
+              </package>
+              <package>
+                <package-id>44130</package-id>
+                <availability>O</availability>
+                <reliability>70</reliability>
+              </package>
+              <package>
+                <package-id>44140</package-id>
+                <availability>O</availability>
+                <reliability>60</reliability>
+              </package>
+              <package>
+                <package-id>45020</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45021</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45040</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45041</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45060</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45061</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45080</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45081</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45100</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45101</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45120</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45121</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45140</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45141</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45160</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45161</package-id>
+                <availability>O</availability>
+                <reliability>97</reliability>
+              </package>
+              <package>
+                <package-id>45180</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>45181</package-id>
+                <availability>O</availability>
+                <reliability>93</reliability>
+              </package>
+              <package>
+                <package-id>45200</package-id>
+                <availability>O</availability>
+                <reliability>97</reliability>
+              </package>
+              <package>
+                <package-id>45201</package-id>
+                <availability>O</availability>
+                <reliability>78</reliability>
+              </package>
+              <package>
+                <package-id>45220</package-id>
+                <availability>O</availability>
+                <reliability>93</reliability>
+              </package>
+              <package>
+                <package-id>45240</package-id>
+                <availability>O</availability>
+                <reliability>78</reliability>
+              </package>
+              <package>
+                <package-id>47021</package-id>
+                <availability>O</availability>
+                <reliability>90</reliability>
+              </package>
+              <package>
+                <package-id>47031</package-id>
+                <availability>O</availability>
+                <reliability>84</reliability>
+              </package>
+              <package>
+                <package-id>47041</package-id>
+                <availability>O</availability>
+                <reliability>77</reliability>
+              </package>
+              <package>
+                <package-id>47051</package-id>
+                <availability>O</availability>
+                <reliability>70</reliability>
+              </package>
+              <package>
+                <package-id>47061</package-id>
+                <availability>O</availability>
+                <reliability>60</reliability>
+              </package>
+              <package>
+                <package-id>48021</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>48041</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>48061</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>48081</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>48101</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>48121</package-id>
+                <availability>O</availability>
+                <reliability>97</reliability>
+              </package>
+              <package>
+                <package-id>48141</package-id>
+                <availability>O</availability>
+                <reliability>93</reliability>
+              </package>
+              <package>
+                <package-id>48161</package-id>
+                <availability>O</availability>
+                <reliability>78</reliability>
+              </package>
+              <package>
+                <package-id>50100</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>50200</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>50201</package-id>
+                <availability>O</availability>
+                <reliability>86</reliability>
+              </package>
+              <package>
+                <package-id>50210</package-id>
+                <availability>O</availability>
+                <reliability>96</reliability>
+              </package>
+              <package>
+                <package-id>50300</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>50301</package-id>
+                <availability>O</availability>
+                <reliability>79</reliability>
+              </package>
+              <package>
+                <package-id>50310</package-id>
+                <availability>O</availability>
+                <reliability>94</reliability>
+              </package>
+              <package>
+                <package-id>50400</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>50401</package-id>
+                <availability>O</availability>
+                <reliability>71</reliability>
+              </package>
+              <package>
+                <package-id>50410</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>50500</package-id>
+                <availability>O</availability>
+                <reliability>98</reliability>
+              </package>
+              <package>
+                <package-id>50501</package-id>
+                <availability>O</availability>
+                <reliability>61</reliability>
+              </package>
+              <package>
+                <package-id>50510</package-id>
+                <availability>O</availability>
+                <reliability>91</reliability>
+              </package>
+              <package>
+                <package-id>50600</package-id>
+                <availability>O</availability>
+                <reliability>96</reliability>
+              </package>
+              <package>
+                <package-id>50610</package-id>
+                <availability>O</availability>
+                <reliability>86</reliability>
+              </package>
+              <package>
+                <package-id>50700</package-id>
+                <availability>O</availability>
+                <reliability>94</reliability>
+              </package>
+              <package>
+                <package-id>50710</package-id>
+                <availability>O</availability>
+                <reliability>79</reliability>
+              </package>
+              <package>
+                <package-id>50800</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>50810</package-id>
+                <availability>O</availability>
+                <reliability>71</reliability>
+              </package>
+              <package>
+                <package-id>50900</package-id>
+                <availability>O</availability>
+                <reliability>91</reliability>
+              </package>
+              <package>
+                <package-id>50910</package-id>
+                <availability>O</availability>
+                <reliability>61</reliability>
+              </package>
+              <package>
+                <package-id>51000</package-id>
+                <availability>O</availability>
+                <reliability>86</reliability>
+              </package>
+              <package>
+                <package-id>51100</package-id>
+                <availability>O</availability>
+                <reliability>79</reliability>
+              </package>
+              <package>
+                <package-id>51200</package-id>
+                <availability>O</availability>
+                <reliability>71</reliability>
+              </package>
+              <package>
+                <package-id>51300</package-id>
+                <availability>O</availability>
+                <reliability>61</reliability>
+              </package>
+              <package>
+                <package-id>54004</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54005</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54006</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54007</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54008</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54010</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54020</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54030</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54040</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>54050</package-id>
+                <availability>O</availability>
+                <reliability>97</reliability>
+              </package>
+              <package>
+                <package-id>54060</package-id>
+                <availability>O</availability>
+                <reliability>95</reliability>
+              </package>
+              <package>
+                <package-id>54070</package-id>
+                <availability>O</availability>
+                <reliability>94</reliability>
+              </package>
+              <package>
+                <package-id>54080</package-id>
+                <availability>O</availability>
+                <reliability>92</reliability>
+              </package>
+              <package>
+                <package-id>54090</package-id>
+                <availability>O</availability>
+                <reliability>90</reliability>
+              </package>
+              <package>
+                <package-id>54100</package-id>
+                <availability>O</availability>
+                <reliability>84</reliability>
+              </package>
+              <package>
+                <package-id>54110</package-id>
+                <availability>O</availability>
+                <reliability>76</reliability>
+              </package>
+              <package>
+                <package-id>54120</package-id>
+                <availability>O</availability>
+                <reliability>69</reliability>
+              </package>
+              <package>
+                <package-id>54130</package-id>
+                <availability>O</availability>
+                <reliability>58</reliability>
+              </package>
+              <package>
+                <package-id>55200</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55201</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55210</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55400</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55401</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55410</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55600</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55601</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55610</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55800</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55801</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>55810</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56000</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56001</package-id>
+                <availability>O</availability>
+                <reliability>98</reliability>
+              </package>
+              <package>
+                <package-id>56010</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56200</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56201</package-id>
+                <availability>O</availability>
+                <reliability>94</reliability>
+              </package>
+              <package>
+                <package-id>56210</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56400</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56401</package-id>
+                <availability>O</availability>
+                <reliability>91</reliability>
+              </package>
+              <package>
+                <package-id>56410</package-id>
+                <availability>O</availability>
+                <reliability>98</reliability>
+              </package>
+              <package>
+                <package-id>56600</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>56610</package-id>
+                <availability>O</availability>
+                <reliability>94</reliability>
+              </package>
+              <package>
+                <package-id>56800</package-id>
+                <availability>O</availability>
+                <reliability>98</reliability>
+              </package>
+              <package>
+                <package-id>56810</package-id>
+                <availability>O</availability>
+                <reliability>91</reliability>
+              </package>
+              <package>
+                <package-id>57000</package-id>
+                <availability>O</availability>
+                <reliability>94</reliability>
+              </package>
+              <package>
+                <package-id>57200</package-id>
+                <availability>O</availability>
+                <reliability>91</reliability>
+              </package>
+              <package>
+                <package-id>70020</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70021</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70022</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70023</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70024</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70025</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70026</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>70027</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80008</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80029</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80030</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80031</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80032</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80033</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80034</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80035</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80036</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80037</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80050</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80051</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80052</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80053</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80054</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80055</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80056</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80057</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80058</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80060</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80061</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80062</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80063</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80064</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80065</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80066</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80067</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80068</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80070</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80072</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80073</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80074</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80075</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80076</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80077</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80078</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80079</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+              <package>
+                <package-id>80080</package-id>
+                <availability>O</availability>
+                <reliability>99</reliability>
+              </package>
+            </distributionpoint>
+            <distributionpoint>
+              <distribution-point>Alrh-SW/2</distribution-point>
+              <distribution-point-type>STK</distribution-point-type>
+              <carrier-vendor-id>REGG</carrier-vendor-id>
+              <access-area-id>AA/9</access-area-id>
+            </distributionpoint>
+            <errorinfo>
+              <errorcode>0</errorcode>
+              <commentcode />
+            </errorinfo>
+          </messagebody>
+        </BsafpicheckType>
+      </Object>
+    </DebugObject>
+  </DebugObjects>
+  <Loggers>
+    <Logger GroupName="PQCC database">
+      <LogEntries>
+        <LogEntry TimeStamp="00:00:00.0000478">Reading information from PQCC database</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0299152">Information read from PQCC database</LogEntry>
+      </LogEntries>
+    </Logger>
+    <Logger GroupName="Wba Broadbandchecker">
+      <LogEntries>
+        <LogEntry TimeStamp="00:00:00.0299237">Reading WBA broadbandchecker response from cache</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0368859">WBA broadbandchecker cache was empty</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0369099">Open Web request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0369801">Writing request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0370373">Written request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0371100">Opened Web request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0436792">Waiting for web request to be ready</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3608533">Reading response</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3614397">Read response</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3614830">Web request was ready</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3614884">Writing response to WBA log</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3628406">Written response to WBA log</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3628452">Write response to WBA cache</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3744806">Written response to WBA cache</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3744863">Processing BBC result</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3745083">Processed BBC result</LogEntry>
+      </LogEntries>
+    </Logger>
+    <Logger GroupName="WBA postcodecheck">
+      <LogEntries>
+        <LogEntry TimeStamp="00:00:00.0371174">Reading WBA response from cache</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0386027">WBA cache was empty</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0386152">Starting web request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0388177">Started web request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0514010">Writing request data</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0514499">Written request data</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3745146">Waiting for webrequest to complete</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8621783">Reading response data</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8643348">Read response data</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8643705">Webrequest is complete</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8643760">Writing to WBA log</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8661031">Written to WBA log</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8661109">Writing to WBA cache</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8788697">Written to WBA cache</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8788754">Processing WBA result</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8809926">Processed WBA result</LogEntry>
+      </LogEntries>
+    </Logger>
+    <Logger GroupName="WBA FPI11 check">
+      <LogEntries>
+        <LogEntry TimeStamp="00:00:00.0398191">Invoking Beginfpi11</LogEntry>
+        <LogEntry TimeStamp="00:00:00.6408804">AsyncCallback completed, Duration=00:00:00.6093750</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8810015">Reading async response</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8820988">Read async response</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8821811">Processing FPI result</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8834044">Expected DLM speed found{ TechnologyType = ADSL2+_POTS, Tv = False, Dlm = SC, distributionpoint = Alr-Hvn }: 10000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8834242">Expected DLM speed found{ TechnologyType = ADSL2+_POTS, Tv = True, Dlm = SC, distributionpoint = Alr-Hvn }: 10000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8834323">Expected DLM speed found{ TechnologyType = VDSL2_POTS, Tv = False, Dlm = SC, distributionpoint = Alr-Hvn }: 22000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8834400">Expected DLM speed found{ TechnologyType = VDSL2_POTS, Tv = True, Dlm = SC, distributionpoint = Alr-Hvn }: 22000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846427">Expected DLM speed found{ TechnologyType = ADSL2+_POTS, Tv = False, Dlm = SC, distributionpoint = Alr-Hvn }: 10000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846557">Expected DLM speed found{ TechnologyType = ADSL2+_POTS, Tv = True, Dlm = SC, distributionpoint = Alr-Hvn }: 10000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846651">Expected DLM speed found{ TechnologyType = VDSL2_POTS, Tv = False, Dlm = SC, distributionpoint = Alr-Hvn }: 22000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846727">Expected DLM speed found{ TechnologyType = VDSL2_POTS, Tv = True, Dlm = SC, distributionpoint = Alr-Hvn }: 22000</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846781">Processed WBA result</LogEntry>
+      </LogEntries>
+    </Logger>
+    <Logger GroupName="Main process">
+      <LogEntries>
+        <LogEntry TimeStamp="00:00:00.0000003">Processing PQCC request</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0000100">Try stub data</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0000498">Invoking StartInquiry for PqccDbSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0299227">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0299252">Invoking StartInquiry for BbcSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0371177">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0371200">Invoking StartInquiry for WbaPcSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0388265">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0388290">Invoking StartInquiry for WbaFpiSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0436583">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0436630">Invoking ProcessResults for PqccDbSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0436809">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.0436828">Invoking ProcessResults for BbcSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3745150">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.3745184">Invoking ProcessResults for WbaPcSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8810018">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8810049">Invoking ProcessResults for WbaFpiSourceController</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846850">Returned</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8846944">Processing generic business rules</LogEntry>
+        <LogEntry TimeStamp="00:00:00.8847086">Processed PQCC request</LogEntry>
+      </LogEntries>
+    </Logger>
+  </Loggers>
+</PqccResponseWithDebugInfo>

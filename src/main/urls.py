@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from dsl.views import SingleDsl
 from frontend.views import DefaultFormsetView, DefaultFormView, DefaultFormByFieldView, \
     FormHorizontalView, FormInlineView, FormWithFilesView, PaginationView, MiscView, HomePageView, \
     loginview, OverviewView
@@ -41,6 +42,8 @@ urlpatterns = patterns('',
     url(r'^/?$', DefaultFormsetView.as_view(), name='formset_default_success'),
     url(r'^', include(router.urls)),
     url(r'^admin/?', include(admin.site.urls)),
+    url(r'^dsl/?', SingleDsl.as_view()),
+
 )
 
 if settings.DEBUG is True:
