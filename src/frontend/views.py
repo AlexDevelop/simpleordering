@@ -257,3 +257,6 @@ class PaginationView(TemplateView):
 
 class MiscView(TemplateView):
     template_name = 'frontend/misc.html'
+
+class DslView(TemplateView):
+    template_name = 'frontend/dsl.html'

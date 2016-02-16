@@ -40,7 +40,7 @@ class SingleDsl(APIView):
             'Host': 'pqcc.soap.dslorder.nl',
             'Origin': 'https://pqcc.soap.dslorder.nl',
         }
-        response = requests.post(url=data_url, data=post_data, headers=headers)
+        response = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
 
         if response.status_code is 200:
             existing_dsl_service_id, name, length_last_distributor, length_mdf = self.retrieve_parse_xml(response.content)
@@ -49,7 +49,8 @@ class SingleDsl(APIView):
                 "existing_dsl_service_id": str(existing_dsl_service_id),
                 "name": str(name),
                 "length_last_distributor": str(length_last_distributor),
-                "length_mdf": str(length_mdf)
+                "length_mdf": str(length_mdf),
+                "content": response.content,
             }
             return Response(data=data)
 

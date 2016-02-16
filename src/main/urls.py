@@ -3,7 +3,7 @@ from django.contrib import admin
 from dsl.views import SingleDsl
 from frontend.views import DefaultFormsetView, DefaultFormView, DefaultFormByFieldView, \
     FormHorizontalView, FormInlineView, FormWithFilesView, PaginationView, MiscView, HomePageView, \
-    loginview, OverviewView
+    loginview, OverviewView, DslView
 from main import settings
 from order import views as OrderProductViews
 from rest_framework.routers import DefaultRouter
@@ -36,6 +36,7 @@ urlpatterns = patterns('',
     url(r'^form_with_files/?$', FormWithFilesView.as_view(), name='form_with_files'),
     url(r'^pagination/?$', PaginationView.as_view(), name='pagination'),
     url(r'^misc/?$', MiscView.as_view(), name='misc'),
+    url(r'^dsl-page/?$', DslView.as_view(), name='misc'),
 
     # API Related
     url(r'^api/?', include('rest_framework.urls', namespace='rest_framework')),
