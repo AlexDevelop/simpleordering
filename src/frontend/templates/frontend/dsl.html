@@ -1,12 +1,25 @@
-<form action="/dsl" method="GET">
-    <label>Postcode</label>
-    <input type="text" name="postcode"/>
-    <br/>
-    <label>Housenumber</label>
-    <input type="text" name="housenumber"/>
-    <br/>
-    <label>Housenumber addition</label>
-    <input type="text" name="housenumber_add"/>
-    <br/>
-    <input type="submit" name="submit"/>
-</form>
+{% extends 'frontend/bootstrap.html' %}
+
+{% load url from future %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+    <div class="container">
+        <form action="/dsl" method="GET">
+            <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input type="text" class="form-control" name="postcode" placeholder="Postcode">
+                <label for="housenumber">Housenumber</label>
+                <input type="text" class="form-control" name="housenumber" placeholder="Housenumber">
+            </div>
+            <div class="form-group">
+                <label for="housenumber_add">Housenumber addition</label>
+                <input type="text" class="form-control" name="housenumber_add" placeholder="Housenumber addition">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}
+
