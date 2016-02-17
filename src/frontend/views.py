@@ -258,5 +258,25 @@ class PaginationView(TemplateView):
 class MiscView(TemplateView):
     template_name = 'frontend/misc.html'
 
+
 class DslView(TemplateView):
     template_name = 'frontend/dsl.html'
+    dsl_data = None
+
+    def get(self, request, *args, **kwargs):
+        if len(request.GET) > 0:
+            protocol = 'https://' if request.is_secure() else 'http://'
+            url = protocol + request.get_host() + reverse('dsl-api')
+            response = requests.get(url, params=request.GET)
+            self.dsl_data = json.loads(response.content)
+        default_response = super(DslView, self).get(request, *args, **kwargs)
+        # if response:
+        #     default_response.context_data['dsl_data-api'] = response.content
+        return default_response
+
+    def get_context_data(self, **kwargs):
+        context = super(DslView, self).get_context_data(**kwargs)
+        if self.dsl_data:
+            context['dsl_data'] = self.dsl_data
+
+        return context

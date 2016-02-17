@@ -36,14 +36,14 @@ urlpatterns = patterns('',
     url(r'^form_with_files/?$', FormWithFilesView.as_view(), name='form_with_files'),
     url(r'^pagination/?$', PaginationView.as_view(), name='pagination'),
     url(r'^misc/?$', MiscView.as_view(), name='misc'),
-    url(r'^dsl-page/?$', DslView.as_view(), name='misc'),
+    url(r'^dsl-page/?$', DslView.as_view(), name='dsl'),
 
     # API Related
     url(r'^api/?', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^/?$', DefaultFormsetView.as_view(), name='formset_default_success'),
     url(r'^', include(router.urls)),
     url(r'^admin/?', include(admin.site.urls)),
-    url(r'^dsl/?', SingleDsl.as_view()),
+    url(r'^dsl/?', SingleDsl.as_view(), name='dsl-api'),
 
 )
 
