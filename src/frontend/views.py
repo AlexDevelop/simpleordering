@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import render, redirect
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.generic import FormView, TemplateView
 from frontend.forms import ContactFormSet, ContactForm, FilesForm, OrderFormSet, LoginForm, OrderForm, OverviewForm
 from django.contrib import messages
@@ -263,6 +264,7 @@ class DslView(TemplateView):
     template_name = 'frontend/dsl.html'
     dsl_data = None
 
+    @xframe_options_exempt
     def get(self, request, *args, **kwargs):
         if len(request.GET) > 0:
             protocol = 'https://' if request.is_secure() else 'http://'

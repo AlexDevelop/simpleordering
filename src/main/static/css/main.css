@@ -47,3 +47,11 @@ img.dd-option-image {
 .page.login {
     margin-top: 20px;
 }
+
+.dsl .dsl-content {
+    visibility: visible;
+}
+
+.dsl.clicked .dsl-content {
+    visibility: hidden;
+}

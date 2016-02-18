@@ -8,9 +8,9 @@
     <div class="container">
         <form action="" method="GET">
             <div class="form-group">
-                <label for="postcode">Postcode</label>
+                <label for="postcode">Postcode *</label>
                 <input type="text" class="form-control" name="postcode" placeholder="Postcode">
-                <label for="housenumber">Housenumber</label>
+                <label for="housenumber">Housenumber *</label>
                 <input type="text" class="form-control" name="housenumber" placeholder="Housenumber">
             </div>
             <div class="form-group">
@@ -21,16 +21,20 @@
         </form>
 
         {% if dsl_data %}
-            <br/>
-            <h3>Data: </h3>
-            City: {{ dsl_data.City }} </br>
-            Postalcode: {{ dsl_data.PostalCode }} </br>
-            Street: {{ dsl_data.Street }} </br>
-            Housenumber: {{ dsl_data.HouseNumber }} </br>
-            Name: {{ dsl_data.name }} </br>
-            Length Last Distributor: {{ dsl_data.length_last_distributor }} </br>
-            Length MDF: {{ dsl_data.length_mdf }} </br>
-            Existing DSL Service ID: {{ dsl_data.existing_dsl_service_id }} </br>
+            <div class="dsl">
+                <h3>Data (click to toggle): </h3>
+                <div class="dsl-content">
+
+                    City: {{ dsl_data.City }} </br>
+                    Postalcode: {{ dsl_data.PostalCode }} </br>
+                    Street: {{ dsl_data.Street }} </br>
+                    Housenumber: {{ dsl_data.HouseNumber }} </br>
+                    Name: {{ dsl_data.name }} </br>
+                    Length Last Distributor: {{ dsl_data.length_last_distributor }} </br>
+                    Length MDF: {{ dsl_data.length_mdf }} </br>
+                    Existing DSL Service ID: {{ dsl_data.existing_dsl_service_id }} </br>
+                </div>
+            </div>
         {% endif %}
     </div>
 
