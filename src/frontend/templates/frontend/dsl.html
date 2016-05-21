@@ -5,7 +5,7 @@
 {% load bootstrap3 %}
 
 {% block bootstrap3_content %}
-    <div class="container">
+    <div class="container dsl">
         <form action="" method="GET">
             <div class="form-group">
                 <label for="postcode">Postcode *</label>
@@ -22,17 +22,32 @@
 
         {% if dsl_data %}
             <div class="dsl">
-                <h3>Data (click to toggle): </h3>
+{#                <h3>Data (click to toggle): </h3>#}
                 <div class="dsl-content">
 
                     City: {{ dsl_data.City }} </br>
-                    Postalcode: {{ dsl_data.PostalCode }} </br>
+                    Postalcode: <input type="text" class="postcode" value="{{ dsl_data.PostalCode }}"/> <span class="postcode_copy"></span></br>
                     Street: {{ dsl_data.Street }} </br>
                     Housenumber: {{ dsl_data.HouseNumber }} </br>
                     Name: {{ dsl_data.name }} </br>
                     Length Last Distributor: {{ dsl_data.length_last_distributor }} </br>
                     Length MDF: {{ dsl_data.length_mdf }} </br>
-                    Existing DSL Service ID: {{ dsl_data.existing_dsl_service_id }} </br>
+                    Existing DSL Service ID: {{ dsl_data.existing_dsl_service_id }} </br></br>
+                    {% for product in dsl_data.products %}
+
+                    {% if forloop.first %}
+                        <span class="product headers">
+                            Network / Technology / Expected Down / Orderable Down / Expected Up / Orderable Up</br>
+                        </span>
+                        {% endif %}
+                        <span class="product">{{ product.network }}</span>
+                        <span class="product">{{ product.technology }}</span>
+                        <span class="product number">{{ product.expected_down }}</span>
+                        <span class="product number">{{ product.orderable_down }}</span>
+                        <span class="product number">{{ product.expected_up }}</span>
+                        <span class="product number">{{ product.orderable_up }}</span>
+                        </br>
+                    {% endfor %}
                 </div>
             </div>
         {% endif %}

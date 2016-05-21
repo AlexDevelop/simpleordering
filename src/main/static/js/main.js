@@ -34,9 +34,18 @@ $(document).ready(function () {
     }
   }
 
-  $('.dsl').click(function (e) {
+  $('.postcode').click(function (e) {
     console.log(this);
-    $(this).toggleClass('clicked');
+    jQuery(this).select();
+    console.log(jQuery(this).select());
+    var successful = document.execCommand('copy');
+    if (successful) {
+      jQuery('.postcode_copy').html('Copy succes')
+    } else {
+      jQuery('.postcode_copy').html('Copy failed')
+    }
+    console.log(successful);
+    // $(this).toggleClass('clicked');
   });
 
   // product.ddslick({

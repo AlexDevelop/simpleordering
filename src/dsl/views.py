@@ -43,7 +43,9 @@ class SingleDsl(APIView):
         response = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
 
         if response.status_code is 200:
-            existing_dsl_service_id, name, length_last_distributor, length_mdf, PostalCode, City, Street, HouseNumber = self.retrieve_parse_xml(response.content)
+            existing_dsl_service_id, name, length_last_distributor, length_mdf, \
+            PostalCode, City, Street, HouseNumber, products \
+                = self.retrieve_parse_xml(response.content)
 
             data = {
                 "existing_dsl_service_id": str(existing_dsl_service_id),
@@ -54,6 +56,7 @@ class SingleDsl(APIView):
                 "City": str(City),
                 "Street": str(Street),
                 "HouseNumber": str(HouseNumber),
+                "products": products,
                 #"content": response.content,
             }
             return Response(data=data)
@@ -84,6 +87,26 @@ class SingleDsl(APIView):
         except KeyError:
             length_mdf = None
 
+        products = []
+        # Deliverable Products
+        for product in tree.findall('Response')[0].findall('DeliverableProducts')[0]:
+            network = product.attrib['Network']
+            technology = product.attrib['Technology']
+            expected_down = product.attrib['ExpectedDownKbps'] if 'ExpectedDownKbps' in product.attrib else '-'
+            orderable_down = product.attrib['OrderableDownKbps']
+            expected_up = product.attrib['ExpectedUpKbps'] if 'ExpectedUpKbps' in product.attrib else '-'
+            orderable_up = product.attrib['OrderableUpKbps']
+            products.append(
+                {
+                    'network': network,
+                    'technology': technology,
+                    'expected_down': expected_down,
+                    'orderable_down': orderable_down,
+                    'expected_up': expected_up,
+                    'orderable_up': orderable_up
+                }
+            )
+
         try:
             PostalCode = tree.findall('Response')[0].findall('Address')[0].attrib['PostalCode']
             City = tree.findall('Response')[0].findall('Address')[0].attrib['City']
@@ -98,4 +121,4 @@ class SingleDsl(APIView):
 
         #<Address PostalCode="1354JE" City="ALMERE" HouseNumber="49" Street="Schoolwerf">
 
-        return existing_dsl_service_id, name, length_last_distributor, length_mdf, PostalCode, City, Street, HouseNumber
+        return existing_dsl_service_id, name, length_last_distributor, length_mdf, PostalCode, City, Street, HouseNumber, products

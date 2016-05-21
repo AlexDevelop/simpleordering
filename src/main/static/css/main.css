@@ -48,10 +48,26 @@ img.dd-option-image {
     margin-top: 20px;
 }
 
+.container.dsl {
+    margin-top: 15px;
+}
+
 .dsl .dsl-content {
     visibility: visible;
 }
 
 .dsl.clicked .dsl-content {
-    visibility: hidden;
+    /*visibility: hidden;*/
+}
+
+.product {
+    width: 80px;
+    display: inline-block;
+}
+.product.headers {
+    width: 100%;
+    display: block;
+}
+.product.number {
+    width: 45px;
 }
