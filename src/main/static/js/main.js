@@ -34,15 +34,15 @@ $(document).ready(function () {
     }
   }
 
-  $('.postcode').click(function (e) {
+  $('.copy_this').click(function (e) {
     console.log(this);
     jQuery(this).select();
     console.log(jQuery(this).select());
     var successful = document.execCommand('copy');
     if (successful) {
-      jQuery('.postcode_copy').html('Copy succes')
+      jQuery('.copy_status').html('Copy succes')
     } else {
-      jQuery('.postcode_copy').html('Copy failed')
+      jQuery('.copy_status').html('Copy failed')
     }
     console.log(successful);
     // $(this).toggleClass('clicked');
