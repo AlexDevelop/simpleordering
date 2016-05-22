@@ -43,21 +43,19 @@ class SingleDsl(APIView):
         response = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
 
         if response.status_code is 200:
-            existing_dsl_service_id, name, length_last_distributor, length_mdf, \
-            PostalCode, City, Street, HouseNumber, products \
-                = self.retrieve_parse_xml(response.content)
+            data = self.retrieve_parse_xml(response.content)
 
             data = {
-                "existing_dsl_service_id": str(existing_dsl_service_id),
-                "name": str(name),
-                "length_last_distributor": str(length_last_distributor),
-                "length_mdf": str(length_mdf),
-                "PostalCode": str(PostalCode),
-                "City": str(City),
-                "Street": str(Street),
-                "HouseNumber": str(HouseNumber),
-                "products": products,
-                #"content": response.content,
+                "existing_dsl_service_id": str(data['existing_dsl_service_id']),
+                "name": str(data['name']),
+                "length_last_distributor": str(data['length_last_distributor']),
+                "length_mdf": str(data['length_mdf']),
+                "PostalCode": str(data['postal_code']),
+                "City": str(data['city']),
+                "Street": str(data['street']),
+                "HouseNumber": str(data['house_number']),
+                "products": data['products'],
+                "remarks": data['remarks'],
             }
             return Response(data=data)
 
@@ -107,6 +105,10 @@ class SingleDsl(APIView):
                 }
             )
 
+        remarks = []
+        for remark in tree.findall('Response')[0].findall('ExistingSituation')[0].findall('Remarks')[0]:
+            remarks.append(remark.attrib['RemarkTextNed'])
+
         try:
             PostalCode = tree.findall('Response')[0].findall('Address')[0].attrib['PostalCode']
             City = tree.findall('Response')[0].findall('Address')[0].attrib['City']
@@ -120,5 +122,16 @@ class SingleDsl(APIView):
 
 
         #<Address PostalCode="1354JE" City="ALMERE" HouseNumber="49" Street="Schoolwerf">
-
-        return existing_dsl_service_id, name, length_last_distributor, length_mdf, PostalCode, City, Street, HouseNumber, products
+        data = dict(
+            existing_dsl_service_id=existing_dsl_service_id,
+            name=name,
+            length_last_distributor=length_last_distributor,
+            length_mdf=length_mdf,
+            postal_code=PostalCode,
+            city=City,
+            street=Street,
+            house_number=HouseNumber,
+            products=products,
+            remarks=remarks
+        )
+        return data
