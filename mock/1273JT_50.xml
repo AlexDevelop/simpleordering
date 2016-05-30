@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PqccResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OriginalRequest PostalCode="1273JT" HouseNumber="50" ApplicationName="PQCC" Source="83.162.34.3" QueryDate="2016-05-30T16:20:42.874125+02:00" SharingPhonenumberToValidate="" PQCCCheckType="Copper" ConnectionPoint="" />
+  <Address PostalCode="1273JT" City="HUIZEN" HouseNumber="50" Street="Monnickskamp">
+    <PossibleHouseNumberAdditions>
+      <Addition />
+    </PossibleHouseNumberAdditions>
+  </Address>
+  <Cgb Name="Hz" LengthLastDistributor="15" NetNumber="035" LengthMdf="2548" />
+  <DeliverableProducts>
+    <DeliverableProduct Network="WBA-E" Dlm="Sc" Technology="Adsl2_Pots" CanShare="Pots" OrderableDownKbps="20000" ExpectedDownKbps="8000" DistributionPoint="Hz" AccessArea="AA/101" OrderableUpKbps="1024" Tv="true" />
+    <DeliverableProduct Network="WBA-E" NlType="6" Technology="GoF" OrderableDownKbps="1000000" DistributionPoint="Hz-AAF/3" AccessArea="AA/102" OrderableUpKbps="1000000" Tv="true" />
+    <DeliverableProduct Network="Sni-F" Dlm="Sc" Technology="Adsl2_Pots" CanShare="Pots" OrderableDownKbps="20000" ExpectedDownKbps="8000" DistributionPoint="Hz" AccessArea="AA/101" OrderableUpKbps="1024" Tv="true" />
+  </DeliverableProducts>
+  <ExistingSituation>
+    <ExistingSituationCopper SharedLine="false" ExistingDslServiceId="CGF26407" carrierstatus="O" carrierVendorid="MDF">
+      <Remarks />
+      <coper-connectionpointinfo>
+        <cgb-name>Hz</cgb-name>
+        <isra-specs>001///</isra-specs>
+        <number-of-nl1-lines>2</number-of-nl1-lines>
+        <number-of-nl2-lines>0</number-of-nl2-lines>
+        <copperconnection>
+          <current-typeofconnection>MDF Broadband service</current-typeofconnection>
+          <current-mdf-access-serviceid>CGF26407</current-mdf-access-serviceid>
+          <current-phonenumber />
+          <future-typeofconnection>No change</future-typeofconnection>
+          <future-mdf-access-serviceid />
+          <future-phonenumber />
+        </copperconnection>
+        <copperconnection>
+          <current-typeofconnection>Not in use</current-typeofconnection>
+          <current-mdf-access-serviceid />
+          <current-phonenumber />
+          <future-typeofconnection>Not in use</future-typeofconnection>
+          <future-mdf-access-serviceid />
+          <future-phonenumber />
+        </copperconnection>
+      </coper-connectionpointinfo>
+    </ExistingSituationCopper>
+    <ExistingSituationFiber xsi:nil="true" />
+    <Remarks>
+      <Remark RemarkCode="9063" RemarkTextEng="Broadband is already provisioned on this line" RemarkTextNed="Broadband is already provisioned on this line" />
+      <Remark RemarkCode="9054" RemarkTextEng="Free copper pares exist besides one active service" RemarkTextNed="Free copper pares exist besides one active service" />
+    </Remarks>
+  </ExistingSituation>
+  <Errors />
+  <DistributionPoints />
+</PqccResponse>

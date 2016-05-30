@@ -1,9 +1,15 @@
+import re
+from collections import OrderedDict
+from urllib import urlencode, quote
+
 import requests
+import xmltodict
 from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import xml.etree.ElementTree as ET
+from django.utils.html import escape
 
 
 class SingleDsl(APIView):
@@ -27,23 +33,71 @@ class SingleDsl(APIView):
             housenumber_add = request.QUERY_PARAMS['housenumber_add']
         except MultiValueDictKeyError:
             housenumber_add = ''
-            
+
+        event_validation = '%2FwEWCAL01dzpAQLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGcfjOTnCgzFi7KmMTv8whoMIaIy4%3D'
+        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIEZyaSAxNyBKdWwgMTM6NTJkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZadrpQNWL5nk7KwOV4zAatCv%2B18n'
+        viewstate_gen = 'D8B62B3A'
         post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                     '&__VIEWSTATE=%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIEZyaSAxNyBKdWwgMTM6NTJkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZadrpQNWL5nk7KwOV4zAatCv%2B18n' \
                     '&__VIEWSTATEGENERATOR=D8B62B3A&__EVENTVALIDATION=%2FwEWCAL01dzpAQLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGcfjOTnCgzFi7KmMTv8whoMIaIy4%3D' \
                     '&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&ShowDebug=on&CheckButton=Check'.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-        )
+            viewstate=viewstate,
+            eventval=event_validation, viewstate_gen=viewstate_gen)
         data_url = 'https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx'
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Host': 'pqcc.soap.dslorder.nl',
             'Origin': 'https://pqcc.soap.dslorder.nl',
         }
-        response = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
+        response_v7 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
 
-        if response.status_code is 200:
-            data = self.retrieve_parse_xml(response.content)
+        headers['Referer'] = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
+        headers['Upgrade-Insecure-Requests'] = 1
+        event_validation = '%2FwEWCwK8oYf6AwLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGVMavHAbsm%2FDWmFiBFFIA00XUNpA%3D'
+        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVHVlIDI5IE1hciAxNjoxOWQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlct4vSGejrc7z2KI5mRWzo%2F2rokl%2B'
+        viewstate_gen = 'B1924A1F'
+        structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
+                              '&__VIEWSTATE={viewstate}' \
+                              '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
+                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
+        post_data = structure_post_data.format(
+            postcode=postcode, housenumber=housenumber, addition=housenumber_add,
+            viewstate=viewstate,
+            eventval=event_validation, viewstate_gen=viewstate_gen)
+        data_url = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
+        response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
+
+        response_v8_data = None
+        if response_v8.status_code is 200:
+            doc = xmltodict.parse(response_v8.content)
+
+            response_v8 = dict(
+                deliverable_product=list()
+            )
+
+            # Search the dict for the dat that we need and transform it if needed
+            pqcc_response = doc['PqccResponse']
+            deliverable_products = pqcc_response['DeliverableProducts']
+            address = pqcc_response['Address']
+            deliverable_product = deliverable_products['DeliverableProduct']
+
+            existing_situation = pqcc_response['ExistingSituation']
+            existing_situation_copper = existing_situation['ExistingSituationCopper']
+            existing_situation_fiber = existing_situation['ExistingSituationFiber']
+            remarks = existing_situation['Remarks']
+
+            # Output to the view that consumes it
+            response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct'])
+            response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
+            response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
+            response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
+            response_v8['address'] = SingleDsl.clean_params(address)
+
+            response_v8_data = response_v8
+
+        if response_v7.status_code is 200:
+            data = self.retrieve_parse_xml(response_v7.content)
 
             data = {
                 "existing_dsl_service_id": str(data['existing_dsl_service_id']),
@@ -56,10 +110,24 @@ class SingleDsl(APIView):
                 "HouseNumber": str(data['house_number']),
                 "products": data['products'],
                 "remarks": data['remarks'],
+                "v8": response_v8_data
             }
             return Response(data=data)
 
         return Response('Something went wrong')
+
+    @staticmethod
+    def clean_params(data):
+        new_data = OrderedDict()
+        for item in data:
+            if type(item) == OrderedDict:
+                return SingleDsl.clean_params(item)
+            values = data[item]
+            new_item = item.replace('@', '') if item.startswith('@') else item
+            del (data[item])
+            new_data[new_item] = values
+
+        return new_data
 
     def retrieve_parse_xml(self, content):
 
