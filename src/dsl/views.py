@@ -1,5 +1,6 @@
 import re
 from collections import OrderedDict
+from copy import deepcopy
 from urllib import urlencode, quote
 
 import requests
@@ -78,6 +79,7 @@ class SingleDsl(APIView):
 
             # Search the dict for the dat that we need and transform it if needed
             pqcc_response = doc['PqccResponse']
+            pqcc_response_copy = deepcopy(doc['PqccResponse'])
             deliverable_products = pqcc_response['DeliverableProducts']
             address = pqcc_response['Address']
             deliverable_product = deliverable_products['DeliverableProduct']
@@ -112,7 +114,7 @@ class SingleDsl(APIView):
                 "products": data['products'],
                 "remarks": data['remarks'],
                 "v8": response_v8_data,
-                "v8_debug": pqcc_response
+                "v8_debug": pqcc_response_copy
             }
             return Response(data=data)
 
