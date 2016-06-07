@@ -88,11 +88,12 @@ class SingleDsl(APIView):
             remarks = existing_situation['Remarks']
 
             # Output to the view that consumes it
+            # TODO Make it work for the entire XML, with all the dicts/lists deep inside it
             response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct'])
             response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
             response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
-            response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
             response_v8['address'] = SingleDsl.clean_params(address)
+            response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
 
             response_v8_data = response_v8
 
@@ -110,23 +111,48 @@ class SingleDsl(APIView):
                 "HouseNumber": str(data['house_number']),
                 "products": data['products'],
                 "remarks": data['remarks'],
-                "v8": response_v8_data
+                "v8": response_v8_data,
+                "v8_debug": pqcc_response
             }
             return Response(data=data)
 
         return Response('Something went wrong')
 
     @staticmethod
-    def clean_params(data):
-        new_data = OrderedDict()
-        for item in data:
-            if type(item) == OrderedDict:
-                return SingleDsl.clean_params(item)
-            values = data[item]
-            new_item = item.replace('@', '') if item.startswith('@') else item
-            del (data[item])
-            new_data[new_item] = values
+    def clean_params(data_to_clean):
+        new_data = type(data_to_clean)()
+        for item in data_to_clean:
+            if type(item) in (list, OrderedDict):
+                print 'type(item) in (list, OrderedDict)'
+                item = SingleDsl.clean_params(item)
 
+            try:
+                if type(data_to_clean[item]) == OrderedDict:
+                    print 'type(data_to_clean[item]) == OrderedDict'
+                    data_to_clean[item] = SingleDsl.clean_params(data_to_clean[item])
+            except TypeError:
+                pass
+            try:
+                values = data_to_clean[item]
+            except TypeError:
+                values = item
+
+            new_item = item
+            if type(item) == unicode:
+                new_item = item.replace('@', '') if item.startswith('@') else item
+                new_item = new_item.replace('-', '_')
+                del (data_to_clean[item])
+
+            if type(values) == list:
+                values_fix = []
+                for item in values:
+                    values_fix.append(SingleDsl.clean_params(item))
+                values = values_fix
+
+            if type(data_to_clean) == list:
+                new_data.append(values)
+            if type(data_to_clean) == OrderedDict:
+                new_data[new_item] = values
         return new_data
 
     def retrieve_parse_xml(self, content):

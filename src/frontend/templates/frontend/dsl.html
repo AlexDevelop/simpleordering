@@ -53,37 +53,23 @@
                 </div>
             </div>
 
-{#            <div class="dsl">#}
-{#                <div class="dsl-content">#}
-{##}
-{#                    City: {{ dsl_data.v8.addressv8.address.City }} </br>#}
-{#                    Postalcode: {{ dsl_data.v8.addressPostalCode }} </br>#}
-{#                    Street: {{ dsl_data.v8.addressStreet }} </br>#}
-{#                    Housenumber: {{ dsl_data.v8.addressHouseNumber }} </br>#}
-{#                    Name: {{ dsl_data.v8.addressname }} </br>#}
-{#                    Length Last Distributor: {{ dsl_data.length_last_distributor }} </br>#}
-{#                    Length MDF: {{ dsl_data.length_mdf }} </br>#}
-{#                    Existing DSL Service ID: {% if dsl_data.existing_dsl_service_id != "None" %}<input type="text" class="copy_this" value="{{ dsl_data.existing_dsl_service_id }}"/>  <span class="copy_status"></span>{% endif %} </br></br>#}
-{#                    {% for remark in dsl_data.remarks %}#}
-{#                        Remark: {{ remark }} </br>#}
-{#                    {% endfor %}#}
-{#                    </br>#}
-{#                    {% for product in dsl_data.products %}#}
-{#                        {% if forloop.first %}#}
-{#                            <span class="product headers">#}
-{#                                Network / Technology / Expected Down / Orderable Down / Expected Up / Orderable Up</br>#}
-{#                            </span>#}
-{#                        {% endif %}#}
-{#                        <span class="product">{{ product.network }}</span>#}
-{#                        <span class="product">{{ product.technology }}</span>#}
-{#                        <span class="product number">{{ product.expected_down }}</span>#}
-{#                        <span class="product number">{{ product.orderable_down }}</span>#}
-{#                        <span class="product number">{{ product.expected_up }}</span>#}
-{#                        <span class="product number">{{ product.orderable_up }}</span>#}
-{#                        </br>#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{#            </div>#}
+            <div class="dsl">
+                <div class="dsl-content">
+                    <h2>v8</h2>
+                    DistributionPoint: {{ dsl_data.v8.deliverable_product.DistributionPoint }} </br>
+                    ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br>
+                    {% for item in dsl_data.v8.existing_situation_copper.copperconnection %}
+                        {{ forloop.counter }} - Current_typeofconnection {{ item.current_typeofconnection }} </br>
+                        {{ forloop.counter }} - Current_mdf_access_serviceid {{ item.current_mdf_access_serviceid }} </br>
+                    {% endfor %}
+                    Length_last_distributor: {{ dsl_data.length_last_distributor }} </br>
+                    Length_mdf: {{ dsl_data.length_mdf }} </br>
+                    {% for remark in dsl_data.v8.remarks %}
+                        Remark(s): {{ remark.RemarkCode }} - {{ remark.RemarkTextNed }} </br>
+                    {% endfor %}
+
+                </div>
+            </div>
         {% endif %}
     </div>
 
