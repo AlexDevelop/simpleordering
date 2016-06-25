@@ -114,10 +114,17 @@ class SingleDsl(APIView):
             if coper_connectionpointinfo:
                 copperconnection = coper_connectionpointinfo['copperconnection'] if 'copperconnection' in coper_connectionpointinfo else None
             if copperconnection:
-                current_mdf_access_serviceid = copperconnection['current_mdf_access_serviceid'] if 'current_mdf_access_serviceid' in copperconnection else None
+                current_mdf_access_serviceid = ''
+                for item in copperconnection:
+                    if item['current_mdf_access_serviceid']:
+                        current_mdf_access_serviceid += item['current_mdf_access_serviceid'] + ' '
+
+            v7_existing_dsl_service_id = data['existing_dsl_service_id']
+            existing_dsl_service_id = v7_existing_dsl_service_id if v7_existing_dsl_service_id else current_mdf_access_serviceid
+            existing_dsl_service_id = existing_dsl_service_id.strip()
 
             data = {
-                "existing_dsl_service_id": str(data['existing_dsl_service_id']) if str(data['existing_dsl_service_id']) else current_mdf_access_serviceid,
+                "existing_dsl_service_id": existing_dsl_service_id,
                 "name": str(data['name']),
                 "length_last_distributor": str(data['length_last_distributor']),
                 "length_mdf": str(data['length_mdf']),
