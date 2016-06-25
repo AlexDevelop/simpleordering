@@ -95,15 +95,29 @@ class SingleDsl(APIView):
             response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
             response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
             response_v8['address'] = SingleDsl.clean_params(address)
-            response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
+            if remarks:
+                response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
+            else:
+                response_v8['remarks'] = remarks
 
             response_v8_data = response_v8
 
         if response_v7.status_code is 200:
             data = self.retrieve_parse_xml(response_v7.content)
 
+            coper_connectionpointinfo = None
+            copperconnection = None
+            current_mdf_access_serviceid = None
+            existing_situation_copper = response_v8['existing_situation_copper']
+            if existing_situation_copper:
+                coper_connectionpointinfo = existing_situation_copper['coper_connectionpointinfo'] if 'coper_connectionpointinfo' in existing_situation_copper else None
+            if coper_connectionpointinfo:
+                copperconnection = coper_connectionpointinfo['copperconnection'] if 'copperconnection' in coper_connectionpointinfo else None
+            if copperconnection:
+                current_mdf_access_serviceid = copperconnection['current_mdf_access_serviceid'] if 'current_mdf_access_serviceid' in copperconnection else None
+
             data = {
-                "existing_dsl_service_id": str(data['existing_dsl_service_id']),
+                "existing_dsl_service_id": str(data['existing_dsl_service_id']) if str(data['existing_dsl_service_id']) else current_mdf_access_serviceid,
                 "name": str(data['name']),
                 "length_last_distributor": str(data['length_last_distributor']),
                 "length_mdf": str(data['length_mdf']),
