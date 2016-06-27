@@ -116,7 +116,7 @@ class SingleDsl(APIView):
             if copperconnection:
                 current_mdf_access_serviceid = ''
                 for item in copperconnection:
-                    if item['current_mdf_access_serviceid']:
+                    if 'current_mdf_access_serviceid' in item:
                         current_mdf_access_serviceid += item['current_mdf_access_serviceid'] + ' '
 
             v7_existing_dsl_service_id = data['existing_dsl_service_id']
