@@ -120,7 +120,8 @@ class SingleDsl(APIView):
 
             v7_existing_dsl_service_id = data['existing_dsl_service_id']
             existing_dsl_service_id = v7_existing_dsl_service_id if v7_existing_dsl_service_id else current_mdf_access_serviceid
-            existing_dsl_service_id = existing_dsl_service_id.strip()
+            if existing_dsl_service_id:
+                existing_dsl_service_id = existing_dsl_service_id.strip()
 
             data = {
                 "existing_dsl_service_id": existing_dsl_service_id,
