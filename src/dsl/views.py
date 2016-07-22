@@ -132,10 +132,11 @@ class SingleDsl(APIView):
                 "City": str(data['city']),
                 "Street": str(data['street']),
                 "HouseNumber": str(data['house_number']),
+                "HouseNumber_add": str(housenumber_add),
                 "products": data['products'],
                 "remarks": data['remarks'],
                 "v8": response_v8_data,
-                "v8_debug": pqcc_response_copy
+                "v8_debug": pqcc_response_copy,
             }
             return Response(data=data)
 
