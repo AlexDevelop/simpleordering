@@ -70,6 +70,7 @@ class SingleDsl(APIView):
         response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
 
         response_v8_data = None
+        pqcc_response_copy = None
         if response_v8.status_code is 200:
             doc = xmltodict.parse(response_v8.content)
 
@@ -79,69 +80,80 @@ class SingleDsl(APIView):
 
             # Search the dict for the dat that we need and transform it if needed
             pqcc_response = doc['PqccResponse']
-            pqcc_response_copy = deepcopy(doc['PqccResponse'])
-            deliverable_products = pqcc_response['DeliverableProducts']
-            address = pqcc_response['Address']
-            deliverable_product = deliverable_products['DeliverableProduct']
+            errors = SingleDsl.clean_params(doc['PqccResponse']['Errors']['Error']) if doc['PqccResponse']['Errors'] else None
+            response_v8_data = dict()
+            response_v8_data['errors'] = errors
+            if not errors:
+                pqcc_response_copy = deepcopy(doc['PqccResponse'])
+                deliverable_products = pqcc_response['DeliverableProducts']
+                address = pqcc_response['Address']
+                deliverable_product = deliverable_products['DeliverableProduct'] if deliverable_products else None
 
-            existing_situation = pqcc_response['ExistingSituation']
-            existing_situation_copper = existing_situation['ExistingSituationCopper']
-            existing_situation_fiber = existing_situation['ExistingSituationFiber']
-            remarks = existing_situation['Remarks']
+                existing_situation = pqcc_response['ExistingSituation']
+                existing_situation_copper = existing_situation['ExistingSituationCopper']
+                existing_situation_fiber = existing_situation['ExistingSituationFiber']
+                remarks = existing_situation['Remarks']
 
-            # Output to the view that consumes it
-            # TODO Make it work for the entire XML, with all the dicts/lists deep inside it
-            response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct'])
-            response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
-            response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
-            response_v8['address'] = SingleDsl.clean_params(address)
-            if remarks:
-                response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
-            else:
-                response_v8['remarks'] = remarks
+                # Output to the view that consumes it
+                # TODO Make it work for the entire XML, with all the dicts/lists deep inside it
+                response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct']) if deliverable_product else None
+                response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
+                response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
+                response_v8['address'] = SingleDsl.clean_params(address)
+                if remarks:
+                    response_v8['remarks'] = SingleDsl.clean_params(remarks['Remark'])
+                else:
+                    response_v8['remarks'] = remarks
 
-            response_v8_data = response_v8
+                response_v8_data = response_v8
+                response_v8_data['errors'] = None
 
+        existing_dsl_service_id = None
         if response_v7.status_code is 200:
             data = self.retrieve_parse_xml(response_v7.content)
 
             coper_connectionpointinfo = None
             copperconnection = None
             current_mdf_access_serviceid = None
-            existing_situation_copper = response_v8['existing_situation_copper']
-            if existing_situation_copper:
-                coper_connectionpointinfo = existing_situation_copper['coper_connectionpointinfo'] if 'coper_connectionpointinfo' in existing_situation_copper else None
-            if coper_connectionpointinfo:
-                copperconnection = coper_connectionpointinfo['copperconnection'] if 'copperconnection' in coper_connectionpointinfo else None
-            if copperconnection:
-                current_mdf_access_serviceid = ''
-                for item in copperconnection:
-                    if item == 'current_mdf_access_serviceid':
-                        current_mdf_access_serviceid += copperconnection[item] + ' '
-                    if type(item) == OrderedDict:
-                        if item['current_mdf_access_serviceid']:
-                            current_mdf_access_serviceid += item['current_mdf_access_serviceid'] + ' '
+            if not response_v8_data['errors']:
+                existing_situation_copper = response_v8['existing_situation_copper']
+                if existing_situation_copper:
+                    coper_connectionpointinfo = existing_situation_copper['coper_connectionpointinfo'] if 'coper_connectionpointinfo' in existing_situation_copper else None
+                if coper_connectionpointinfo:
+                    copperconnection = coper_connectionpointinfo['copperconnection'] if 'copperconnection' in coper_connectionpointinfo else None
+                if copperconnection:
+                    current_mdf_access_serviceid = ''
+                    for item in copperconnection:
+                        if item == 'current_mdf_access_serviceid':
+                            if copperconnection[item]:
+                                current_mdf_access_serviceid += copperconnection[item] + ' '
+                        if type(item) == OrderedDict:
+                            if item['current_mdf_access_serviceid']:
+                                current_mdf_access_serviceid += item['current_mdf_access_serviceid'] + ' '
 
-            v7_existing_dsl_service_id = data['existing_dsl_service_id']
-            existing_dsl_service_id = v7_existing_dsl_service_id if v7_existing_dsl_service_id else current_mdf_access_serviceid
-            if existing_dsl_service_id:
-                existing_dsl_service_id = existing_dsl_service_id.strip()
-
-            data = {
-                "existing_dsl_service_id": existing_dsl_service_id,
-                "name": str(data['name']),
-                "length_last_distributor": str(data['length_last_distributor']),
-                "length_mdf": str(data['length_mdf']),
-                "PostalCode": str(data['postal_code']),
-                "City": str(data['city']),
-                "Street": str(data['street']),
-                "HouseNumber": str(data['house_number']),
-                "HouseNumber_add": str(housenumber_add),
-                "products": data['products'],
-                "remarks": data['remarks'],
-                "v8": response_v8_data,
-                "v8_debug": pqcc_response_copy,
-            }
+                v7_existing_dsl_service_id = data['existing_dsl_service_id']
+                existing_dsl_service_id = v7_existing_dsl_service_id if v7_existing_dsl_service_id else current_mdf_access_serviceid
+                if existing_dsl_service_id:
+                    existing_dsl_service_id = existing_dsl_service_id.strip()
+            try:
+                data = {
+                    "existing_dsl_service_id": existing_dsl_service_id if existing_dsl_service_id else '',
+                    "name": str(data['name']),
+                    "length_last_distributor": str(data['length_last_distributor']),
+                    "length_mdf": str(data['length_mdf']),
+                    "PostalCode": str(data['postal_code']),
+                    "City": str(data['city']),
+                    "Street": str(data['street']),
+                    "HouseNumber": str(data['house_number']),
+                    "HouseNumber_add": str(housenumber_add),
+                    "products": data['products'],
+                    "remarks": data['remarks'],
+                    "v8": response_v8_data,
+                    "v8_debug": pqcc_response_copy,
+                }
+            except Exception as e:
+                print(e)
+                pass
             return Response(data=data)
 
         return Response('Something went wrong')

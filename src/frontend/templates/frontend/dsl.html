@@ -56,17 +56,21 @@
             <div class="dsl">
                 <div class="dsl-content">
                     <h2>v8</h2>
-                    DistributionPoint: {{ dsl_data.v8.deliverable_product.DistributionPoint }} </br>
-                    ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br>
-                    {% for item in dsl_data.v8.existing_situation_copper.copperconnection %}
-                        {{ forloop.counter }} - Current_typeofconnection {{ item.current_typeofconnection }} </br>
-                        {{ forloop.counter }} - Current_mdf_access_serviceid {{ item.current_mdf_access_serviceid }} </br>
-                    {% endfor %}
-                    Length_last_distributor: {{ dsl_data.length_last_distributor }} </br>
-                    Length_mdf: {{ dsl_data.length_mdf }} </br>
-                    {% for remark in dsl_data.v8.remarks %}
-                        Remark(s): {{ remark.RemarkCode }} - {{ remark.RemarkTextNed }} </br>
-                    {% endfor %}
+                    {% if dsl_data.v8.errors %}
+                        {{  dsl_data.v8.errors.DescriptionNed }}
+                    {% else %}
+                        DistributionPoint: {{ dsl_data.v8.deliverable_product.DistributionPoint }} </br>
+                        ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br>
+                        {% for item in dsl_data.v8.existing_situation_copper.copperconnection %}
+                            {{ forloop.counter }} - Current_typeofconnection {{ item.current_typeofconnection }} </br>
+                            {{ forloop.counter }} - Current_mdf_access_serviceid {{ item.current_mdf_access_serviceid }} </br>
+                        {% endfor %}
+                        Length_last_distributor: {{ dsl_data.length_last_distributor }} </br>
+                        Length_mdf: {{ dsl_data.length_mdf }} </br>
+                        {% for remark in dsl_data.v8.remarks %}
+                            Remark(s): {{ remark.RemarkCode }} - {{ remark.RemarkTextNed }} </br>
+                        {% endfor %}
+                    {% endif %}
 
                 </div>
             </div>
