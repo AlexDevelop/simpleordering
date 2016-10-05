@@ -35,12 +35,12 @@ class SingleDsl(APIView):
         except MultiValueDictKeyError:
             housenumber_add = ''
 
-        event_validation = '%2FwEWCAL01dzpAQLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGcfjOTnCgzFi7KmMTv8whoMIaIy4%3D'
-        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIEZyaSAxNyBKdWwgMTM6NTJkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZadrpQNWL5nk7KwOV4zAatCv%2B18n'
+        event_validation = '%2FwEdAAj2nAj4MX3lEQSLACYzgWlf0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGc6GJdK8E3%2FUNJjli%2FOuvtX5OTggoMzf3VFIsSmjz3zjXuK1xQRArSXfG0V278iMTLvv7nhEylN6mt2tBlYP9F4GPz4%2BoNvqMGxbc2jRNYYi'
+        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUcVmVyc2lvbiA3LjEsIHdvIDMwIG1ydCAyMDoxNGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCVNob3dEZWJ1ZwUYQ2hlY2tmb3JVcGdyYWRlRG93bkdyYWRlZVNj3if3ksPanMtefRi5u39liArL0lU%2BoHtdlESu%2B48%3D'
         viewstate_gen = 'D8B62B3A'
         post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
-                    '&__VIEWSTATE=%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIEZyaSAxNyBKdWwgMTM6NTJkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZadrpQNWL5nk7KwOV4zAatCv%2B18n' \
-                    '&__VIEWSTATEGENERATOR=D8B62B3A&__EVENTVALIDATION=%2FwEWCAL01dzpAQLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGcfjOTnCgzFi7KmMTv8whoMIaIy4%3D' \
+                    '&__VIEWSTATE={viewstate}' \
+                    '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
                     '&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&ShowDebug=on&CheckButton=Check'.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
             viewstate=viewstate,
@@ -55,8 +55,8 @@ class SingleDsl(APIView):
 
         headers['Referer'] = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
         headers['Upgrade-Insecure-Requests'] = 1
-        event_validation = '%2FwEWCwK8oYf6AwLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGVMavHAbsm%2FDWmFiBFFIA00XUNpA%3D'
-        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVHVlIDI5IE1hciAxNjoxOWQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlct4vSGejrc7z2KI5mRWzo%2F2rokl%2B'
+        event_validation = '%2FwEdAAuGe%2FadlIS%2Bo61SNKUam58F0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTKCiTUcHa3uoMGXc5DM6uM9lSaeoHOXMEt4rWuYWO5bD'
+        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBRtWZXJzaW9uIDguMCwgZGkgMiBhdWcgMTQ6MDZkAiMPEA8WAh4HQ2hlY2tlZGhkZGRkAiUPEA8WAh8BZ2RkZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQVGaWJlcgUFRmliZXLCXAD8skR7qEMzVwU6VBqar%2BByHkBGmgPbpd2bMVxFpA%3D%3D'
         viewstate_gen = 'B1924A1F'
         structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                               '&__VIEWSTATE={viewstate}' \
@@ -115,7 +115,7 @@ class SingleDsl(APIView):
             coper_connectionpointinfo = None
             copperconnection = None
             current_mdf_access_serviceid = None
-            if not response_v8_data['errors']:
+            if response_v8_data and not response_v8_data['errors']:
                 existing_situation_copper = response_v8['existing_situation_copper']
                 if existing_situation_copper:
                     coper_connectionpointinfo = existing_situation_copper['coper_connectionpointinfo'] if 'coper_connectionpointinfo' in existing_situation_copper else None
@@ -153,7 +153,7 @@ class SingleDsl(APIView):
                 }
             except Exception as e:
                 print(e)
-                pass
+                return Response(e)
             return Response(data=data)
 
         return Response('Something went wrong')
