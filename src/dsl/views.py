@@ -10,7 +10,51 @@ from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import xml.etree.ElementTree as ET
-from django.utils.html import escape
+
+
+class DslOrder(object):
+    def __init__(self):
+        self.data_url = 'https://pqcc.soap.dslorder.nl/pqcc/v{}.0/pqcc.aspx'
+        headers = {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Host': 'pqcc.soap.dslorder.nl',
+            'Origin': 'https://pqcc.soap.dslorder.nl',
+        }
+        self.headers = headers
+
+    def get_dslorder_v7(self, postcode, housenumber, housenumber_add=None):
+        event_validation = '%2FwEdAAj2nAj4MX3lEQSLACYzgWlf0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGc6GJdK8E3%2FUNJjli%2FOuvtX5OTggoMzf3VFIsSmjz3zjXuK1xQRArSXfG0V278iMTLvv7nhEylN6mt2tBlYP9F4GPz4%2BoNvqMGxbc2jRNYYi'
+        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUcVmVyc2lvbiA3LjEsIHdvIDMwIG1ydCAyMDoxNGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCVNob3dEZWJ1ZwUYQ2hlY2tmb3JVcGdyYWRlRG93bkdyYWRlZVNj3if3ksPanMtefRi5u39liArL0lU%2BoHtdlESu%2B48%3D'
+        viewstate_gen = 'D8B62B3A'
+        post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
+                    '&__VIEWSTATE={viewstate}' \
+                    '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
+                    '&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&ShowDebug=on&CheckButton=Check'.format(
+            postcode=postcode, housenumber=housenumber, addition=housenumber_add,
+            viewstate=viewstate,
+            eventval=event_validation, viewstate_gen=viewstate_gen)
+        data_url = self.data_url.format(7)
+
+        response_v7 = requests.post(url=data_url, data=post_data, headers=self.headers, verify=False)
+        return response_v7
+
+    def get_dslorder_v8(self, postcode, housenumber, housenumber_add=None):
+        headers = self.headers
+        headers['Referer'] = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
+        headers['Upgrade-Insecure-Requests'] = 1
+        event_validation = '%2FwEdAAuGe%2FadlIS%2Bo61SNKUam58F0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTKCiTUcHa3uoMGXc5DM6uM9lSaeoHOXMEt4rWuYWO5bD'
+        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBRtWZXJzaW9uIDguMCwgZGkgMiBhdWcgMTQ6MDZkAiMPEA8WAh4HQ2hlY2tlZGhkZGRkAiUPEA8WAh8BZ2RkZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQVGaWJlcgUFRmliZXLCXAD8skR7qEMzVwU6VBqar%2BByHkBGmgPbpd2bMVxFpA%3D%3D'
+        viewstate_gen = 'B1924A1F'
+        structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
+                              '&__VIEWSTATE={viewstate}' \
+                              '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
+                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
+        post_data = structure_post_data.format(
+            postcode=postcode, housenumber=housenumber, addition=housenumber_add,
+            viewstate=viewstate, eventval=event_validation, viewstate_gen=viewstate_gen)
+        data_url = self.data_url.format(8)
+        response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
+        return response_v8
 
 
 class SingleDsl(APIView):
@@ -35,39 +79,8 @@ class SingleDsl(APIView):
         except MultiValueDictKeyError:
             housenumber_add = ''
 
-        event_validation = '%2FwEdAAj2nAj4MX3lEQSLACYzgWlf0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGc6GJdK8E3%2FUNJjli%2FOuvtX5OTggoMzf3VFIsSmjz3zjXuK1xQRArSXfG0V278iMTLvv7nhEylN6mt2tBlYP9F4GPz4%2BoNvqMGxbc2jRNYYi'
-        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUcVmVyc2lvbiA3LjEsIHdvIDMwIG1ydCAyMDoxNGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCVNob3dEZWJ1ZwUYQ2hlY2tmb3JVcGdyYWRlRG93bkdyYWRlZVNj3if3ksPanMtefRi5u39liArL0lU%2BoHtdlESu%2B48%3D'
-        viewstate_gen = 'D8B62B3A'
-        post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
-                    '&__VIEWSTATE={viewstate}' \
-                    '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
-                    '&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&ShowDebug=on&CheckButton=Check'.format(
-            postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=viewstate,
-            eventval=event_validation, viewstate_gen=viewstate_gen)
-        data_url = 'https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx'
-        headers = {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Host': 'pqcc.soap.dslorder.nl',
-            'Origin': 'https://pqcc.soap.dslorder.nl',
-        }
-        response_v7 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
-
-        headers['Referer'] = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
-        headers['Upgrade-Insecure-Requests'] = 1
-        event_validation = '%2FwEdAAuGe%2FadlIS%2Bo61SNKUam58F0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTKCiTUcHa3uoMGXc5DM6uM9lSaeoHOXMEt4rWuYWO5bD'
-        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBRtWZXJzaW9uIDguMCwgZGkgMiBhdWcgMTQ6MDZkAiMPEA8WAh4HQ2hlY2tlZGhkZGRkAiUPEA8WAh8BZ2RkZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQVGaWJlcgUFRmliZXLCXAD8skR7qEMzVwU6VBqar%2BByHkBGmgPbpd2bMVxFpA%3D%3D'
-        viewstate_gen = 'B1924A1F'
-        structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
-                              '&__VIEWSTATE={viewstate}' \
-                              '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
-                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
-        post_data = structure_post_data.format(
-            postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=viewstate,
-            eventval=event_validation, viewstate_gen=viewstate_gen)
-        data_url = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
-        response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
+        response_v7 = DslOrder().get_dslorder_v7(postcode, housenumber, housenumber_add)
+        response_v8 = DslOrder().get_dslorder_v8(postcode, housenumber, housenumber_add)
 
         response_v8_data = None
         pqcc_response_copy = None
@@ -198,7 +211,6 @@ class SingleDsl(APIView):
     def retrieve_parse_xml(self, content):
 
         tree = ET.fromstring(content)
-        #tree = ET.parse('1354EJ49.xml')
         try:
             existing_dsl_service_id = tree.findall('Response')[0].findall('ExistingSituation')[0].attrib['ExistingDslServiceId']
         except KeyError:
@@ -254,8 +266,6 @@ class SingleDsl(APIView):
             Street = None
             HouseNumber = None
 
-
-        #<Address PostalCode="1354JE" City="ALMERE" HouseNumber="49" Street="Schoolwerf">
         data = dict(
             existing_dsl_service_id=existing_dsl_service_id,
             name=name,
