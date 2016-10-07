@@ -112,7 +112,7 @@ class SingleDsl(APIView):
 
                 # Output to the view that consumes it
                 # TODO Make it work for the entire XML, with all the dicts/lists deep inside it
-                response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct'])
+                response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct']) if deliverable_products else None
                 response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
                 response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
                 response_v8['address'] = SingleDsl.clean_params(address)
