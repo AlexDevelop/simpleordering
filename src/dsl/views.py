@@ -1,10 +1,10 @@
 import re
 from collections import OrderedDict
 from copy import deepcopy
-from urllib import urlencode, quote
 
 import requests
 import xmltodict
+from django.conf import settings
 from django.utils.datastructures import MultiValueDictKeyError
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 
 class DslOrder(object):
-    def __init__(self):
+    def __init__(self, event_validation=None, view_state=None):
         self.data_url = 'https://pqcc.soap.dslorder.nl/pqcc/v{}.0/pqcc.aspx'
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -21,29 +21,27 @@ class DslOrder(object):
             'Origin': 'https://pqcc.soap.dslorder.nl',
         }
         self.headers = headers
+        self.event_validation = settings.EVENT_VALIDATION if not event_validation else event_validation
+        self.view_state = settings.VIEW_STATE if not view_state else view_state
 
     def get_dslorder_v7(self, postcode, housenumber, housenumber_add=None):
-        event_validation = '%2FwEWCALJ%2BduGDwLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGBs2n3KWC%2BoGKuyIOeytm4GX4Yyc%3D'
-        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIFdlZCAzMCBNYXIgMjA6MTRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZRDTZ1FztBXrKn4JDzgTyyOZh%2FLN'
         viewstate_gen = 'D8B62B3A'
         post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                     '&__VIEWSTATE={viewstate}' \
                     '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
                     '&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&ShowDebug=on&CheckButton=Check'.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=viewstate,
-            eventval=event_validation, viewstate_gen=viewstate_gen)
+            viewstate=self.view_state, eventval=self.event_validation, viewstate_gen=viewstate_gen)
         data_url = self.data_url.format(7)
 
         response_v7 = requests.post(url=data_url, data=post_data, headers=self.headers, verify=False)
         return response_v7
 
     def get_dslorder_v8(self, postcode, housenumber, housenumber_add=None):
+        data_url = self.data_url.format(8)
         headers = self.headers
-        headers['Referer'] = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
+        headers['Referer'] = data_url
         headers['Upgrade-Insecure-Requests'] = 1
-        event_validation = '%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D'
-        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV'
         viewstate_gen = 'B1924A1F'
         structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                               '&__VIEWSTATE={viewstate}' \
@@ -51,8 +49,8 @@ class DslOrder(object):
                               '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
         post_data = structure_post_data.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=viewstate, eventval=event_validation, viewstate_gen=viewstate_gen)
-        data_url = self.data_url.format(8)
+            viewstate=self.view_state, eventval=self.view_state, viewstate_gen=viewstate_gen)
+
         response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
         return response_v8
 
@@ -254,8 +252,11 @@ class SingleDsl(APIView):
             )
 
         remarks = []
-        for remark in tree.findall('Response')[0].findall('ExistingSituation')[0].findall('Remarks')[0]:
-            remarks.append(remark.attrib['RemarkTextNed'])
+        try:
+            for remark in tree.findall('Response')[0].findall('ExistingSituation')[0].findall('Remarks')[0]:
+                remarks.append(remark.attrib['RemarkTextNed'])
+        except IndexError as e:
+            pass
 
         try:
             PostalCode = tree.findall('Response')[0].findall('Address')[0].attrib['PostalCode']
