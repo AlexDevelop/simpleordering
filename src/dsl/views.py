@@ -49,7 +49,7 @@ class DslOrder(object):
                               '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
         post_data = structure_post_data.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=self.view_state, eventval=self.view_state, viewstate_gen=viewstate_gen)
+            viewstate=self.view_state, eventval=self.event_validation, viewstate_gen=viewstate_gen)
 
         response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
         return response_v8
