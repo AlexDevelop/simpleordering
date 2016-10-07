@@ -23,8 +23,8 @@ class DslOrder(object):
         self.headers = headers
 
     def get_dslorder_v7(self, postcode, housenumber, housenumber_add=None):
-        event_validation = '%2FwEdAAj2nAj4MX3lEQSLACYzgWlf0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGc6GJdK8E3%2FUNJjli%2FOuvtX5OTggoMzf3VFIsSmjz3zjXuK1xQRArSXfG0V278iMTLvv7nhEylN6mt2tBlYP9F4GPz4%2BoNvqMGxbc2jRNYYi'
-        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUcVmVyc2lvbiA3LjEsIHdvIDMwIG1ydCAyMDoxNGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCVNob3dEZWJ1ZwUYQ2hlY2tmb3JVcGdyYWRlRG93bkdyYWRlZVNj3if3ksPanMtefRi5u39liArL0lU%2BoHtdlESu%2B48%3D'
+        event_validation = '%2FwEWCALJ%2BduGDwLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGBs2n3KWC%2BoGKuyIOeytm4GX4Yyc%3D'
+        viewstate = '%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIFdlZCAzMCBNYXIgMjA6MTRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZRDTZ1FztBXrKn4JDzgTyyOZh%2FLN'
         viewstate_gen = 'D8B62B3A'
         post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                     '&__VIEWSTATE={viewstate}' \
@@ -42,8 +42,8 @@ class DslOrder(object):
         headers = self.headers
         headers['Referer'] = 'https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx'
         headers['Upgrade-Insecure-Requests'] = 1
-        event_validation = '%2FwEdAAuGe%2FadlIS%2Bo61SNKUam58F0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTKCiTUcHa3uoMGXc5DM6uM9lSaeoHOXMEt4rWuYWO5bD'
-        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBRtWZXJzaW9uIDguMCwgZGkgMiBhdWcgMTQ6MDZkAiMPEA8WAh4HQ2hlY2tlZGhkZGRkAiUPEA8WAh8BZ2RkZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQVGaWJlcgUFRmliZXLCXAD8skR7qEMzVwU6VBqar%2BByHkBGmgPbpd2bMVxFpA%3D%3D'
+        event_validation = '%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D'
+        viewstate = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV'
         viewstate_gen = 'B1924A1F'
         structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                               '&__VIEWSTATE={viewstate}' \
@@ -103,13 +103,13 @@ class SingleDsl(APIView):
                 deliverable_product = deliverable_products['DeliverableProduct'] if deliverable_products else None
 
                 existing_situation = pqcc_response['ExistingSituation']
-                existing_situation_copper = existing_situation['ExistingSituationCopper']
-                existing_situation_fiber = existing_situation['ExistingSituationFiber']
-                remarks = existing_situation['Remarks']
+                existing_situation_copper = existing_situation['ExistingSituationCopper'] if 'ExistingSituationCopper' in existing_situation else None
+                existing_situation_fiber = existing_situation['ExistingSituationFiber'] if 'ExistingSituationFiber' in existing_situation else None
+                remarks = existing_situation['Remarks'] if 'Remarks' in existing_situation else None
 
                 # Output to the view that consumes it
                 # TODO Make it work for the entire XML, with all the dicts/lists deep inside it
-                response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct']) if deliverable_product else None
+                response_v8['deliverable_product'] = SingleDsl.clean_params(deliverable_products['DeliverableProduct'])
                 response_v8['existing_situation_copper'] = SingleDsl.clean_params(existing_situation_copper)
                 response_v8['existing_situation_fiber'] = SingleDsl.clean_params(existing_situation_fiber)
                 response_v8['address'] = SingleDsl.clean_params(address)
@@ -173,6 +173,8 @@ class SingleDsl(APIView):
 
     @staticmethod
     def clean_params(data_to_clean):
+        if not data_to_clean:
+            return None
         new_data = type(data_to_clean)()
         for item in data_to_clean:
             if type(item) in (list, OrderedDict):
