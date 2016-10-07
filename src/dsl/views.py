@@ -21,35 +21,40 @@ class DslOrder(object):
             'Origin': 'https://pqcc.soap.dslorder.nl',
         }
         self.headers = headers
-        self.event_validation = settings.EVENT_VALIDATION if not event_validation else event_validation
-        self.view_state = settings.VIEW_STATE if not view_state else view_state
+        #self.event_validation = settings.EVENT_VALIDATION if not event_validation else event_validation
+        #self.view_state = settings.VIEW_STATE if not view_state else view_state
 
     def get_dslorder_v7(self, postcode, housenumber, housenumber_add=None):
-        viewstate_gen = 'D8B62B3A'
+        viewstate_gen = settings.VIEW_STATE_GEN_V7
+        event_validation = settings.EVENT_VALIDATION_V7
+        view_state = settings.VIEW_STATE_V7
         post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                     '&__VIEWSTATE={viewstate}' \
                     '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
                     '&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&ShowDebug=on&CheckButton=Check'.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=self.view_state, eventval=self.event_validation, viewstate_gen=viewstate_gen)
+            viewstate=view_state, eventval=event_validation, viewstate_gen=viewstate_gen)
         data_url = self.data_url.format(7)
 
         response_v7 = requests.post(url=data_url, data=post_data, headers=self.headers, verify=False)
         return response_v7
 
     def get_dslorder_v8(self, postcode, housenumber, housenumber_add=None):
+        viewstate_gen = settings.VIEW_STATE_GEN_V8
+        event_validation = settings.EVENT_VALIDATION_V8
+        view_state = settings.VIEW_STATE_V8
+
         data_url = self.data_url.format(8)
         headers = self.headers
         headers['Referer'] = data_url
         headers['Upgrade-Insecure-Requests'] = 1
-        viewstate_gen = 'B1924A1F'
         structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                               '&__VIEWSTATE={viewstate}' \
                               '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
                               '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
         post_data = structure_post_data.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=self.view_state, eventval=self.event_validation, viewstate_gen=viewstate_gen)
+            viewstate=view_state, eventval=event_validation, viewstate_gen=viewstate_gen)
 
         response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
         return response_v8
