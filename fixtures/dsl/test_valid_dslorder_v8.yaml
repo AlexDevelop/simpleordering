@@ -1,312 +1,488 @@
 interactions:
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1319CS&HouseNumber=105&Addition=&PhoneNumber=&CheckButton=Check
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=1319CS&HouseNumber=105&Addition=None&PhoneNumber=&CheckButton=Check
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['575']
+      Content-Length: ['633']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['105']
+      postcode: [1319CS]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAEAKxWXW/iOBR9X2n/g+XXVYgTWragQJUGOiMVKANstW8j4xjwNNip7ZT23+9NAiFd
-        wkwf5g3fz3OOry8Jbt92CXrl2ggl+9hrEXw7+POPYPbC2JybVEnDEYRI03szoo+31qY9193v9619
-        u6X0xvUJ8dx/J+MF2/IddYQ0lkrGcZUV/zoLQ0uEgkctNkLSZM5fMm4smimolUQq5oCs7XWjBUZf
-        VWb4NNutuAYjucYoTNNEMGqBwJTuIHT2LYowWqhMMzjd+C3v6qblk07L6/gYfcu4fh9SCy6feB3H
-        Iw75e0m6PXLda3utq+7N9V/E7xECJbZUC7mZbZXksmi5VE80EXGRjVHeKNpy9rx8T8EQqTTlGqNI
-        SclZjmemhLR5pFsSDONYc2MaiUXCvvdxOJ6M5qMmmgurOYdid4on4ocsJYOaUMuIVcJrGdBG5O3N
-        IabsXJgOSMDi/jIxcA94y1O0WaFS4DDRzkKmGI253NjtmBo7FMZqscqsArw3bQ+jKbdH/KTdOcZO
-        4jXo3u2QSpMh0IH5o4BkplWcMXuE3eDKq+6Vfu7jhRTOPUbDZAe/GUZLzrZSJWqTixibxP8+U9aA
-        rFTm15iPRXF+1HFZcaj28mGVmnwMSH7bo7cUbo3HJ4fnF46K2+lGKwVCxkCgUHMKxtDt1hr8kx6q
-        EP8K8L32sdUZP/L+HL1pUo5W5yPBkbpvZOKRkkozYuOE4ZPrfRJ0Wem3wv7yU9i/EXcD8MC9NGjB
-        6A3awjtfCJsVa+TI9MxRvvBiL/B4LCRQXNPEQBNGtRawRS21GcB4rCxPXMZKC1iCk+E9Pj3IOaw9
-        /WwqWcHEFBR3WLU90lwBIdeqCsmDNitHwiscHEYwcCtLLUoYTR0D82wG+aK9cyfLB3cyWo7mD+Fi
-        Gbg1fy2r3HGOWjsy8ZwE+JmBF7hN5gtZfnOWf57FCilPZGu+3JtpzaV1LIyRWteiQER0pxWNV1TG
-        yHD9KhgHDS7FN1bdxWuHFrPkHCqIuHYRHxCkp+X//5B1ZjPNz3tOFWJbKjeA61JIU53PoDqEXgIF
-        QlyStXD9dLwC98K8X3wO9yIHAN8FPSmSsz3xccIbqh9en9ZKV1FnG6D0wL9V7YNk8N8Atm+PuLYI
-        AAA=
+        H4sIAAAAAAAEAKRU32/aMBB+n7T/wfLTpgniBEoLglZZoNpUoJSwam+TcW7Ea7Az2yn0v9+F8Ksd
+        VTXtCXxn33ffd9+le7VeZuQRjJVa9ahfZ/Tq8v277uS3EFOwuVYWCF5RtrO2skdT5/KO561Wq/qq
+        Uddm4QWM+d730TAWKSx5TSrruBJA96+St19RhCSke2vkQiqeTeF3AdaRicZaWaQTwM4afjuKKfmi
+        CwvjYjkHg0F29iwSJol0GyJjrbCFMM8zKXgZGvMlVpncRRElsS6MwNMFq/vMrweNZr0dUHJXgHnq
+        c4eZgPmtms9q7HzmX3Sarc5ZUGfNs8b52ScWdBjDGik3Ui0mKQKpDfhM3/NMJpv3lJRIUQriYfaU
+        YyDSeQ6GkkgrBaJsaKKlcuVNryKPvRuw9iTpSLqnHg2Ho8F08I8SxM4AIM5nDZn8pSqlEQ5hrJxn
+        cOKp3d6pmtqEtk1ixHvzYdfbUqlO0WJOKvHDzNRilVMyBLVw6ZBb15fWGTkvnEYqFw2fkjG4HTXW
+        aO3ujpKfOJR2i+3l6iMdtC3HTiZGJ4Vwu7ZPpMqqK20eejRWsnZNST9b4n9ByQxEqnSmF6W+ic2C
+        HxPtLCrOVTnh0jKb861Jqop9vVI389yWHmGlEQbrHAcKySHhB5vEntth2HsFQiFQoNAAx2DotY8A
+        vuXbKixoYn+PPepMAXve3mvEu4M1AqIlY+mKjeV3evyVqMxIBDdG4uY77goEvKW7yD2oRBuJizvq
+        X9ODG6a4qubBHpnhldKvIl9LnCzBL0lHyew5s0P9l4Ck+qlWos3O0RVVZAZrN1CL0uokLe1YLSLB
+        MKjyg0aW3ImUfJhrl5KbcHwfxkQbEg3G/enX+ONxnTEk/1HnoMgxhxP6bEdljDZ2b+WXRqkyuGpH
+        H+HLPwMATCCEqqoFAAA=
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_1319CS105.xml]
+      content-disposition: [attachment; filename=PQCC_1319CS105XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:33 GMT']
+      date: ['Fri, 07 Oct 2016 16:46:53 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1321HS&HouseNumber=44&Addition=&PhoneNumber=&CheckButton=Check
+    body: null
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['574']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=105&postcode=1319CS
+  response:
+    body: {string: !!python/unicode '{"City":"ALMERE","v8":{"errors":null,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"12000","DistributionPoint":"Alr-Snp","AccessArea":"AA/9","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","NlType":"6","Technology":"EoF","OrderableDownKbps":"100000","DistributionPoint":"Alrs-AAV/1","AccessArea":"AA/9","OrderableUpKbps":"100000","Tv":"true"},{"Network":"Sni-F","NlType":"6","Technology":"GoF","OrderableDownKbps":"1000000","DistributionPoint":"Alrs-AAV/1","AccessArea":"AA/9","OrderableUpKbps":"1000000","Tv":"true"}],"existing_situation_copper":{"SharedLine":"false","carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Alr-Snp","isra_specs":"001/B/MTK/METERKAST","number_of_nl1_lines":"1","number_of_nl2_lines":"1","copperconnection":{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null}}},"address":{"PostalCode":"1319CS","City":"ALMERE","HouseNumber":"105","Street":"Boelijn","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":null,"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1319CS","remarks":[],"length_last_distributor":"831","name":"Alr-Snp","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Boelijn","length_mdf":"2960","v8_debug":null,"products":[{"orderable_down":"8000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"12000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"1000000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1000000","technology":"GoF"}],"HouseNumber":"105"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:46:56 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=1321HS&HouseNumber=44&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['632']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['44']
+      postcode: [1321HS]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_1321HS44.xml]
+      content-disposition: [attachment; filename=PQCC_1321HS44XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:34 GMT']
+      date: ['Fri, 07 Oct 2016 16:46:56 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=3603AZ&HouseNumber=14&Addition=&PhoneNumber=&CheckButton=Check
+    body: null
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['574']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=44&postcode=1321HS
+  response:
+    body: {string: !!python/unicode '{"City":"ALMERE","v8":{"errors":null,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"11000","DistributionPoint":"Alr-Shk","AccessArea":"AA/9","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"50000","ExpectedDownKbps":"28000","DistributionPoint":"Alr-Shk","AccessArea":"AA/9","OrderableUpKbps":"5000","Tv":"true"},{"Network":"Sni-F","NlType":"6","Technology":"EoF","OrderableDownKbps":"100000","DistributionPoint":"Alrs-AAG/4","AccessArea":"AA/9","OrderableUpKbps":"100000","Tv":"true"},{"Network":"Sni-F","NlType":"6","Technology":"GoF","OrderableDownKbps":"1000000","DistributionPoint":"Alrs-AAG/4","AccessArea":"AA/9","OrderableUpKbps":"1000000","Tv":"true"}],"existing_situation_copper":{"SharedLine":"false","carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Alr-Shk","isra_specs":"001/B/MTK/METERKAST","number_of_nl1_lines":"1","number_of_nl2_lines":"1","copperconnection":{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null}}},"address":{"PostalCode":"1321HS","City":"ALMERE","HouseNumber":"44","Street":"Poeziestraat","PossibleHouseNumberAdditions":{}},"remarks":null,"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1321HS","remarks":[],"length_last_distributor":"318","name":"Alr-Shk","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Poeziestraat","length_mdf":"1303","v8_debug":null,"products":[{"orderable_down":"20000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"11000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"50000","expected_down":"28000","network":"Sni-F","expected_up":"-","orderable_up":"5000","technology":"Vdsl2_Pots"},{"orderable_down":"1000000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1000000","technology":"GoF"}],"HouseNumber":"44"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:46:59 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=3603AZ&HouseNumber=14&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['632']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['14']
+      postcode: [3603AZ]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAEAOxXS2/jNhC+F+h/IHgtZL1s78awvdDKyW7RxHFiNyh6KWhpbBORSS1Jxcm/71Dy
-        Q42lBrvbQwv0kkScB7/vG3I4GX543mbkCZTmUoyo3/Hoh/GPPwxnX5LkHnQuhQaCLkIPnjUf0Y0x
-        +cB1d7tdZxd2pFq7gef57m831/NkA1vmcKENEwnQY1T6dhTFLQkZ3iq+5oJl9/ClAG3ITGKuLJYp
-        jGjY98Lod0o+y0LDtNguQSHcLiVRnmc8YQbxT9kWPWd3cUzJXBYqwa/3Qcfvvu8EXr/j9wNK7gpQ
-        LxNm0BR4ft/xPcd7t/AuBl5vEHY7F2H/Jy8YeB5m2DDFxXq2kQJEueFCPrCMp2UwJXafeAPJ4+Il
-        x4VY5jkoSmIpBCQWzkxyYaynW9GL0lSB1o20Ym5eRvQmiu7n88tpA825UQCY7aPMACUG1BklUoyZ
-        SjzMj3k1X2ZQi8UtuYWi9z4VinJpjwpX3DcDh+4ee/UVr5ek0vqGaUquQazN5pppM+EIiS8LI5WV
-        t0fJFMyBhRd2+wfnm3Q1ohe93lGbCWQcTyFDFDMl0yIxB8gNJpt1J9XjiM4Fd64omWRb/DuhZAHJ
-        RshMrlHMKNVZ8MdMGoQYM2HLaU9H+X2r0irjRO7EL8tcW7ierfrlc47Vg/Rk8MPScOR2qmzJPkoS
-        FCZSwHDLyPX9oJb+13yfwwuwhounETWqgAPr7yD38HXkem3kwvffT65XpnhNbui21XR4+Yzb4dWa
-        c1OUF/egxpmhulTlVYT0mgvkuGKZBkulcp3obA7qiSfwMzaaOL4LEeQ7ShKmFMe2ZpgpEOPtceUB
-        RCoVR+ebyRU93Yt77EPqUR9Lg0uJxM2d5Hihc6sMFyt5dLFO66Uj8DKMUbChe/yqeXCtmKNReT22
-        Xc/9FE0/lT+Gbs1UC6i6jSNXjsh8J0PaehwO3abllqhgb/b/GhWcRyWlwieONZu1FkqBMI7BFidX
-        NS/UjnxUkqVLJlKiqwog/Tb/xqzbdOWw8oQ5+ww8HR9KeErW6NaYMD/16lodS5dVYQoFe2A1YFNJ
-        kg0TawTf5tKUpwlTy5ZtoJBgu/bfWpepNIQLgn38nyjGa0b/6/wf0PkE7N8jdGn62146dFuaf+vb
-        cMUtAJxKB4JnZw/rvp2/7u+k+lUNXxfeBb4U1coCns2lWNuxwZInRmJXw9bGBClH2iwrNyU4vmAL
-        tYPeKW4KaRUHmshtzR+2UhgoFNkCZgSirX6C1t+YRlj98AzWqdlyTViGL3L6QnIln7id3CEliM1s
-        0GY7/Bm4r4x+C1+ve4bvCsdTUtWf5PhaawK2YGQJmqdWFwGEYeWf4PBanIH8lhSnIbZe8IbDtJ88
-        lJJKH4fO11NPZcGBuPbfz/jPAQDDtF0BIw0AAA==
+        H4sIAAAAAAAEAKRV227aTBC+/6X/HVZ71aoKPnAIIEjkGqJWDQ7FFFW9qRZ7ilexd93ddSBv37HN
+        qQFUtblKPLvzHWZmh8HtJkvJEyjNpRhSp2HT25v//xtMf0bRDHQuhQaCV4TubzQf0sSYvG9Z6/W6
+        sW42pFpZrm071tfJfRglkLErLrRhIgK6z4r/nEWRkpDBg+IrLlg6g58FaEOmErFSX8YwpM2O3fS+
+        UfJBFhqCIluCQrmt3wJeHHNT+QikQAVenqc8YmUoYBmCTD/7PiWhLFSEX1274dhOw222Gj2Xks8F
+        qOcRM3ji2k7nyrGv7Ou50+23Ov12t9FrOx23/c52+7aNGAlTXKymCRKJinwuFyzlcZVPScnkJxA9
+        zp9zDPgyz0FR4kshICoFTSUXprxp1d5RuwKtz3r2uXke0onnzcJwHPxdDUKjAJDovUwBWwPYHyyt
+        YszURUdqpNR8mcIZFL29UwusQlvBGLH+mDiwtrbqL3+1JHUjJkxTcg9iZZJ7ps2IoyS+LIxUZfHb
+        lARgdgbtZquzuzyJfwxpr93el20EKcfpZahiqmRcRGYn+cxRibqW6nFIQ8Gv7igZpRn+H1EyhygR
+        MpUrrLMX69T9PpUGJfpMlJ0uR6f6flBxjTiSa/FpmetSrl0OxHiTY2MhPhw4zepg7+3Q9Mq9F0VY
+        GE8BQ0rPchz3CP5LvsWwXWzv/GlIjSpg5/oV5hZ/Z659yVyz+3pz7QripbmBdamng/EG6fDVhdwU
+        1aveVePkoH5vJGJKcdxthpkCCR/oLrIAEUvFcTVNRnf0MOQzXEbqUR/N+AXoi8x3HIeW4K7sC56e
+        tG2L/5KQ1H/qV9+ze9d0G5nDxozFqhzKJx4BMZJolE6YINWiTdOKlODj4ALKDXPICyCu80ATmR3d
+        h0wKA4UiGSAiEG0KBeKg8pKs686JrECSpHz89QokGMYlUwrKmIkS8mYpTUI+ecHCC4lUxB8Ho9nH
+        8O2JzH/GOTTquLRn2radIKWk0vvl8XJ66xNcbEe/fje/BgDpuHtAIwcAAA==
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_3603AZ14.xml]
+      content-disposition: [attachment; filename=PQCC_3603AZ14XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:36 GMT']
+      date: ['Fri, 07 Oct 2016 16:46:59 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1967DC&HouseNumber=2260&Addition=&PhoneNumber=&CheckButton=Check
+    body: null
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['576']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=14&postcode=3603AZ
+  response:
+    body: {string: !!python/unicode '{"City":"MAARSSEN","v8":{"errors":null,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"13000","DistributionPoint":"Mas","AccessArea":"AA/112","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"50000","ExpectedDownKbps":"38000","DistributionPoint":"Mas","AccessArea":"AA/112","OrderableUpKbps":"5000","Tv":"true"}],"existing_situation_copper":{"SharedLine":"false","ExistingDslServiceId":"CCQ31127","carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Mas","isra_specs":"001//GANG/GANG","number_of_nl1_lines":"3","number_of_nl2_lines":"1","copperconnection":[{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CCQ31127","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null}]}},"address":{"PostalCode":"3603AZ","City":"MAARSSEN","HouseNumber":"14","Street":"Bolensteinsestraat","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":[{"RemarkCode":"9097","RemarkTextEng":"Advice
+        to send an installation engineer","RemarkTextNed":"Advies om installatiemonteur
+        mee te sturen"},{"RemarkCode":"9063","RemarkTextEng":"Broadband is already
+        provisioned on this line","RemarkTextNed":"Broadband is already provisioned
+        on this line"},{"RemarkCode":"9054","RemarkTextEng":"Free copper pares exist
+        besides one active service","RemarkTextNed":"Free copper pares exist besides
+        one active service"}],"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"3603AZ","remarks":["Advies
+        om installatiemonteur mee te sturen"],"length_last_distributor":"205","name":"Mas","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Bolensteinsestraat","length_mdf":"955","v8_debug":null,"products":[{"orderable_down":"20000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"13000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"50000","expected_down":"38000","network":"Sni-F","expected_up":"-","orderable_up":"5000","technology":"Vdsl2_Pots"}],"HouseNumber":"14"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:47:03 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=1967DC&HouseNumber=2260&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['634']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['2260']
+      postcode: [1967DC]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAEAOxYX2/iOBB/P+m+g+XXU8gfaEoRsKJAt1IXyhauureTSQawGuys7QD99jdJIORK
-        2Kp7e/dw4gns+feb34yNh/an3ToiG1CaS9Ghbs2hn7q//tKefAuCJ9CxFBoIqgjd2mneoStj4pZt
-        b7fb2rZek2ppe47j2n+MvkyDFayZxYU2TARAC6vwfSuKIQlpPyq+5IJFT/AtAW3IRKKvqC9DQGQ3
-        /vWgT8m9TDSMk/UcVId6nu9Q0ovjiAfMYAZjtkbdydc+ak5logJcNb2a22jWPMevub5HydcE1OuA
-        GRR5jutbrmM51zPnpuVctep+rVH3f3O8loOOpyumuFhOVlKAyELO5DOLeJgZU5LG6a8geJm9xrjR
-        l3EMipK+FAKCFM5EcmFSTTtPsBeGCrSuTKzPzWuH3g+Ho+nD8OmhMtOpUQDocABkpuQ6BpMzh67R
-        pebzCEpWGI2nKPReJweQbe0B4Y79rmHb3sPOV/3lnOQ0326sMSVfQCzN6gvTZsC1UXyeGJkCbjh1
-        SsZgDhk43pV70B6Fiw5t1Ot+wcwAIo5dyBDIRMkwCcwBdYUodbuV6qVDp4Jbd5QMojV+DyiZQbAS
-        MpJLpLIX6sj7cyKNRnKZSIuZ9ka2flRh7nEgt+JhHuu0F5y05sNdjLWD8Ci4yvaL5I5lvQdYW71e
-        D3uqFwRIUE8Bw7g9u9Eohfg9zv24jofbs02HLlik4ZD6P8jwefOxFF3nXI7XPy3HzFGapFFJkWPb
-        Plff9nCHQfGQTblJsiN8IOVEkB8vEjClON5XhpkEIz7Sw84ziFAqjtfNaHBHjz3/hBeMetEF3bgV
-        SPRkBcU5jdNkuVjIQiVVWs4tgY3eTfu8bRfLkgrXilkaydTd9D67tUezB3s0nOH57U1nbbskL1nl
-        V4klF5aIXCviAnTXb9tV22esvGor79QqyEg7ZlqSpdJEKRDGMnh/yUVJCxkkt0qycM5ESDSoDQ8A
-        OTinX+l1HS4sljWNtffAw26//9lpun7z6KxSrdJhfLyIS9XMVBaJSRScAhtLEqyYWCL4QuV72PdK
-        VZjOhDwHChM8z/2P1mUsDeGC4E39M4rxNqMLz/9B/w8mjZvrpn/p//9Z/x+BXYi+EH0h+t8hOhN9
-        9+3Wts+8HIuH5VvxHU8B4HjbEjz6+8P1+Hx8+54k+Uc+w904Pg47+c4MdmYoljgeFb8fXBMW4bs5
-        fCWxkhueztoQEhzDzApl6aOtbD2G8MPW9jv4rq5P8I2kAnTBBLoCwpDMDZBpXrLCO8tHvxN4HzN+
-        F13jBN0dTrokbwMS41ijCaR1I3PQPMRVKey+zU4w/oiL41xcrntFT+2nF6Wk0sUQ+3Z+yiU4Y5f+
-        Ten+NQBdjjDPcxEAAA==
+        H4sIAAAAAAAEAKRUXW/iOhB9v9L9D5af7moFcQILLSKtsgnVXlFSSthq31YmmRKrwU5tp9B/fyeE
+        r9ulqlb7BB57zpkzcybD682qIC+gjVDSp26b0eurv/8aTp/TdAamVNIAwSfSDDZG+DS3thw4znq9
+        bq87baWXjseY6/yY3CZpDiveEtJYLlOgh6zs4yyKlIQM77RYCsmLGTxXYCyZKsQqQpUBVnbZ60ch
+        Jd9UZSCuVgvQPvW8HvtfKMgyYbdKYiWxhqAsC5HyOhTzFcJM70MESVSlUzxdsLbL3LbX6bYvPUru
+        K9CvEbd44zG313JZi/Xn7sWg2x8wr93vXnz5zLwBQ84k51rI5TRHGrmlnqsHXohsm01JzRPmkD7N
+        X0sMhKosQVMSKikhrcuZKiFt/dJptGPlGow5qzkU9tWn30ajSTIezca/24TEagDkioDMtVqVYJt+
+        IyuyGbEo4Ey22b1patuGdrVixPkwcejsFDWncLkgzQS+vrRiSm5BLm1+y42NhLFaLCqrai1d1qEk
+        BrsXx7wv7v71JHv0abfT6R2aFkEh0LscC5lqlVWp3Vd95qqGXSv95NNEitYNJVGxwv8pJXNIc6kK
+        tcQuB5kpvJ9TZQ32nct6zrVttuc7nTWIkVrL8aI0tU9YbYfRpsSxQna86GzjB3HHiTf6gzTF3gQa
+        OFIGTrd7gv69bCBc5mF4/uLTR14YOKh23pM9HG2QD22ZCFttTb/vxi8XjSFJyrUWuPyW2woZ7+g+
+        8gAyU1rg7k6iG3q0wgy3VT+ZEye8A/0u843AwRL8mAykKHxqdXVQdsR/S0ian2YtLlkfLdBE5rCx
+        I7msrU7y2ovNMhIMg6y/aWTFbZqTfxbK5mQcxA9BQpQm4SiOZv8mn05xYsj+AOfYkVMNZ/qzG5XW
+        SpuDkd/6pLnBPTv5Dl/9NwC0wSOmrQUAAA==
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_1967DC2260.xml]
+      content-disposition: [attachment; filename=PQCC_1967DC2260XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:38 GMT']
+      date: ['Fri, 07 Oct 2016 16:47:04 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=3438LE&HouseNumber=136&Addition=&PhoneNumber=&CheckButton=Check
+    body: null
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['575']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=2260&postcode=1967DC
+  response:
+    body: {string: !!python/unicode '{"City":"HEEMSKERK","v8":{"errors":null,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"5000","DistributionPoint":"Heem-AAA2","AccessArea":"AA/44","OrderableUpKbps":"1024","Tv":"false"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vvdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"100000","ExpectedDownKbps":"7000","DistributionPoint":"Heem-AAA2","AccessArea":"AA/44","OrderableUpKbps":"10000","Tv":"true"}],"existing_situation_copper":{"carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Bv-N","isra_specs":"001/B/MTK/METERKAST","number_of_nl1_lines":"6","number_of_nl2_lines":"6","copperconnection":[{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CCG08168","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CDP49786","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null}]}},"address":{"PostalCode":"1967DC","City":"HEEMSKERK","HouseNumber":"2260","Street":"De
+        Trompet","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":[{"RemarkCode":"9063","RemarkTextEng":"Broadband
+        is already provisioned on this line","RemarkTextNed":"Broadband is already
+        provisioned on this line"},{"RemarkCode":"9057","RemarkTextEng":"More than
+        one active Service on this address","RemarkTextNed":"More than one active
+        Service on this address"},{"RemarkCode":"9054","RemarkTextEng":"Free copper
+        pares exist besides one active service","RemarkTextNed":"Free copper pares
+        exist besides one active service"}],"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1967DC","remarks":[],"length_last_distributor":"2403","name":"Bv-N","existing_dsl_service_id":"","HouseNumber_add":"","Street":"De
+        Trompet","length_mdf":"4336","v8_debug":null,"products":[{"orderable_down":"8000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"5000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"100000","expected_down":"7000","network":"Sni-F","expected_up":"-","orderable_up":"10000","technology":"Vvdsl2_Pots"}],"HouseNumber":"2260"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:47:07 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=3438LE&HouseNumber=136&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['633']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['136']
+      postcode: [3438LE]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        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
+        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
+        NCd42Q6e4/M/AwD7xWYJtAUAAA==
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_3438LE136.xml]
+      content-disposition: [attachment; filename=PQCC_3438LE136XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:41 GMT']
+      date: ['Fri, 07 Oct 2016 16:47:07 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1716KE&HouseNumber=38&Addition=&PhoneNumber=&CheckButton=Check
+    body: null
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['574']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=136&postcode=3438LE
+  response:
+    body: {string: !!python/unicode '{"City":"NIEUWEGEIN","v8":{"errors":null,"deliverable_product":{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"9000","DistributionPoint":"Niwg-N","AccessArea":"AA/120","OrderableUpKbps":"1024","Tv":"true"},"existing_situation_copper":{"SharedLine":"false","ExistingDslServiceId":"CDW34774","carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Niwg-N","isra_specs":"001/B/MTK/METERKAST","number_of_nl1_lines":"1","number_of_nl2_lines":"0","copperconnection":{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CDW34774","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null}}},"address":{"PostalCode":"3438LE","City":"NIEUWEGEIN","HouseNumber":"136","Street":"Moerashoeve","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":{"RemarkCode":"9063","RemarkTextEng":"Broadband
+        is already provisioned on this line","RemarkTextNed":"Broadband is already
+        provisioned on this line"},"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"3438LE","remarks":[],"length_last_distributor":"10000","name":"Niwg-N","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Moerashoeve","length_mdf":"10000","v8_debug":null,"products":[{"orderable_down":"6145","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1025","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"9000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"}],"HouseNumber":"136"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:47:11 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=1716KE&HouseNumber=38&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['632']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['38']
+      postcode: [1716KE]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_1716KE38.xml]
+      content-disposition: [attachment; filename=PQCC_1716KE38XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:42 GMT']
+      date: ['Fri, 07 Oct 2016 16:47:11 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1043EJ&HouseNumber=121&Addition=&PhoneNumber=&CheckButton=Check
+    body: null
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['575']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=38&postcode=1716KE
+  response:
+    body: {string: !!python/unicode '{"City":"OPMEER","v8":{"errors":null,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"10000","DistributionPoint":"Spk","AccessArea":"AA/123","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"50000","ExpectedDownKbps":"18000","DistributionPoint":"Spk","AccessArea":"AA/123","OrderableUpKbps":"5000","Tv":"true"}],"existing_situation_copper":null,"address":{"PostalCode":"1716KE","City":"OPMEER","HouseNumber":"38","Street":"De
+        Veken","PossibleHouseNumberAdditions":{}},"remarks":null,"existing_situation_fiber":null},"PostalCode":"1716KE","remarks":[],"length_last_distributor":"1089","name":"Spk","existing_dsl_service_id":"","HouseNumber_add":"","Street":"De
+        Veken","length_mdf":"2103","v8_debug":null,"products":[{"orderable_down":"20000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"10000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"50000","expected_down":"18000","network":"Sni-F","expected_up":"-","orderable_up":"5000","technology":"Vdsl2_Pots"}],"HouseNumber":"38"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:47:15 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D&PQCCType=Copper&Postcode=1043EJ&HouseNumber=121&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['633']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
       Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
       Upgrade-Insecure-Requests: [1]
       User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['121']
+      postcode: [1043EJ]
     method: POST
     uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAEAIRU32/aMBB+n7T/wfLrROKkQAsKVCihmiYoKYnYtDeT3IjVYKe2U8p/v4MAY4K2
-        j7777rvvfjm4f1uX5BW0EUoOqOcwej/8+iWIX7JsDqZS0gBBiDT9NyMGtLC26rvuZrNxNjeO0ivX
-        Z8xzf00nSVbAmreENJbLDOgpKv88imJKQoKZFisheTmHlxqMJbFCrjJUOaAy1r4Z/6Dku6oNPNbr
-        JWg0+h4lo6oqRcYtFvDI1wiNn8KQkkTVOsPXne947TvHZ13H6/qUPNWgtxG36PKZ1215rMVuU9br
-        s06/7Tu9DqI635jfZwxJCq6FXMWFkiD3SVO14KXI9/GU7FKFBWTP6bZCQ6iqCjQloZISsp2iWAlp
-        d0i3KXGU5xqMuVpaKOx2QEfTJB3Po9H0Wq2J1QDIl0IJldJ2qeoSXrnOmw5iAiQ2YlnCWSzmFDst
-        5oBpZOxNB1n/2YbtaL4I3NPzEhAufn/on82S9EPAz/EVQOB+qn0fs+tf8wpXS9KMfGTyVlKqnJIJ
-        yJUtJtzYSBirxbK2atc91qPkEeyxm8xnR+w0/zOgbc+7PQ0pglLgSXCUEmuV15k1R9f4DVlxIxJh
-        a34u/sLR7ALJuNYCz8tyW5sBndGjZQEyV1rgdUyjB/qvSXO8B/1sTpMJ3Heo3838ILBEgufal6Ic
-        UKtrOJZ2wX+F/VCo1kqfUKdeHle68eDIzv6J4d8BAInqj9lNBAAA
+        H4sIAAAAAAAEAKxVXW/aMBR9n7T/YPlp0wRxUgoFQasoodrW8lGSsWkvk0k8YjXYqe0U+u93k/DV
+        FlpV3RP4+vqce4+Pb7oXq0WK7pnSXIoetusEX5x//NAd30XRhOlMCs0QpAjdWWnew4kxWceylstl
+        fXlSl2puOYTY1q/BdRAlbEFrXGhDRcTw9lT8+ikMlAh1R4rPuaDphN3lTBs0loCVejJmUBlpnPS/
+        Y/RV5poN88WMKQg69qOIG8fclI0MpYAS3CxLeUSL0JAuAGV843kYBTJXEazOSN0mdt05adTbDkY3
+        OVMPPjWw4xC7WbNJjbRC+6zTaHXsRv201Ww6p1+I0yEEMBKquJiPEyASJXkopzTlcXkeo4LJS1h0
+        Gz5kEPBkljGFkSeFYFFR0FhyYYpMq2oealdM64NNe9w89LA7CML+xHcHb1QhMIoxoApZyjKpzEzm
+        KbunKq5kB27g1HyWsgMgep1TVViG1hU/ip03/Mm0a22XzxO86e8X90ejIHwx4Wf/QELXerX28kwh
+        bbXy5jNUmcHVcS1IZYzRNRNzk1xTbXyujeKz3MhCWNLGaMjMRmjikE3uIP7bww3bbm3vz2cph3dE
+        oZSxknEemY10B7YK1KVUtz0cCF67xMhPF/A/wihkUSJkKufFhcc6df6MpdFgASoKyxUeLtcjFVeI
+        vlyKq1mmC9OSwpn9VQYOY/Fuw7bLjW1vO/ftJHCjCCRyFaMQdS2nvUfxI1vjEKcBFd73sFE523T+
+        jganb2vw9FiDTvP/NHhawjxtsGsdu9tufwWUMAYCbnK6b8tnG9UAQBFVisO0NdTkQDjCm8iUiVgq
+        DsNy4F/inf0nMB7Vrd5pbR2BPsp8ycG8CKZ3R/D02dWt8Z8SouqnGkNt0mridSRkK9MX82K2oKR4
+        ctXwQxBmoviIoAU1UYI+zaRJ0JU7nLoBkgp5/aE/+RZ83scZsvgdODtF9ns4oM/6qpSSSm9f61Or
+        VArDONn78J3/GwBQjqGfHgcAAA==
     headers:
       cache-control: [private]
-      content-disposition: [attachment; filename=PQCC_1043EJ121.xml]
+      content-disposition: [attachment; filename=PQCC_1043EJ121XNone.xml]
       content-encoding: [gzip]
       content-type: [text/xml]
-      date: ['Fri, 07 Oct 2016 07:05:43 GMT']
+      date: ['Fri, 07 Oct 2016 16:47:15 GMT']
       server: [Microsoft-IIS/6.0]
       vary: [Accept-Encoding]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=121&postcode=1043EJ
+  response:
+    body: {string: !!python/unicode '{"City":"AMSTERDAM","v8":{"errors":null,"deliverable_product":null,"existing_situation_copper":{"carrierstatus":"O","carrierVendorid":"MDF","Remarks":null},"address":{"PostalCode":"1043EJ","City":"AMSTERDAM","HouseNumber":"121","Street":"Teleportboulevard","PossibleHouseNumberAdditions":{}},"remarks":null,"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1043EJ","remarks":[],"length_last_distributor":"109","name":"Asd-Slod","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Teleportboulevard","length_mdf":"4117","v8_debug":null,"products":[],"HouseNumber":"121"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Fri, 07 Oct 2016 16:47:18 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 version: 1

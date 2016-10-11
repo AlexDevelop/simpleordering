@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'frontend',
     'authtoken',
     'translation_manager',
+    'dsl',
 )
 
 MIDDLEWARE_CLASSES = (
