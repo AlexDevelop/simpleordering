@@ -485,4 +485,134 @@ interactions:
       vary: ['Accept, Cookie']
       x-frame-options: [SAMEORIGIN]
     status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1311XB&HouseNumber=6&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['577']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['6']
+      postcode: [1311XB]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAKxVXW/aMBR9n7T/YPlp0wT5oIOCoFUWqDYVKCWs69sUkrvEIrFT2yn03++a8LUW
+        VFXdE/he+5x77le6l6s8I48gFRO8R526TS8vPn7oTh6iaAqqEFwBwStcdVaK9WiqddGxrOVyWV82
+        6kImlmvbjnU/GgZRCnlYY1zpkEdAd6/i119RpCSkeyNZwniYTeGhBKXJRCBW5osYMLKG49x/o+S7
+        KBWMy3wOskeb/5y9OGZ6LWMsOAbgFUXGotCYxmGOGJNb36ckEKWMDGK7UXdajbrrNOuO06LktgT5
+        1A81+lzbadYcu+a4M+esc+Z2nFbdbre/2G7HthEiDSXjySRFHr7mnom7MGPx+jElhshPIVrMngo0
+        +KIoQFLiC84hMvFMBOPa3LQq5Ri6BKWOKvaZfupRbzgaTAdv0h9oCYAsv4TMQS4hqdKMdEij2DyD
+        I4/V5k4V1Nq0CRIt1qsPu9ZGSnXykzmpcu9lshakC0qGwBOdDkOl+0xpyealFiilcd6mZAx6K81u
+        NLd3R/Efk41zd5euPmQMezbESCZSxGWkt2EfcRnUpZCLHg04q11R0s9y/B9RMoMo5SITiclvrDL3
+        90RohRkPuamw6Zj1+UbGFWJfLPn1vFCmQWzTCINVgQWFeO9wKsdO277Yuwx4UYQJ8iSEaPSs9gHB
+        z2KL4p5hfI89qmUJW93vkHf3NnlfT8lz/4u8r2uQ5/K61qm6dgcrJMSJC5gu1wO9zccLRzVrJAql
+        ZLjVdKhLJLyhW8sd8FhIhktp1L+i+2af4hqSC3XQ6yegTzJfMWxcgluyw1n2onAb/OeEpPqpJr5t
+        t7DpK8sMVnrAEzPLJDXTVu0ZgmbgZlmTPNRRSj7NhU7JtTe+8wIiJPEH4/70R/D5EGcM8Ttw9hk5
+        1HAkP5tSSSmk2k3q80apPLhJDj4wF38HAMRs1sSGBgAA
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1311XB6XNone.xml]
+      content-encoding: [gzip]
+      content-type: [text/xml]
+      date: ['Wed, 12 Oct 2016 12:42:18 GMT']
+      server: [Microsoft-IIS/6.0]
+      vary: [Accept-Encoding]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=6&postcode=1311XB
+  response:
+    body: {string: !!python/unicode '{"City":"ALMERE","v8":{"errors":null,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"10000","DistributionPoint":"Alr-Shk","AccessArea":"AA/9","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"50000","ExpectedDownKbps":"20000","DistributionPoint":"Alr-Shk","AccessArea":"AA/9","OrderableUpKbps":"5000","Tv":"true"}],"existing_situation_copper":{"carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Alr-Shk","isra_specs":"001/B/COMP/COMPUTERRUIMTE","number_of_nl1_lines":"30","number_of_nl2_lines":"0","copperconnection":[{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******464","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******003","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******201","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******276","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******719","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Fixed
+        Line service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Fixed
+        Line service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CBZ69468","current_phonenumber":"*******525","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******589","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFP09690","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******196","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFP59981","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******196","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFP69099","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CBF12410","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFS76616","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFV57091","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null}]}},"address":{"PostalCode":"1311XB","City":"ALMERE","HouseNumber":"6","Street":"Wormerweg","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":[{"RemarkCode":"9063","RemarkTextEng":"Broadband
+        is already provisioned on this line","RemarkTextNed":"Broadband is already
+        provisioned on this line"},{"RemarkCode":"9057","RemarkTextEng":"More than
+        one active Service on this address","RemarkTextNed":"More than one active
+        Service on this address"},{"RemarkCode":"9054","RemarkTextEng":"Free copper
+        pares exist besides one active service","RemarkTextNed":"Free copper pares
+        exist besides one active service"}],"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1311XB","remarks":[],"length_last_distributor":"389","name":"Alr-Shk","existing_dsl_service_id":"CBZ69468
+        CFP09690 CFP59981 CFP69099 CBF12410 CFS76616 CFV57091","HouseNumber_add":"","Street":"Wormerweg","length_mdf":"1382","v8_debug":null,"products":[{"orderable_down":"20000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"10000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"50000","expected_down":"20000","network":"Sni-F","expected_up":"-","orderable_up":"5000","technology":"Vdsl2_Pots"}],"HouseNumber":"6"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Wed, 12 Oct 2016 12:42:23 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
 version: 1

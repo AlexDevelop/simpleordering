@@ -49,6 +49,11 @@ class DslTest(TestCase):
                 postcode='1043EJ',
                 housenumber='121',
                 housenumber_add=None,
+            ),
+            Ddict(
+                postcode='1311XB',
+                housenumber='6',
+                housenumber_add=None,
             )
         ]
 

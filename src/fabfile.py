@@ -11,5 +11,6 @@ def deploy_prod():
         with prefix('source venv/bin/activate'):
             run('git pull')
             run('pip install -r src/requirements.txt')
+            run('python src/manage.py migrate')
             run('python src/manage.py collectstatic --noinput')
     sudo('service apache2 restart', pty=False)

@@ -288,4 +288,45 @@ interactions:
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIFdlZCAzMCBNYXIgMjA6MTRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZRDTZ1FztBXrKn4JDzgTyyOZh%2FLN&__VIEWSTATEGENERATOR=D8B62B3A&__EVENTVALIDATION=%2FwEWCALJ%2BduGDwLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGBs2n3KWC%2BoGKuyIOeytm4GX4Yyc%3D&Postcode=1311XB&HouseNumber=6&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['519']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['6']
+      postcode: [1311XB]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAKxVUU/bPBR9/6TvP1h+2jQ1idPSQtWAurZoEyWEpjDepjS5JFYTO9gOKf9+TlxK
+        N0BosKfI177H5xzfezM62RQ5ugchKWceJpaDT47//28U3MXxAmTJmQSkjzA53Ejq4UypcmjbdV1b
+        ddfiIrVdxyH2zfk8jDMoog5lUkUsBrzLSt7OwvpKhEYXgqaURfkC7iqQCgVcY+UTnoBm1iXk5itG
+        33glwa+KFQgP939bj5OEqlaGz5kmMC7LnMZRE/KjQmMEl5MJRiGvRNwgHnUtMuhaLulbhAwwuqxA
+        PEwjpfdch/Q7xOkQd0l6w547JD3L6Q8GB18cd+g4GiSLBGVpkOmbWHv7kl9HOU3adIxso0hTEiDl
+        i0omVD14eDw/ny1mf6UrVAJAefgHFwWIGlJjn75OXyPpKocXkuX2jCHVhrYkdcR+M3Fkb6WY1SRd
+        IePpOBedMFtjNAeWqmweSTWlUgm6qhTXUrqHRxj5oB6lOd3+49nz5LZx49Dd2TWFnOpajDSTQPCk
+        itUj7Re2GtSai7WHQ0Y7pxgtIc4Yz3na2JrI3P0ZcCW10RFrnqspgHZ9IRIDNOU1O1uVsnlvp3nV
+        HXOtO+CUqT19y3sP30a5hD2Aq9KkE8ft4Sc7P8B1mhf6TPyc9GxTQqwgeeJMDOf3q1Gi+vdirt8n
+        xn1VzMGHxBy0ydvysl+rr9Fso+F1P4dUVe3AQKeqWj6UmvEVWzNNZtdjCz2vxHqvnUwAmY9p8SNn
+        oKvcRJawUTOWNs2Lsqa9zLhAOgysmbqoiFScoU8rrjJ0NvavxyHiAk1m/nTxPfy8j+ND8gGcp3bf
+        1zCyn4nfeiIEF3LXmn/6b3b06Nj7Uxz/GgBQzbLITwYAAA==
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1311XB6XNone.xml]
+      content-encoding: [gzip]
+      content-type: [text/xml]
+      date: ['Wed, 12 Oct 2016 12:42:16 GMT']
+      server: [Microsoft-IIS/6.0]
+      vary: [Accept-Encoding]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
 version: 1

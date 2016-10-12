@@ -153,7 +153,7 @@ def parse_v7(response_v8_data, response_v8, data):
     copperconnection = None
     current_mdf_access_serviceid = None
     if response_v8_data and not response_v8_data['errors']:
-        existing_situation_copper = response_v8['existing_situation_copper'] if 'existing_situation_copper' in response_v8 else None
+        existing_situation_copper = response_v8_data['existing_situation_copper'] if 'existing_situation_copper' in response_v8_data else None
         if existing_situation_copper:
             coper_connectionpointinfo = existing_situation_copper[
                 'coper_connectionpointinfo'] if 'coper_connectionpointinfo' in existing_situation_copper else None
