@@ -58,6 +58,9 @@
                     <h2>v8</h2>
                     {% if dsl_data.v8.errors %}
                         {{  dsl_data.v8.errors.DescriptionNed }}
+                        {% for error in dsl_data.v8.errors %}
+                            {% if error.DescriptionNed %}{{ error.DescriptionNed }}{% else %}Geen beschrijving beschikbaar{% endif %} - {{ error.EnumName }} </br>
+                        {% endfor %}
                     {% else %}
                         DistributionPoint: {{ dsl_data.v8.deliverable_product.DistributionPoint }} </br>
                         ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br>

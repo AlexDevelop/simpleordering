@@ -54,10 +54,19 @@ class DslTest(TestCase):
                 postcode='1311XB',
                 housenumber='6',
                 housenumber_add=None,
-            )
+            ),
+        ]
+
+        items_with_errors = [
+            Ddict(
+                postcode='1757PK',
+                housenumber='34',
+                housenumber_add='H-089',
+            ),
         ]
 
         self.items = items
+        self.items_with_errors = items_with_errors
 
         response_v7 = requests.get('https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx')
         self.event_validation_v7 = urllib.quote(re.findall('__EVENTVALIDATION.*?value=\"(.*?)\"', response_v7.content)[0], safe='')
@@ -76,6 +85,22 @@ class DslTest(TestCase):
                 data_cleaned = clean_params(data)
                 assert response.status_code is 200
                 assert data_cleaned['PqccResponse']['Errors'] is None
+                assert data_cleaned['PqccResponse']['Address']['PostalCode'] == item.postcode
+                assert data_cleaned['PqccResponse']['Address']['HouseNumber'] == item.housenumber
+                assert 'PossibleHouseNumberAdditions' in data_cleaned['PqccResponse']['Address']
+
+    def test_valid_dslorder_v7_with_errors(self):
+        with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v7_with_errors.yaml'),
+                              record_mode='new_episodes'):
+            for item in self.items_with_errors:
+                response = DslOrder(event_validation=self.event_validation_v7, view_state=self.view_state_v7).get_dslorder_v7(item.postcode, item.housenumber, item.housenumber_add)
+                data = xmltodict.parse(response.content)
+                data_cleaned = clean_params(data)
+                assert response.status_code is 200
+
+                assert 'EnumName' in data_cleaned['PqccResponse']['Errors']['Error'][0]
+                assert 'DescriptionNed' in data_cleaned['PqccResponse']['Errors']['Error'][0]
+
                 assert data_cleaned['PqccResponse']['Address']['PostalCode'] == item.postcode
                 assert data_cleaned['PqccResponse']['Address']['HouseNumber'] == item.housenumber
                 assert 'PossibleHouseNumberAdditions' in data_cleaned['PqccResponse']['Address']
@@ -101,3 +126,19 @@ class DslTest(TestCase):
                 assert response['PostalCode'] == item.postcode
                 assert response['HouseNumber'] == item.housenumber
                 assert response['v8'] != None
+
+    def test_valid_dslorder_v8_with_errors(self):
+        with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v8_with_errors.yaml'),
+                              record_mode='new_episodes'):
+            for item in self.items_with_errors:
+                response = DslOrder(event_validation=self.event_validation_v8, view_state=self.view_state_v8).get_dslorder_v8(item.postcode, item.housenumber, item.housenumber_add)
+                data = xmltodict.parse(response.content)
+                data_cleaned = clean_params(data)
+                assert response.status_code is 200
+
+                assert 'EnumName' in data_cleaned['PqccResponse']['Errors']['Error'][0]
+                assert 'DescriptionNed' in data_cleaned['PqccResponse']['Errors']['Error'][0]
+
+                assert data_cleaned['PqccResponse']['Address']['PostalCode'] == item.postcode
+                assert data_cleaned['PqccResponse']['Address']['HouseNumber'] == item.housenumber
+                assert 'PossibleHouseNumberAdditions' in data_cleaned['PqccResponse']['Address']

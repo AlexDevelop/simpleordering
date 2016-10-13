@@ -221,7 +221,10 @@ class SingleDsl(APIView):
         if response_v7.status_code is 200:
             data = self.retrieve_parse_xml(response_v7.content)  # xmltodict.parse(response_v7.content)
             data_v7 = parse_v7(response_v8_data, response_v8, data)
-            existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection = data_v7
+            if data_v7:
+                existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection = data_v7
+            else:
+                existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection = None, None, None, None, None
             try:
                 data = {
                     "existing_dsl_service_id": existing_dsl_service_id if existing_dsl_service_id else '',
