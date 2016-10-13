@@ -57,9 +57,18 @@ INSTALLED_APPS = (
     'authtoken',
     'translation_manager',
     'dsl',
+
+    'opbeat.contrib.django',
 )
 
+OPBEAT = {
+    'ORGANIZATION_ID': '',
+    'APP_ID': '',
+    'SECRET_TOKEN': '',
+}
+
 MIDDLEWARE_CLASSES = (
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
