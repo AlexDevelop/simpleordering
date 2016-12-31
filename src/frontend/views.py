@@ -1,4 +1,6 @@
 import json
+
+from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -81,8 +83,8 @@ class MainView(FormView):
 
 
 class APIClient(object):
-    protocol = 'http://'
-    base_url = '0.0.0.0'
+    protocol = settings.BASE_SCHEMA
+    base_url = settings.BASE_URL
     port = PORT if PORT else '8000'
     content_type = {
         'Content-Type': 'application/json'
