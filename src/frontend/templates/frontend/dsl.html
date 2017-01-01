@@ -76,11 +76,15 @@
                         {% endfor %}
                         <br/>
                         <h3>Aderparen</h3>
-                        ISRA Specs: {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.isra_specs }} </br>
+                        ISRA Specs: {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.isra_specs }}
+                        {% for isra_spec in dsl_data.v8.existing_situation_copper.coper_connectionpointinfo %}
+                            <br/>{{ isra_spec.isra_specs }}
+                        {% endfor %}
+                        </br>
                         Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/></br>
                         
                         {% if dsl_data.v8.total_aderparen == 1 %}
-                            AP{{ forloop.counter }}
+                            AP1{{ forloop.counter }}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_typeofconnection %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_typeofconnection }} {% endif %}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid }} {% endif %}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_sdf_access_serviceid %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_sdf_access_serviceid }} {% endif %}
@@ -98,6 +102,19 @@
                                 {% if item.current_mdf_access_serviceid and item.current_phonenumber %}
                                     (shared line)
                                 {% endif %} </br>
+                            {% endfor %}
+                            {% for isra_spec in dsl_data.v8.existing_situation_copper.coper_connectionpointinfo %}
+                                {% for item in isra_spec.copperconnection %}
+                                    AP{{ forloop.counter }}
+                                    {% if item.current_typeofconnection %}- {{ item.current_typeofconnection }} {% endif %}
+                                    {% if item.current_mdf_access_serviceid %}- {{ item.current_mdf_access_serviceid }} {% endif %}
+                                    {% if item.current_sdf_access_serviceid %}- {{ item.current_sdf_access_serviceid }} {% endif %}
+                                    {% if item.current_phonenumber %}- {{ item.current_phonenumber }} {% endif %}
+                                    {% if item.current_mdf_access_serviceid and item.current_phonenumber %}
+                                        (shared line)
+                                    {% endif %} </br>
+                                {% endfor %}
+                                <br/>
                             {% endfor %}
                         {% endif %}
                     {% endif %}
