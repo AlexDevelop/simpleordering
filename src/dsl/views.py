@@ -143,8 +143,11 @@ def parse_v8(doc):
         else:
             response_v8['remarks'] = remarks
 
-        response_v8['total_aderparen'] = len(response_v8['existing_situation_copper']['coper_connectionpointinfo']['copperconnection'])
-
+        copperconnection = response_v8['existing_situation_copper']['coper_connectionpointinfo']['copperconnection']
+        if type(copperconnection) == list:
+            response_v8['total_aderparen'] = len(copperconnection)
+        else:
+            response_v8['total_aderparen'] = 1
         response_v8_data = response_v8
         response_v8_data['errors'] = None
     return response_v8_data
