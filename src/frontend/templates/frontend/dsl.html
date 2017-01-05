@@ -64,7 +64,7 @@
                         {% endfor %}
                     {% else %}
                         DistributionPoint: {{ dsl_data.v8.deliverable_product.DistributionPoint }} </br>
-                        ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br>
+                        {% if dsl_data.v8.existing_situation_copper.ExistingDslServiceId %} ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br> {% endif %}
                         {% for item in dsl_data.v8.existing_situation_copper.copperconnection %}
                             {{ forloop.counter }} - Current_typeofconnection {{ item.current_typeofconnection }} </br>
                             {{ forloop.counter }} - Current_mdf_access_serviceid {{ item.current_mdf_access_serviceid }} </br>
@@ -81,7 +81,7 @@
                             <br/>{{ isra_spec.isra_specs }}
                         {% endfor %}
                         </br>
-                        Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/></br>
+                    Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/>LET OP: Indien aderparen zijn uitgelost is de AP nummering niet meer ok.</br></br>
                         
                         {% if dsl_data.v8.total_aderparen == 1 %}
                             AP1{{ forloop.counter }}
