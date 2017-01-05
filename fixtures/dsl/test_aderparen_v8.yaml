@@ -1,0 +1,365 @@
+interactions:
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVy0uj7RD1eglCwD8puCwewIZbcH7FtB7cYt3gpCYkd89k%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAu4m7upix0XUJhj2r0rYPfv0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTC0vUv80Hf5c5fD7b9Vuq8NxPYhHSarpS7xHKtO5PkE2&PQCCType=Copper&Postcode=1311XB&HouseNumber=6&Addition=&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['753']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['6']
+      housenumber_add: ['']
+      postcode: [1311XB]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"1311XB\" HouseNumber=\"6\" ApplicationName=\"PQCC\" Source=\"84.53.99.126\"
+        QueryDate=\"2017-01-03T16:59:17.2002552+01:00\" SharingPhonenumberToValidate=\"\"
+        PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"1311XB\"
+        City=\"ALMERE\" HouseNumber=\"6\" Street=\"Wormerweg\">\r\n    <PossibleHouseNumberAdditions>\r\n
+        \     <Addition />\r\n    </PossibleHouseNumberAdditions>\r\n  </Address>\r\n
+        \ <Cgb Name=\"Alr-Shk\" LengthLastDistributor=\"389\" NetNumber=\"036\" LengthMdf=\"1382\"
+        />\r\n  <DeliverableProducts>\r\n    <DeliverableProduct Network=\"Sni-F\"
+        Dlm=\"Sc\" Technology=\"Adsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"20000\"
+        ExpectedDownKbps=\"10000\" DistributionPoint=\"Alr-Shk\" AccessArea=\"AA/9\"
+        OrderableUpKbps=\"1024\" Tv=\"true\" />\r\n    <DeliverableProduct Network=\"Sni-F\"
+        Dlm=\"Sc\" Technology=\"Vdsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"50000\"
+        ExpectedDownKbps=\"14000\" DistributionPoint=\"Alr-Shk\" AccessArea=\"AA/9\"
+        OrderableUpKbps=\"5000\" Tv=\"true\" />\r\n  </DeliverableProducts>\r\n  <ExistingSituation>\r\n
+        \   <ExistingSituationCopper carrierstatus=\"O\" carrierVendorid=\"MDF\">\r\n
+        \     <Remarks />\r\n      <coper-connectionpointinfo>\r\n        <cgb-name>Alr-Shk</cgb-name>\r\n
+        \       <isra-specs>001/B/COMP/COMPUTERRUIMTE</isra-specs>\r\n        <number-of-nl1-lines>30</number-of-nl1-lines>\r\n
+        \       <number-of-nl2-lines>2</number-of-nl2-lines>\r\n        <copperconnection>\r\n
+        \         <current-typeofconnection>Telephony service</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber>*******464</current-phonenumber>\r\n
+        \         <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Telephony
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber>*******003</current-phonenumber>\r\n
+        \         <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Telephony
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber>*******201</current-phonenumber>\r\n
+        \         <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Telephony
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber>*******276</current-phonenumber>\r\n
+        \         <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Telephony
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber>*******719</current-phonenumber>\r\n
+        \         <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Fixed
+        Line service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Fixed Line
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>MDF Broadband
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CBZ69468</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber>*******525</current-phonenumber>\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Telephony
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber>*******589</current-phonenumber>\r\n
+        \         <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>MDF
+        Broadband service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CFP09690</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>MDF
+        Broadband service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CFP59981</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>MDF
+        Broadband service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CFP69099</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>MDF Broadband
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CBF12410</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>MDF Broadband
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>MDF Broadband
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CFS76616</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>Not in use</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Not
+        in use</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>Not
+        in use</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>MDF Broadband
+        service</current-typeofconnection>\r\n          <current-mdf-access-serviceid>CFV57091</current-mdf-access-serviceid>\r\n
+        \         <current-phonenumber />\r\n          <future-typeofconnection>No
+        change</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>Not in use</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Not
+        in use</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>Not
+        in use</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>Not in use</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Not
+        in use</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>Not
+        in use</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>Not in use</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Not
+        in use</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>Not
+        in use</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>Not in use</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Not
+        in use</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>Not
+        in use</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \       <copperconnection>\r\n          <current-typeofconnection>Not in use</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>Not in use</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n        <copperconnection>\r\n          <current-typeofconnection>Not
+        in use</current-typeofconnection>\r\n          <current-mdf-access-serviceid
+        />\r\n          <current-phonenumber />\r\n          <future-typeofconnection>Not
+        in use</future-typeofconnection>\r\n          <future-mdf-access-serviceid
+        />\r\n          <future-phonenumber />\r\n        </copperconnection>\r\n
+        \     </coper-connectionpointinfo>\r\n    </ExistingSituationCopper>\r\n    <ExistingSituationFiber
+        xsi:nil=\"true\" />\r\n    <Remarks>\r\n      <Remark RemarkCode=\"9063\"
+        RemarkTextEng=\"Broadband is already provisioned on this line\" RemarkTextNed=\"Broadband
+        is already provisioned on this line\" />\r\n      <Remark RemarkCode=\"9057\"
+        RemarkTextEng=\"More than one active Service on this address\" RemarkTextNed=\"More
+        than one active Service on this address\" />\r\n      <Remark RemarkCode=\"9054\"
+        RemarkTextEng=\"Free copper pares exist besides one active service\" RemarkTextNed=\"Free
+        copper pares exist besides one active service\" />\r\n    </Remarks>\r\n  </ExistingSituation>\r\n
+        \ <Errors />\r\n  <DistributionPoints />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1311XB6.xml]
+      content-length: ['13630']
+      content-type: [text/xml]
+      date: ['Tue, 03 Jan 2017 15:59:20 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=6&postcode=1311XB
+  response:
+    body: {string: !!python/unicode '{"City":"ALMERE","v8":{"errors":null,"total_aderparen":30,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"10000","DistributionPoint":"Alr-Shk","AccessArea":"AA/9","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"50000","ExpectedDownKbps":"14000","DistributionPoint":"Alr-Shk","AccessArea":"AA/9","OrderableUpKbps":"5000","Tv":"true"}],"existing_situation_copper":{"carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Alr-Shk","isra_specs":"001/B/COMP/COMPUTERRUIMTE","number_of_nl1_lines":"30","number_of_nl2_lines":"2","copperconnection":[{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******464","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******003","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******201","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******276","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******719","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Fixed
+        Line service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Fixed
+        Line service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CBZ69468","current_phonenumber":"*******525","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Telephony
+        service","current_mdf_access_serviceid":null,"current_phonenumber":"*******589","future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFP09690","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFP59981","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFP69099","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CBF12410","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFS76616","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":"CFV57091","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null}]}},"address":{"PostalCode":"1311XB","City":"ALMERE","HouseNumber":"6","Street":"Wormerweg","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":[{"RemarkCode":"9063","RemarkTextEng":"Broadband
+        is already provisioned on this line","RemarkTextNed":"Broadband is already
+        provisioned on this line"},{"RemarkCode":"9057","RemarkTextEng":"More than
+        one active Service on this address","RemarkTextNed":"More than one active
+        Service on this address"},{"RemarkCode":"9054","RemarkTextEng":"Free copper
+        pares exist besides one active service","RemarkTextNed":"Free copper pares
+        exist besides one active service"}],"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1311XB","remarks":[],"length_last_distributor":"389","name":"Alr-Shk","existing_dsl_service_id":"CBZ69468
+        CFP09690 CFP59981 CFP69099 CBF12410 CFS76616 CFV57091","HouseNumber_add":"","Street":"Wormerweg","length_mdf":"1382","v8_debug":null,"products":[{"orderable_down":"20000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"10000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"50000","expected_down":"14000","network":"Sni-F","expected_up":"-","orderable_up":"5000","technology":"Vdsl2_Pots"}],"HouseNumber":"6"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Tue, 03 Jan 2017 15:59:24 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVy0uj7RD1eglCwD8puCwewIZbcH7FtB7cYt3gpCYkd89k%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAu4m7upix0XUJhj2r0rYPfv0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTC0vUv80Hf5c5fD7b9Vuq8NxPYhHSarpS7xHKtO5PkE2&PQCCType=Copper&Postcode=1319CS&HouseNumber=105&Addition=&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['755']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['105']
+      housenumber_add: ['']
+      postcode: [1319CS]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"1319CS\" HouseNumber=\"105\" ApplicationName=\"PQCC\" Source=\"84.53.99.126\"
+        QueryDate=\"2017-01-03T17:01:28.6772861+01:00\" SharingPhonenumberToValidate=\"\"
+        PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"1319CS\"
+        City=\"ALMERE\" HouseNumber=\"105\" Street=\"Boelijn\">\r\n    <PossibleHouseNumberAdditions>\r\n
+        \     <Addition />\r\n    </PossibleHouseNumberAdditions>\r\n  </Address>\r\n
+        \ <Cgb Name=\"Alr-Snp\" LengthLastDistributor=\"831\" NetNumber=\"036\" LengthMdf=\"2960\"
+        />\r\n  <DeliverableProducts>\r\n    <DeliverableProduct Network=\"Sni-F\"
+        Dlm=\"Sc\" Technology=\"Adsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"20000\"
+        ExpectedDownKbps=\"5000\" DistributionPoint=\"Alr-Snp\" AccessArea=\"AA/9\"
+        OrderableUpKbps=\"1024\" Tv=\"false\" />\r\n    <DeliverableProduct Network=\"Sni-F\"
+        NlType=\"6\" Technology=\"EoF\" OrderableDownKbps=\"100000\" DistributionPoint=\"Alrs-AAV/1\"
+        AccessArea=\"AA/9\" OrderableUpKbps=\"100000\" Tv=\"true\" />\r\n    <DeliverableProduct
+        Network=\"Sni-F\" NlType=\"6\" Technology=\"GoF\" OrderableDownKbps=\"1000000\"
+        DistributionPoint=\"Alrs-AAV/1\" AccessArea=\"AA/9\" OrderableUpKbps=\"1000000\"
+        Tv=\"true\" />\r\n  </DeliverableProducts>\r\n  <ExistingSituation>\r\n    <ExistingSituationCopper
+        SharedLine=\"false\" carrierstatus=\"O\" carrierVendorid=\"MDF\">\r\n      <Remarks
+        />\r\n      <coper-connectionpointinfo>\r\n        <cgb-name>Alr-Snp</cgb-name>\r\n
+        \       <isra-specs>001/B/MTK/METERKAST</isra-specs>\r\n        <number-of-nl1-lines>1</number-of-nl1-lines>\r\n
+        \       <number-of-nl2-lines>1</number-of-nl2-lines>\r\n        <copperconnection>\r\n
+        \         <current-typeofconnection>MDF Broadband service</current-typeofconnection>\r\n
+        \         <current-mdf-access-serviceid />\r\n          <current-phonenumber
+        />\r\n          <future-typeofconnection>No change</future-typeofconnection>\r\n
+        \         <future-mdf-access-serviceid />\r\n          <future-phonenumber
+        />\r\n        </copperconnection>\r\n      </coper-connectionpointinfo>\r\n
+        \   </ExistingSituationCopper>\r\n    <ExistingSituationFiber xsi:nil=\"true\"
+        />\r\n    <Remarks />\r\n  </ExistingSituation>\r\n  <Errors />\r\n  <DistributionPoints
+        />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1319CS105.xml]
+      content-length: ['2231']
+      content-type: [text/xml]
+      date: ['Tue, 03 Jan 2017 16:01:30 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=105&postcode=1319CS
+  response:
+    body: {string: !!python/unicode '{"City":"ALMERE","v8":{"errors":null,"total_aderparen":1,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"5000","DistributionPoint":"Alr-Snp","AccessArea":"AA/9","OrderableUpKbps":"1024","Tv":"false"},{"Network":"Sni-F","NlType":"6","Technology":"EoF","OrderableDownKbps":"100000","DistributionPoint":"Alrs-AAV/1","AccessArea":"AA/9","OrderableUpKbps":"100000","Tv":"true"},{"Network":"Sni-F","NlType":"6","Technology":"GoF","OrderableDownKbps":"1000000","DistributionPoint":"Alrs-AAV/1","AccessArea":"AA/9","OrderableUpKbps":"1000000","Tv":"true"}],"existing_situation_copper":{"SharedLine":"false","carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Alr-Snp","isra_specs":"001/B/MTK/METERKAST","number_of_nl1_lines":"1","number_of_nl2_lines":"1","copperconnection":{"current_typeofconnection":"MDF
+        Broadband service","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null}}},"address":{"PostalCode":"1319CS","City":"ALMERE","HouseNumber":"105","Street":"Boelijn","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":null,"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"1319CS","remarks":[],"length_last_distributor":"831","name":"Alr-Snp","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Boelijn","length_mdf":"2960","v8_debug":null,"products":[{"orderable_down":"8000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"5000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"1000000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1000000","technology":"GoF"}],"HouseNumber":"105"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Tue, 03 Jan 2017 16:01:33 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+version: 1

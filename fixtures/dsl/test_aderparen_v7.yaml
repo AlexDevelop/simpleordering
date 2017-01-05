@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUbVmVyc2lvbiA3LjEsIHdvIDUgb2t0IDEzOjU4ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUJU2hvd0RlYnVnBRhDaGVja2ZvclVwZ3JhZGVEb3duR3JhZGUrjFZNRDOlBMVXek1Ym08uPLe6t3u1B1lcofx5e%2FrBwQ%3D%3D&__VIEWSTATEGENERATOR=D8B62B3A&__EVENTVALIDATION=%2FwEdAAhRahCKiolW6N3rYUHJPWPr0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGc6GJdK8E3%2FUNJjli%2FOuvtX5OTggoMzf3VFIsSmjz3zjXuK1xQRArSXfG0V278iMTHVVUZkDMNQSAQmj%2FoStDP3bLs8IRT%2BeCc7klCvl359R&Postcode=1311XB&HouseNumber=6&Addition=&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['655']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['6']
+      housenumber_add: ['']
+      postcode: [1311XB]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"1311XB\" HouseNumber=\"6\" ApplicationName=\"PQCC\" Source=\"84.53.99.126\"
+        QueryDate=\"2017-01-03T16:26:11.9251683+01:00\" SharingPhonenumberToValidate=\"\"
+        />\r\n  <Address PostalCode=\"1311XB\" City=\"ALMERE\" HouseNumber=\"6\" Street=\"Wormerweg\">\r\n
+        \   <PossibleHouseNumberAdditions>\r\n      <Addition />\r\n    </PossibleHouseNumberAdditions>\r\n
+        \ </Address>\r\n  <Cgb Name=\"Alr-Shk\" LengthLastDistributor=\"389\" NetNumber=\"036\"
+        LengthMdf=\"1382\" />\r\n  <DeliverableProducts>\r\n    <DeliverableProduct
+        Network=\"Sni-F\" Technology=\"Adsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"20000\"
+        DistributionPoint=\"Alr-Shk\" Tv=\"false\" OrderableUpKbps=\"1024\" />\r\n
+        \   <DeliverableProduct Network=\"Sni-F\" Technology=\"Adsl2_Pots\" Dlm=\"Sc\"
+        CanShare=\"Pots\" ExpectedDownKbps=\"10000\" OrderableDownKbps=\"20000\" DistributionPoint=\"Alr-Shk\"
+        Tv=\"true\" OrderableUpKbps=\"1024\" />\r\n    <DeliverableProduct Network=\"Sni-F\"
+        Technology=\"Vdsl2_Pots\" Dlm=\"Sc\" CanShare=\"Pots\" ExpectedDownKbps=\"14000\"
+        OrderableDownKbps=\"50000\" DistributionPoint=\"Alr-Shk\" Tv=\"true\" OrderableUpKbps=\"5000\"
+        />\r\n  </DeliverableProducts>\r\n  <ExistingSituation FtuType=\"Unknown\">\r\n
+        \   <Remarks />\r\n  </ExistingSituation>\r\n  <Errors />\r\n  <DistributionPoints
+        />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1311XB6.xml]
+      content-length: ['1366']
+      content-type: [text/xml]
+      date: ['Tue, 03 Jan 2017 15:26:11 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUbVmVyc2lvbiA3LjEsIHdvIDUgb2t0IDEzOjU4ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUJU2hvd0RlYnVnBRhDaGVja2ZvclVwZ3JhZGVEb3duR3JhZGUrjFZNRDOlBMVXek1Ym08uPLe6t3u1B1lcofx5e%2FrBwQ%3D%3D&__VIEWSTATEGENERATOR=D8B62B3A&__EVENTVALIDATION=%2FwEdAAhRahCKiolW6N3rYUHJPWPr0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGc6GJdK8E3%2FUNJjli%2FOuvtX5OTggoMzf3VFIsSmjz3zjXuK1xQRArSXfG0V278iMTHVVUZkDMNQSAQmj%2FoStDP3bLs8IRT%2BeCc7klCvl359R&Postcode=1319CS&HouseNumber=105&Addition=&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['657']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['105']
+      housenumber_add: ['']
+      postcode: [1319CS]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"1319CS\" HouseNumber=\"105\" ApplicationName=\"PQCC\" Source=\"84.53.99.126\"
+        QueryDate=\"2017-01-03T16:26:12.2683689+01:00\" SharingPhonenumberToValidate=\"\"
+        />\r\n  <Address PostalCode=\"1319CS\" City=\"ALMERE\" HouseNumber=\"105\"
+        Street=\"Boelijn\">\r\n    <PossibleHouseNumberAdditions>\r\n      <Addition
+        />\r\n    </PossibleHouseNumberAdditions>\r\n  </Address>\r\n  <Cgb Name=\"Alr-Snp\"
+        LengthLastDistributor=\"831\" NetNumber=\"036\" LengthMdf=\"2960\" />\r\n
+        \ <DeliverableProducts>\r\n    <DeliverableProduct Network=\"Sni-F\" Technology=\"Adsl2_Pots\"
+        CanShare=\"Pots\" OrderableDownKbps=\"8000\" DistributionPoint=\"Alr-Snp\"
+        Tv=\"false\" OrderableUpKbps=\"1024\" />\r\n    <DeliverableProduct Network=\"Sni-F\"
+        Technology=\"Adsl2_Pots\" Dlm=\"Sc\" CanShare=\"Pots\" ExpectedDownKbps=\"5000\"
+        OrderableDownKbps=\"20000\" DistributionPoint=\"Alr-Snp\" Tv=\"false\" OrderableUpKbps=\"1024\"
+        />\r\n    <DeliverableProduct Network=\"Sni-F\" Technology=\"GoF\" NlType=\"6\"
+        OrderableDownKbps=\"1000000\" DistributionPoint=\"Alrs-AAV/1\" Tv=\"true\"
+        OrderableUpKbps=\"1000000\" />\r\n  </DeliverableProducts>\r\n  <ExistingSituation
+        FtuType=\"Unknown\">\r\n    <Remarks />\r\n  </ExistingSituation>\r\n  <Errors
+        />\r\n  <DistributionPoints />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1319CS105.xml]
+      content-length: ['1329']
+      content-type: [text/xml]
+      date: ['Tue, 03 Jan 2017 15:26:11 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1
