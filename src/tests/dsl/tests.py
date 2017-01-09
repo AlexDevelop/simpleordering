@@ -55,6 +55,11 @@ class DslTest(TestCase):
                 housenumber='6',
                 housenumber_add=None,
             ),
+            Ddict(
+                postcode='5061KK',
+                housenumber='7',
+                housenumber_add=None,
+            ),
         ]
 
         items_with_errors = [
@@ -77,6 +82,24 @@ class DslTest(TestCase):
                 housenumber='105',
                 housenumber_add='',
                 total_aderparen=1
+            ),
+            Ddict(
+                postcode='5061KK',
+                housenumber='7',
+                housenumber_add=None,
+                total_aderparen=8
+            ),
+            Ddict(
+                postcode='2542AC',
+                housenumber='71',
+                housenumber_add=None,
+                total_aderparen=1
+            ),
+            Ddict(
+                postcode='5025RD',
+                housenumber='3',
+                housenumber_add=None,
+                total_aderparen=6
             ),
         ]
 
@@ -186,8 +209,7 @@ class DslTest(TestCase):
 
     def test_aderparen_v8(self):
         with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
-                                           'fixtures/dsl/test_aderparen_{}.yaml'.format(self.get_version_number())),
-                              record_mode='override'):
+                                           'fixtures/dsl/test_aderparen_{}.yaml'.format(self.get_version_number())),):
             for item in self.items_copperconnection:
                 response = DslOrder(event_validation=self.event_validation_v8,
                                     view_state=self.view_state_v8).get_dslorder_v8(item.postcode, item.housenumber,

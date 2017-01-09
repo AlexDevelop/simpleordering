@@ -1,11 +1,11 @@
 interactions:
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVy0uj7RD1eglCwD8puCwewIZbcH7FtB7cYt3gpCYkd89k%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAu4m7upix0XUJhj2r0rYPfv0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTC0vUv80Hf5c5fD7b9Vuq8NxPYhHSarpS7xHKtO5PkE2&PQCCType=Copper&Postcode=1311XB&HouseNumber=6&Addition=&PhoneNumber=&CheckButton=Check
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVyx%2FSCWkWumULXdMNfgH2cw6OsAKK7f06U%2B44tt%2Fs4x4A%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAs6WrwawrThm%2FaFDOevMDHJ0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTHUEHtK2RnmbXINT31CEf3BQ%2BWXx00gkNv914i%2FCKC%2Bn&PQCCType=Copper&Postcode=1311XB&HouseNumber=6&Addition=&PhoneNumber=&CheckButton=Check
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['753']
+      Content-Length: ['767']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
@@ -20,8 +20,8 @@ interactions:
   response:
     body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
-        PostalCode=\"1311XB\" HouseNumber=\"6\" ApplicationName=\"PQCC\" Source=\"84.53.99.126\"
-        QueryDate=\"2017-01-03T16:59:17.2002552+01:00\" SharingPhonenumberToValidate=\"\"
+        PostalCode=\"1311XB\" HouseNumber=\"6\" ApplicationName=\"PQCC\" Source=\"80.101.234.92\"
+        QueryDate=\"2017-01-09T18:05:03.8469242+01:00\" SharingPhonenumberToValidate=\"\"
         PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"1311XB\"
         City=\"ALMERE\" HouseNumber=\"6\" Street=\"Wormerweg\">\r\n    <PossibleHouseNumberAdditions>\r\n
         \     <Addition />\r\n    </PossibleHouseNumberAdditions>\r\n  </Address>\r\n
@@ -190,9 +190,9 @@ interactions:
     headers:
       cache-control: [private]
       content-disposition: [attachment; filename=PQCC_1311XB6.xml]
-      content-length: ['13630']
+      content-length: ['13631']
       content-type: [text/xml]
-      date: ['Tue, 03 Jan 2017 15:59:20 GMT']
+      date: ['Mon, 09 Jan 2017 17:05:06 GMT']
       server: [Microsoft-IIS/7.5]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
@@ -278,18 +278,18 @@ interactions:
     headers:
       allow: ['GET, HEAD, OPTIONS']
       content-type: [application/json]
-      date: ['Tue, 03 Jan 2017 15:59:24 GMT']
+      date: ['Mon, 09 Jan 2017 17:05:11 GMT']
       server: [WSGIServer/0.1 Python/2.7.10]
       vary: ['Accept, Cookie']
       x-frame-options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVy0uj7RD1eglCwD8puCwewIZbcH7FtB7cYt3gpCYkd89k%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAu4m7upix0XUJhj2r0rYPfv0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTC0vUv80Hf5c5fD7b9Vuq8NxPYhHSarpS7xHKtO5PkE2&PQCCType=Copper&Postcode=1319CS&HouseNumber=105&Addition=&PhoneNumber=&CheckButton=Check
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVyx%2FSCWkWumULXdMNfgH2cw6OsAKK7f06U%2B44tt%2Fs4x4A%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAs6WrwawrThm%2FaFDOevMDHJ0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTHUEHtK2RnmbXINT31CEf3BQ%2BWXx00gkNv914i%2FCKC%2Bn&PQCCType=Copper&Postcode=1319CS&HouseNumber=105&Addition=&PhoneNumber=&CheckButton=Check
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['755']
+      Content-Length: ['769']
       Content-Type: [application/x-www-form-urlencoded]
       Host: [pqcc.soap.dslorder.nl]
       Origin: ['https://pqcc.soap.dslorder.nl']
@@ -304,8 +304,8 @@ interactions:
   response:
     body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
-        PostalCode=\"1319CS\" HouseNumber=\"105\" ApplicationName=\"PQCC\" Source=\"84.53.99.126\"
-        QueryDate=\"2017-01-03T17:01:28.6772861+01:00\" SharingPhonenumberToValidate=\"\"
+        PostalCode=\"1319CS\" HouseNumber=\"105\" ApplicationName=\"PQCC\" Source=\"80.101.234.92\"
+        QueryDate=\"2017-01-09T18:05:11.3505374+01:00\" SharingPhonenumberToValidate=\"\"
         PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"1319CS\"
         City=\"ALMERE\" HouseNumber=\"105\" Street=\"Boelijn\">\r\n    <PossibleHouseNumberAdditions>\r\n
         \     <Addition />\r\n    </PossibleHouseNumberAdditions>\r\n  </Address>\r\n
@@ -334,9 +334,9 @@ interactions:
     headers:
       cache-control: [private]
       content-disposition: [attachment; filename=PQCC_1319CS105.xml]
-      content-length: ['2231']
+      content-length: ['2232']
       content-type: [text/xml]
-      date: ['Tue, 03 Jan 2017 16:01:30 GMT']
+      date: ['Mon, 09 Jan 2017 17:05:14 GMT']
       server: [Microsoft-IIS/7.5]
       x-aspnet-version: [4.0.30319]
       x-powered-by: [ASP.NET]
@@ -357,7 +357,237 @@ interactions:
     headers:
       allow: ['GET, HEAD, OPTIONS']
       content-type: [application/json]
-      date: ['Tue, 03 Jan 2017 16:01:33 GMT']
+      date: ['Mon, 09 Jan 2017 17:05:17 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVyx%2FSCWkWumULXdMNfgH2cw6OsAKK7f06U%2B44tt%2Fs4x4A%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAs6WrwawrThm%2FaFDOevMDHJ0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTHUEHtK2RnmbXINT31CEf3BQ%2BWXx00gkNv914i%2FCKC%2Bn&PQCCType=Copper&Postcode=5061KK&HouseNumber=7&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['771']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['7']
+      postcode: [5061KK]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"5061KK\" HouseNumber=\"7\" HouseNumberAddition=\"None\" ApplicationName=\"PQCC\"
+        Source=\"80.101.234.92\" QueryDate=\"2017-01-09T18:05:16.9821473+01:00\" SharingPhonenumberToValidate=\"\"
+        PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"5061KK\"
+        City=\"OISTERWIJK\" HouseNumber=\"7\" HouseNumberAddition=\"None\" Street=\"Nijverheidsweg\">\r\n
+        \   <PossibleHouseNumberAdditions>\r\n      <Addition />\r\n      <Addition>1</Addition>\r\n
+        \     <Addition>2</Addition>\r\n      <Addition>3</Addition>\r\n      <Addition>4</Addition>\r\n
+        \     <Addition>5</Addition>\r\n      <Addition>A</Addition>\r\n    </PossibleHouseNumberAdditions>\r\n
+        \ </Address>\r\n  <Cgb Name=\"Otw\" LengthLastDistributor=\"83\" NetNumber=\"013\"
+        LengthMdf=\"2670\" />\r\n  <DeliverableProducts>\r\n    <DeliverableProduct
+        Network=\"Sni-F\" Dlm=\"Sc\" Technology=\"Adsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"20000\"
+        ExpectedDownKbps=\"8000\" DistributionPoint=\"Otw\" AccessArea=\"AA/156\"
+        OrderableUpKbps=\"1024\" Tv=\"true\" />\r\n    <DeliverableProduct Network=\"Sni-F\"
+        Dlm=\"Sc\" Technology=\"Vdsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"50000\"
+        ExpectedDownKbps=\"4000\" DistributionPoint=\"Otw\" AccessArea=\"AA/156\"
+        OrderableUpKbps=\"5000\" Tv=\"false\" />\r\n  </DeliverableProducts>\r\n  <ExistingSituation>\r\n
+        \   <ExistingSituationCopper carrierstatus=\"O\" carrierVendorid=\"MDF\">\r\n
+        \     <Remarks />\r\n    </ExistingSituationCopper>\r\n    <ExistingSituationFiber
+        xsi:nil=\"true\" />\r\n    <Remarks>\r\n      <Remark RemarkCode=\"9076\"
+        RemarkTextEng=\"No housenumber extension match (both KANVAS or CENDRIS)\"
+        RemarkTextNed=\"No housenumber extension match (both KANVAS or CENDRIS)\"
+        />\r\n    </Remarks>\r\n  </ExistingSituation>\r\n  <Errors />\r\n  <DistributionPoints
+        />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_5061KK7XNone.xml]
+      content-length: ['1851']
+      content-type: [text/xml]
+      date: ['Mon, 09 Jan 2017 17:05:18 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=7&postcode=5061KK
+  response:
+    body: {string: !!python/unicode '{"City":"OISTERWIJK","v8":{"errors":null,"total_aderparen":8,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"8000","DistributionPoint":"Otw","AccessArea":"AA/156","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"50000","ExpectedDownKbps":"4000","DistributionPoint":"Otw","AccessArea":"AA/156","OrderableUpKbps":"5000","Tv":"false"}],"existing_situation_copper":{"carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":[{"cgb_name":"Otw","isra_specs":"001/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"002/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"003/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"004/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"005/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"006/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"007/B/MTK/METERKAST","number_of_nl1_lines":"0","number_of_nl2_lines":null},{"cgb_name":"Otw","isra_specs":"008/B/KANT/KANTOOR","number_of_nl1_lines":"0","number_of_nl2_lines":null}]},"address":{"PostalCode":"5061KK","City":"OISTERWIJK","HouseNumber":"7","Street":"Nijverheidsweg","PossibleHouseNumberAdditions":{}},"remarks":{"RemarkCode":"9055","RemarkTextEng":"More
+        than one connection point ( ISRA ) on this adress","RemarkTextNed":"More than
+        one connection point ( ISRA ) on this adress"},"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"5061KK","remarks":[],"length_last_distributor":"83","name":"Otw","existing_dsl_service_id":"","HouseNumber_add":"","Street":"Nijverheidsweg","length_mdf":"2670","v8_debug":null,"products":[{"orderable_down":"16001","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1025","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"8000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"50000","expected_down":"4000","network":"Sni-F","expected_up":"-","orderable_up":"5000","technology":"Vdsl2_Pots"}],"HouseNumber":"7"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Mon, 09 Jan 2017 17:05:20 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVyx%2FSCWkWumULXdMNfgH2cw6OsAKK7f06U%2B44tt%2Fs4x4A%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAs6WrwawrThm%2FaFDOevMDHJ0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTHUEHtK2RnmbXINT31CEf3BQ%2BWXx00gkNv914i%2FCKC%2Bn&PQCCType=Copper&Postcode=2542AC&HouseNumber=71&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['772']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['71']
+      postcode: [2542AC]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"2542AC\" HouseNumber=\"71\" HouseNumberAddition=\"None\" ApplicationName=\"PQCC\"
+        Source=\"80.101.234.92\" QueryDate=\"2017-01-09T18:05:19.7277521+01:00\" SharingPhonenumberToValidate=\"\"
+        PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"2542AC\"
+        City=\"'S-GRAVENHAGE\" HouseNumber=\"71\" HouseNumberAddition=\"None\" Street=\"Steenhouwersgaarde\">\r\n
+        \   <PossibleHouseNumberAdditions>\r\n      <Addition />\r\n    </PossibleHouseNumberAdditions>\r\n
+        \ </Address>\r\n  <Cgb Name=\"Gv-Ecp\" LengthLastDistributor=\"500\" NetNumber=\"070\"
+        LengthMdf=\"2229\" />\r\n  <DeliverableProducts>\r\n    <DeliverableProduct
+        Network=\"Sni-F\" Dlm=\"Sc\" Technology=\"Adsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"20000\"
+        ExpectedDownKbps=\"9000\" DistributionPoint=\"Gv-Ecp\" AccessArea=\"AA/79\"
+        OrderableUpKbps=\"1024\" Tv=\"true\" />\r\n  </DeliverableProducts>\r\n  <ExistingSituation>\r\n
+        \   <ExistingSituationCopper carrierstatus=\"O\" carrierVendorid=\"MDF\">\r\n
+        \     <Remarks />\r\n    </ExistingSituationCopper>\r\n    <ExistingSituationFiber
+        xsi:nil=\"true\" />\r\n    <Remarks>\r\n      <Remark RemarkCode=\"9076\"
+        RemarkTextEng=\"No housenumber extension match (both KANVAS or CENDRIS)\"
+        RemarkTextNed=\"No housenumber extension match (both KANVAS or CENDRIS)\"
+        />\r\n    </Remarks>\r\n  </ExistingSituation>\r\n  <Errors />\r\n  <DistributionPoints
+        />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_2542AC71XNone.xml]
+      content-length: ['1465']
+      content-type: [text/xml]
+      date: ['Mon, 09 Jan 2017 17:05:20 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=71&postcode=2542AC
+  response:
+    body: {string: !!python/unicode '{"City":"''S-GRAVENHAGE","v8":{"errors":null,"total_aderparen":1,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"11000","DistributionPoint":"Gv-AKP","AccessArea":"AA/79","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vvdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"100000","ExpectedDownKbps":"60000","DistributionPoint":"Gv-AKP","AccessArea":"AA/79","OrderableUpKbps":"10000","Tv":"true"}],"existing_situation_copper":{"SharedLine":"false","ExistingDslServiceId":"CGH59664","carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Gv-Ecp","isra_specs":"001///","number_of_nl1_lines":"1","number_of_nl2_lines":"5","copperconnection":{"current_typeofconnection":"SDF
+        Broadband service","current_mdf_access_serviceid":"CGH59664","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null}}},"address":{"PostalCode":"2542AC","City":"''S-GRAVENHAGE","HouseNumber":"71","Street":"Steenhouwersgaarde","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":{"RemarkCode":"9063","RemarkTextEng":"Broadband
+        is already provisioned on this line","RemarkTextNed":"Broadband is already
+        provisioned on this line"},"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"2542AC","remarks":[],"length_last_distributor":"500","name":"Gv-Ecp","existing_dsl_service_id":"CGH59664","HouseNumber_add":"","Street":"Steenhouwersgaarde","length_mdf":"2229","v8_debug":null,"products":[{"orderable_down":"20000","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"11000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"100000","expected_down":"60000","network":"Sni-F","expected_up":"-","orderable_up":"10000","technology":"Vvdsl2_Pots"}],"HouseNumber":"71"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Mon, 09 Jan 2017 17:05:23 GMT']
+      server: [WSGIServer/0.1 Python/2.7.10]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBRxWZXJzaW9uIDguMCwgZG8gMjkgc2VwIDE2OjA2ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBkNvcHBlcgUFRmliZXIFBUZpYmVyx%2FSCWkWumULXdMNfgH2cw6OsAKK7f06U%2B44tt%2Fs4x4A%3D&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEdAAs6WrwawrThm%2FaFDOevMDHJ0b0eyTTkjCzPsTg5JLfwZsUDNj5QOq4YEpuBGehHFpvLpniq3TgasFKWFIJhOrFgpXyG7ZhawaLDBAmcXpjCGdbaR3QYIdQewjwBNwryBZ7OhiXSvBN%2F1DSY5Yvzrr7V3Lv5JTeg%2F0NE43xycdCb3A1bcUvBC%2FDjM7XoxZNGXRRmRe0ZQOxzCQEP8H6dXYeVXuK1xQRArSXfG0V278iMTHUEHtK2RnmbXINT31CEf3BQ%2BWXx00gkNv914i%2FCKC%2Bn&PQCCType=Copper&Postcode=5025RD&HouseNumber=3&Addition=None&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['771']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+      housenumber: ['3']
+      postcode: [5025RD]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body: {string: !!python/unicode "<?xml version=\"1.0\"?>\r\n<PqccResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <OriginalRequest
+        PostalCode=\"5025RD\" HouseNumber=\"3\" HouseNumberAddition=\"None\" ApplicationName=\"PQCC\"
+        Source=\"80.101.234.92\" QueryDate=\"2017-01-09T18:05:22.4577569+01:00\" SharingPhonenumberToValidate=\"\"
+        PQCCCheckType=\"Copper\" ConnectionPoint=\"\" />\r\n  <Address PostalCode=\"5025RD\"
+        City=\"TILBURG\" HouseNumber=\"3\" HouseNumberAddition=\"None\" Street=\"Jan
+        Tooropstraat\">\r\n    <PossibleHouseNumberAdditions>\r\n      <Addition />\r\n
+        \   </PossibleHouseNumberAdditions>\r\n  </Address>\r\n  <Cgb Name=\"Tb-Reit\"
+        LengthLastDistributor=\"328\" NetNumber=\"013\" LengthMdf=\"2648\" />\r\n
+        \ <DeliverableProducts>\r\n    <DeliverableProduct Network=\"Sni-F\" Dlm=\"Sc\"
+        Technology=\"Adsl2_Pots\" CanShare=\"Pots\" OrderableDownKbps=\"20000\" ExpectedDownKbps=\"9000\"
+        DistributionPoint=\"Tb-Reit\" AccessArea=\"AA/157\" OrderableUpKbps=\"1024\"
+        Tv=\"true\" />\r\n  </DeliverableProducts>\r\n  <ExistingSituation>\r\n    <ExistingSituationCopper
+        carrierstatus=\"O\" carrierVendorid=\"MDF\">\r\n      <Remarks />\r\n    </ExistingSituationCopper>\r\n
+        \   <ExistingSituationFiber xsi:nil=\"true\" />\r\n    <Remarks>\r\n      <Remark
+        RemarkCode=\"9076\" RemarkTextEng=\"No housenumber extension match (both KANVAS
+        or CENDRIS)\" RemarkTextNed=\"No housenumber extension match (both KANVAS
+        or CENDRIS)\" />\r\n    </Remarks>\r\n  </ExistingSituation>\r\n  <Errors
+        />\r\n  <DistributionPoints />\r\n</PqccResponse>"}
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_5025RD3XNone.xml]
+      content-length: ['1458']
+      content-type: [text/xml]
+      date: ['Mon, 09 Jan 2017 17:05:23 GMT']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/16.1.0]
+    method: GET
+    uri: http://0.0.0.0:5555/dsl-info?housenumber_add=&housenumber=3&postcode=5025RD
+  response:
+    body: {string: !!python/unicode '{"City":"TILBURG","v8":{"errors":null,"total_aderparen":6,"deliverable_product":[{"Network":"Sni-F","Dlm":"Sc","Technology":"Adsl2_Pots","CanShare":"Pots","OrderableDownKbps":"20000","ExpectedDownKbps":"13000","DistributionPoint":"Tb-ABX","AccessArea":"AA/157","OrderableUpKbps":"1024","Tv":"true"},{"Network":"Sni-F","Dlm":"Sc","Technology":"Vvdsl2_Pots","CanShare":"Pots","OrderableDownKbps":"100000","ExpectedDownKbps":"100000","DistributionPoint":"Tb-ABX","AccessArea":"AA/157","OrderableUpKbps":"10000","Tv":"true"}],"existing_situation_copper":{"carrierstatus":"O","carrierVendorid":"MDF","Remarks":null,"coper_connectionpointinfo":{"cgb_name":"Tb-Reit","isra_specs":"001/B/KMR/KAMER(SLAAP
+        EN","number_of_nl1_lines":"6","number_of_nl2_lines":"6","copperconnection":[{"current_typeofconnection":"SDF
+        Broadband service","current_mdf_access_serviceid":"CFC46950","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"SDF
+        Broadband service","current_mdf_access_serviceid":"CGK52306","current_phonenumber":null,"future_typeofconnection":"No
+        change","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null},{"current_typeofconnection":"Not
+        in use","current_mdf_access_serviceid":null,"current_phonenumber":null,"future_typeofconnection":"Not
+        in use","future_mdf_access_serviceid":null,"future_phonenumber":null}]}},"address":{"PostalCode":"5025RD","City":"TILBURG","HouseNumber":"3","Street":"Jan
+        Tooropstraat","PossibleHouseNumberAdditions":{"Addition":null}},"remarks":[{"RemarkCode":"9063","RemarkTextEng":"Broadband
+        is already provisioned on this line","RemarkTextNed":"Broadband is already
+        provisioned on this line"},{"RemarkCode":"9057","RemarkTextEng":"More than
+        one active Service on this address","RemarkTextNed":"More than one active
+        Service on this address"},{"RemarkCode":"9054","RemarkTextEng":"Free copper
+        pares exist besides one active service","RemarkTextNed":"Free copper pares
+        exist besides one active service"}],"existing_situation_fiber":{"xsi:nil":"true"}},"PostalCode":"5025RD","remarks":[],"length_last_distributor":"328","name":"Tb-Reit","existing_dsl_service_id":"CFC46950
+        CGK52306","HouseNumber_add":"","Street":"Jan Tooropstraat","length_mdf":"2648","v8_debug":null,"products":[{"orderable_down":"16001","expected_down":"-","network":"Sni-F","expected_up":"-","orderable_up":"1025","technology":"Adsl2_Pots"},{"orderable_down":"20000","expected_down":"13000","network":"Sni-F","expected_up":"-","orderable_up":"1024","technology":"Adsl2_Pots"},{"orderable_down":"100000","expected_down":"100000","network":"Sni-F","expected_up":"-","orderable_up":"10000","technology":"Vvdsl2_Pots"}],"HouseNumber":"3"}'}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Mon, 09 Jan 2017 17:05:26 GMT']
       server: [WSGIServer/0.1 Python/2.7.10]
       vary: ['Accept, Cookie']
       x-frame-options: [SAMEORIGIN]
