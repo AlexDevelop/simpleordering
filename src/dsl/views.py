@@ -153,14 +153,12 @@ def parse_v8(doc):
                     total_aderparen = sum([len(x['copperconnection']) for x in _coper_connectionpointinfo if 'copperconnection' in x])
                     if total_aderparen == 0:
                         total_aderparen = len(_coper_connectionpointinfo)
-                elif type(_coper_connectionpointinfo['copperconnection']) != list:
-                    coper_connectionpointinfo = dict()
-                    coper_connectionpointinfo['copperconnection'] = [response_v8['existing_situation_copper']['coper_connectionpointinfo']['copperconnection']]
-
-                    total_aderparen = len(coper_connectionpointinfo['copperconnection'])
                 elif type(_coper_connectionpointinfo) == OrderedDict:
                     if 'copperconnection' in _coper_connectionpointinfo:
-                        total_aderparen = len([x for x in _coper_connectionpointinfo['copperconnection']])
+                        if type(_coper_connectionpointinfo['copperconnection']) == OrderedDict:
+                            total_aderparen = 1
+                        if type(_coper_connectionpointinfo['copperconnection']) == list:
+                            total_aderparen = len([x for x in _coper_connectionpointinfo['copperconnection']])
 
                 response_v8['total_aderparen'] = total_aderparen
 

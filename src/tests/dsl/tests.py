@@ -11,6 +11,8 @@ import os
 import re
 import urllib
 
+my_vcr = vcr.VCR()  # ignore_localhost=True)
+
 
 class DslTest(TestCase):
     def setUp(self):
@@ -120,7 +122,7 @@ class DslTest(TestCase):
                                           safe='')
 
     def test_valid_dslorder_v7(self):
-        with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v7.yaml'),
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v7.yaml'),
                               record_mode='new_episodes'):
             for item in self.items:
                 response = DslOrder(event_validation=self.event_validation_v7,
@@ -135,7 +137,7 @@ class DslTest(TestCase):
                 assert 'PossibleHouseNumberAdditions' in data_cleaned['PqccResponse']['Address']
 
     def test_valid_dslorder_v7_with_errors(self):
-        with vcr.use_cassette(
+        with my_vcr.use_cassette(
                 os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v7_with_errors.yaml'),
                 record_mode='new_episodes'):
             for item in self.items_with_errors:
@@ -154,7 +156,7 @@ class DslTest(TestCase):
                 assert 'PossibleHouseNumberAdditions' in data_cleaned['PqccResponse']['Address']
 
     def test_valid_dslorder_v8(self):
-        with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v8.yaml'),
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v8.yaml'),
                               record_mode='new_episodes'):
             for item in self.items:
                 response = DslOrder(event_validation=self.event_validation_v8,
@@ -179,7 +181,7 @@ class DslTest(TestCase):
                 assert response['v8'] != None
 
     def test_valid_dslorder_v8_with_errors(self):
-        with vcr.use_cassette(
+        with my_vcr.use_cassette(
                 os.path.join(settings.REPOSITORY_ROOT, 'fixtures/dsl/test_valid_dslorder_v8_with_errors.yaml'),
                 record_mode='new_episodes'):
             for item in self.items_with_errors:
@@ -198,7 +200,7 @@ class DslTest(TestCase):
                 assert 'PossibleHouseNumberAdditions' in data_cleaned['PqccResponse']['Address']
 
     def test_aderparen_v7(self):
-        with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
                                            'fixtures/dsl/test_aderparen_{}.yaml'.format(self.get_version_number()))):
             for item in self.items_copperconnection:
                 response = DslOrder(event_validation=self.event_validation_v7,
@@ -208,7 +210,7 @@ class DslTest(TestCase):
                 assert response.status_code is 200
 
     def test_aderparen_v8(self):
-        with vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
                                            'fixtures/dsl/test_aderparen_{}.yaml'.format(self.get_version_number())),):
             for item in self.items_copperconnection:
                 response = DslOrder(event_validation=self.event_validation_v8,

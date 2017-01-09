@@ -9,6 +9,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 from django.utils.translation import ugettext_lazy as _
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
