@@ -65,3 +65,6 @@ params.py
 
 # sqllite db
 *.sqlite3
+
+# Static
+static/

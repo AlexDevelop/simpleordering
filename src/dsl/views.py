@@ -124,6 +124,12 @@ def parse_v8(doc):
         deliverable_products = pqcc_response['DeliverableProducts']
         address = pqcc_response['Address']
 
+        response_v8['possible_house_number_additions'] = []
+        if 'PossibleHouseNumberAdditions' in address:
+            if 'Addition' in address['PossibleHouseNumberAdditions'] and address['PossibleHouseNumberAdditions']['Addition'] is not None:
+                possible_house_number_additions = [x for x in address['PossibleHouseNumberAdditions']['Addition'] if x is not None]
+                response_v8['possible_house_number_additions'] = possible_house_number_additions
+
         existing_situation = pqcc_response['ExistingSituation']
         existing_situation_copper = existing_situation[
             'ExistingSituationCopper'] if 'ExistingSituationCopper' in existing_situation else None

@@ -32,7 +32,16 @@
                     ISRA Specs: {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.isra_specs }} </br>
                     Length Last Distributor: {{ dsl_data.length_last_distributor }} meter</br>
                     Length MDF: {{ dsl_data.length_mdf }} meter </br>
-                    Existing DSL Service ID: {% if dsl_data.existing_dsl_service_id != "None" %}<input type="text" class="copy_this" value="{{ dsl_data.existing_dsl_service_id }}"/>  <span class="copy_status"></span>{% endif %} </br></br>
+                    Existing DSL Service ID: {% if dsl_data.existing_dsl_service_id != "None" %}<input type="text" class="copy_this" value="{{ dsl_data.existing_dsl_service_id }}"/>  <span class="copy_status"></span>{% endif %} </br>
+                    {% if dsl_data.v8.possible_house_number_additions%}
+                        {% for possible_house_number_additions in dsl_data.v8.possible_house_number_additions %}
+                            {% if forloop.last %}
+                                {{ possible_house_number_additions }} <br/><br/>
+                            {% else %}
+                                {{ possible_house_number_additions }},
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                     {% for remark in dsl_data.remarks %}
                         Remark: {{ remark }} </br>
                     {% endfor %}
@@ -81,7 +90,7 @@
                             <br/>{{ isra_spec.isra_specs }}
                         {% endfor %}
                         </br>
-                    Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/>LET OP: Indien aderparen zijn uitgelost is de AP nummering niet meer ok.</br></br>
+                    Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/>LET OP: Indien aderparen zijn uitgelast is de AP nummering niet meer ok.</br></br>
                         
                         {% if dsl_data.v8.total_aderparen == 1 %}
                             AP1{{ forloop.counter }}

@@ -105,9 +105,19 @@ class DslTest(TestCase):
             ),
         ]
 
+        items_possible_house_number_addtions = [
+            Ddict(
+                postcode='1332AW',
+                housenumber='46',
+                housenumber_add='',
+                possible_house_number_additions=23
+            ),
+        ]
+
         self.items = items
         self.items_with_errors = items_with_errors
         self.items_copperconnection = items_copperconnection
+        self.items_possible_house_number_addtions = items_possible_house_number_addtions
 
         response_v7 = requests.get('https://pqcc.soap.dslorder.nl/pqcc/v7.0/pqcc.aspx')
         self.event_validation_v7 = urllib.quote(
@@ -224,6 +234,22 @@ class DslTest(TestCase):
                 response = requests.get('http://0.0.0.0:5555/dsl-info', params=parameters).json()
 
                 assert response['v8']['total_aderparen'] == item.total_aderparen
+
+    def test_possible_house_number_additions_v8(self):
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
+                                           'fixtures/dsl/test_possible_house_number_additions_{}.yaml'.format(self.get_version_number())),):
+            for item in self.items_possible_house_number_addtions:
+                response = DslOrder(event_validation=self.event_validation_v8,
+                                    view_state=self.view_state_v8).get_dslorder_v8(item.postcode, item.housenumber,
+                                                                                   item.housenumber_add)
+                assert response.status_code is 200
+
+                housenumber_add = item.housenumber_add if item.housenumber_add else ''
+                parameters = {'postcode': item.postcode, 'housenumber': item.housenumber,
+                              'housenumber_add': housenumber_add}
+                response = requests.get('http://0.0.0.0:5555/dsl-info', params=parameters).json()
+
+                assert len(response['v8']['possible_house_number_additions']) == item.possible_house_number_additions
 
     def get_version_number(self):
         return self.__name__.split('_')[-1]
