@@ -34,6 +34,7 @@
                     Length MDF: {{ dsl_data.length_mdf }} meter </br>
                     Existing DSL Service ID: {% if dsl_data.existing_dsl_service_id != "None" %}<input type="text" class="copy_this" value="{{ dsl_data.existing_dsl_service_id }}"/>  <span class="copy_status"></span>{% endif %} </br>
                     {% if dsl_data.v8.possible_house_number_additions%}
+                        Possible extensions:
                         {% for possible_house_number_additions in dsl_data.v8.possible_house_number_additions %}
                             {% if forloop.last %}
                                 {{ possible_house_number_additions }} <br/><br/>
