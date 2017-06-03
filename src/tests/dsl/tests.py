@@ -253,3 +253,46 @@ class DslTest(TestCase):
 
     def get_version_number(self):
         return self.__name__.split('_')[-1]
+
+    def test_backend_unavailable_v7(self):
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
+                                              'fixtures/dsl/test_backend_unavailable_{}.yaml'.format(
+                                                  self.get_version_number())), record_mode='new_episodes'):
+
+            for item in self.items:
+                response = DslOrder(event_validation=self.event_validation_v7,
+                                    view_state=self.view_state_v7).get_dslorder_v7(item.postcode, item.housenumber,
+                                                                                   item.housenumber_add)
+                assert response.status_code == 500
+
+                housenumber_add = item.housenumber_add if item.housenumber_add else ''
+                parameters = {'postcode': item.postcode, 'housenumber': item.housenumber,
+                              'housenumber_add': housenumber_add}
+                response = requests.get('http://0.0.0.0:7777/dsl-info', params=parameters)
+                assert response.status_code == 200
+
+                content = response.json()
+                assert "Something went wrong - V7: 500 - V8: 500" in content
+
+                # TODO Check frontend for content too
+
+    def test_backend_unavailable_v8(self):
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
+                                              'fixtures/dsl/test_backend_unavailable_{}.yaml'.format(
+                                                  self.get_version_number())), record_mode='new_episodes'):
+            for item in self.items:
+                response = DslOrder(event_validation=self.event_validation_v8,
+                                    view_state=self.view_state_v8).get_dslorder_v8(item.postcode, item.housenumber,
+                                                                                   item.housenumber_add)
+                assert response.status_code == 500
+
+                housenumber_add = item.housenumber_add if item.housenumber_add else ''
+                parameters = {'postcode': item.postcode, 'housenumber': item.housenumber,
+                              'housenumber_add': housenumber_add}
+                response = requests.get('http://0.0.0.0:7777/dsl-info', params=parameters)
+                assert response.status_code == 200
+
+                content = response.json()
+                assert "Something went wrong - V7: 500 - V8: 500" in content
+
+                # TODO Check frontend for content too
