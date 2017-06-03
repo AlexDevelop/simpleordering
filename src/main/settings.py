@@ -9,6 +9,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 from django.utils.translation import ugettext_lazy as _
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -55,9 +59,20 @@ INSTALLED_APPS = (
     'order',
     'frontend',
     'authtoken',
+    'translation_manager',
+    'dsl',
+
+    'opbeat.contrib.django',
 )
 
+OPBEAT = {
+    'ORGANIZATION_ID': '',
+    'APP_ID': '',
+    'SECRET_TOKEN': '',
+}
+
 MIDDLEWARE_CLASSES = (
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,7 +92,7 @@ ROOT_URLCONF = 'main.urls'
 WSGI_APPLICATION = 'main.wsgi.application'
 
 
-
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -86,6 +101,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TEST': dict(),
     }
 }
 
@@ -102,7 +118,7 @@ TIME_ZONE = 'Europe/Amsterdam'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'nl-NL'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -225,6 +241,15 @@ BOOTSTRAP3 = {
 }
 
 PORT = '8000'
+
+# DSL Order parameters
+EVENT_VALIDATION_V7 = '%2FwEWCALJ%2BduGDwLU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgLo1KSVDwKE%2FfOFAgLO4PZGBs2n3KWC%2BoGKuyIOeytm4GX4Yyc%3D'
+VIEW_STATE_V7 = '2FwEPDwULLTExNjY2MDU5OTEPZBYCAgMPZBYCAgEPFgIeCWlubmVyaHRtbAUdVmVyc2lvbiA3LjEsIFdlZCAzMCBNYXIgMjA6MTRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQlTaG93RGVidWcFGENoZWNrZm9yVXBncmFkZURvd25HcmFkZRDTZ1FztBXrKn4JDzgTyyOZh%2FLN'
+VIEW_STATE_GEN_V7 = 'D8B62B3A'
+
+EVENT_VALIDATION_V8 = '%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAujUpJUPAvbzlNYLArnAvtIGApWklc4GAs7g9kYOSolULdpXtXhzkRoH0URxVAjleA%3D%3D'
+VIEW_STATE_V8 = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV'
+VIEW_STATE_GEN_V8 = 'B1924A1F'
 
 try:
     from main.params import *

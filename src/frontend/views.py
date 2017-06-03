@@ -1,9 +1,12 @@
 import json
+
+from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import render, redirect
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.generic import FormView, TemplateView
 from frontend.forms import ContactFormSet, ContactForm, FilesForm, OrderFormSet, LoginForm, OrderForm, OverviewForm
 from django.contrib import messages
@@ -80,8 +83,8 @@ class MainView(FormView):
 
 
 class APIClient(object):
-    protocol = 'http://'
-    base_url = '0.0.0.0'
+    protocol = settings.BASE_SCHEMA
+    base_url = settings.BASE_URL
     port = PORT if PORT else '8000'
     content_type = {
         'Content-Type': 'application/json'
@@ -257,3 +260,27 @@ class PaginationView(TemplateView):
 
 class MiscView(TemplateView):
     template_name = 'frontend/misc.html'
+
+
+class DslView(TemplateView):
+    template_name = 'frontend/dsl.html'
+    dsl_data = None
+
+    @xframe_options_exempt
+    def get(self, request, *args, **kwargs):
+        if len(request.GET) > 0:
+            protocol = 'https://' if request.is_secure() else 'http://'
+            url = protocol + request.get_host() + reverse('dsl-api')
+            response = requests.get(url, params=request.GET)
+            self.dsl_data = json.loads(response.content)
+        default_response = super(DslView, self).get(request, *args, **kwargs)
+        # if response:
+        #     default_response.context_data['dsl_data-api'] = response.content
+        return default_response
+
+    def get_context_data(self, **kwargs):
+        context = super(DslView, self).get_context_data(**kwargs)
+        if self.dsl_data:
+            context['dsl_data'] = self.dsl_data
+
+        return context

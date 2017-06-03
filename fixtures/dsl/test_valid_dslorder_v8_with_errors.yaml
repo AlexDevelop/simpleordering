@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: !!python/unicode __LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgICAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgYFCVNob3dEZWJ1ZwUNQ292ZXJhZ2VDaGVjawUGQ29wcGVyBQZDb3BwZXIFBUZpYmVyBQVGaWJlcmoNjteVm%2BxD4A7fgfG4gzQ0uUSE&__VIEWSTATEGENERATOR=B1924A1F&__EVENTVALIDATION=%2FwEWCwKP3oGoDALU4YLJCwLsu%2BfPCQL2soCpDQKJ%2BpbDCgKlwLy3CQLo1KSVDwL285TWCwK5wL7SBgKVpJXOBgLO4PZGPI6udoeB9PImyuLYxbWiWbsNdtU%3D&PQCCType=Copper&Postcode=1757PK&HouseNumber=34&Addition=H-089&PhoneNumber=&CheckButton=Check
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['579']
+      Content-Type: [application/x-www-form-urlencoded]
+      Host: [pqcc.soap.dslorder.nl]
+      Origin: ['https://pqcc.soap.dslorder.nl']
+      Referer: ['https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx']
+      Upgrade-Insecure-Requests: [1]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.10 Darwin/15.2.0]
+      housenumber: ['34']
+      housenumber_add: [H-089]
+      postcode: [1757PK]
+    method: POST
+    uri: https://pqcc.soap.dslorder.nl/pqcc/v8.0/pqcc.aspx
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAJTYW2/bNhgG4PsB+w8Eb4fYInU27BSd7SFF09SNnXS3tMTZxGRSJakc/v0oqzZS
+        JOu73VnUy9Nj3Xzf9N3ToSEP0jpl9IyyUUTfXf76y3T1rapupWuNdpKEiHaTJ6dmdO99OxmPHx8f
+        R4/xyNjdmEcRG//56Xpd7eVBXCjtvNCVpOdZNZ5Fw5aETD9btVNaNLfyWyedJysT1mrmppbhZHma
+        rz5ScmU6J2+6w1baGY2THwbe17Xyx3tcXURFScn7tm1UJfqxG3EIq6y+zOeUrE1nq/BUxCOW8VGc
+        jGJKvnTSPi+ED+M8YtkFiy5YvOHRJOETloyysvgt4pMoCtP3wiq9W+2Nlvq48cbci0bVx8mU9JvM
+        97L6e/PchoG5aVtpKZkbrWXVn2VllPZ9cjzcO5zbSufevO9c+ecZ/Xy3WK6v7z6s/w9AOKm3Uoad
+        1q2xvhFCD9Bhy7CVU9tGvjHZfc8MBzsOXV6Fv2s6Pj++GeAoEKNAggIpCmQokKNAgQIlCLAIBZAk
+        Q5IMSTIkyZAkQ5IMSTIkyZAkR5IcSXIkyZEkR5IcSXIkyZEkR5IcScZIMkaSMZKMkWSMJGMkGSPJ
+        GEnGBQogyQRJJkgyQZIJkkyQZIIkEySZIMkEfZMJkkyRZIokUySZIskUSaZIMkWSKZJMkWSKJDMk
+        mSHJDElmSDJDkhmSzJBkhiQzJJkhyRxJ5kgyR5I5ksyRZI4kcySZI8kcSeZIskCSBZIskGSBJAsk
+        WSDJAkkWSLJAkgWSLJFkiSRLJFkiyRJJlkiyRJIlkiyRZAkkWRRNxz8PMLQCR4EYBRIUSFEgQ4Ec
+        BQoUQJKoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGoxmGgxvl4v/jp
+        +/vl7av30zHsQBzn9H2R4Wm+25KhifPVUnIt9c7vr4XzC+W8VdvOm74fkkeU3Eh/6o+ECjA5hT/V
+        f4VAGRfnvstCNupBWhFOsbKm7irvTq+WT2FZpXdr5btj/4g8OTXRqplRbzt5XmJprbGnjsnwRM7N
+        GUoW0lVWtf0CS72b0Q/6oW8UkX1/aTI0j0Zks5ekv4TekUpobTzZSlIZHc7mZU28IYIM877PoGQZ
+        fg0aL/z+MPYg/A+73sg6RKQnYXH5YKStJdl3yoXpB2mJcuFFZayVlR+dLvXqIjx7fZOXR/i6FRtj
+        GnenxYNQTe/5+hD/vnoOV//dGlFvha6PbbX/tM10/OKvmZ4/klP3bfijw1f4os95+c8AlpT9Sw0V
+        AAA=
+    headers:
+      cache-control: [private]
+      content-disposition: [attachment; filename=PQCC_1757PK34XH-089.xml]
+      content-encoding: [gzip]
+      content-type: [text/xml]
+      date: ['Thu, 13 Oct 2016 18:42:14 GMT']
+      server: [Microsoft-IIS/6.0]
+      vary: [Accept-Encoding]
+      x-aspnet-version: [4.0.30319]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1
