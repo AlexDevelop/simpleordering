@@ -2,6 +2,7 @@ Django==1.8.3
 Markdown==2.6.2
 django-bootstrap3==6.1.0
 django-bootstrap3-datetimepicker==2.2.3
+django-translation-manager==0.5.1
 django-datetime-widget==0.9.3
 django-extensions==1.5.5
 django-filter==0.10.0
