@@ -178,6 +178,7 @@ def parse_v7(response_v8_data, response_v8, data):
     copperconnection = None
     current_mdf_access_serviceid = None
     if response_v8_data and not response_v8_data['errors']:
+
         existing_situation_copper = response_v8_data['existing_situation_copper'] if 'existing_situation_copper' in response_v8_data else None
         if existing_situation_copper:
             coper_connectionpointinfo = existing_situation_copper[
@@ -205,7 +206,8 @@ def parse_v7(response_v8_data, response_v8, data):
             v7_existing_dsl_service_id,
             current_mdf_access_serviceid,
             coper_connectionpointinfo,
-            copperconnection
+            copperconnection,
+            data['additions']
         ]
         return data
 
@@ -247,9 +249,9 @@ class SingleDsl(APIView):
             data = self.retrieve_parse_xml(response_v7.content)  # xmltodict.parse(response_v7.content)
             data_v7 = parse_v7(response_v8_data, response_v8, data)
             if data_v7:
-                existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection = data_v7
+                existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection, additions = data_v7
             else:
-                existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection = None, None, None, None, None
+                existing_dsl_service_id, v7_existing_dsl_service_id, current_mdf_access_serviceid, coper_connectionpointinfo, copperconnection, additions = None, None, None, None, None, None
             try:
                 data = {
                     "existing_dsl_service_id": existing_dsl_service_id if existing_dsl_service_id else '',
@@ -265,6 +267,7 @@ class SingleDsl(APIView):
                     "remarks": data['remarks'],
                     "v8": response_v8_data,
                     "v8_debug": pqcc_response_copy,
+                    "additions_v7": additions
                 }
             except Exception as e:
                 print(e)
@@ -334,6 +337,12 @@ class SingleDsl(APIView):
             Street = None
             HouseNumber = None
 
+        try:
+            additions = tree.findall('Address')[0].findall('PossibleHouseNumberAdditions')[0].findall('Addition')
+            additions = [x.text for x in additions if x.text != None]
+        except KeyError:
+            additions = None
+
         data = dict(
             existing_dsl_service_id=existing_dsl_service_id,
             name=name,
@@ -344,6 +353,7 @@ class SingleDsl(APIView):
             street=Street,
             house_number=HouseNumber,
             products=products,
-            remarks=remarks
+            remarks=remarks,
+            additions=additions
         )
         return data

@@ -296,3 +296,29 @@ class DslTest(TestCase):
                 assert "Something went wrong - V7: 500 - V8: 500" in content
 
                 # TODO Check frontend for content too
+
+    def test_possible_additions_v7(self):
+        with my_vcr.use_cassette(os.path.join(settings.REPOSITORY_ROOT,
+                                              'fixtures/dsl/test_possible_additions_{}.yaml'.format(
+                                                  self.get_version_number())), record_mode='new_episodes'):
+            for item in self.items:
+                response = DslOrder(event_validation=self.event_validation_v7,
+                                    view_state=self.view_state_v7).get_dslorder_v7(item.postcode, item.housenumber,
+                                                                                   item.housenumber_add)
+
+                assert response.status_code == 200
+
+                housenumber_add = item.housenumber_add if item.housenumber_add else ''
+                parameters = {'postcode': item.postcode, 'housenumber': item.housenumber,
+                              'housenumber_add': housenumber_add}
+                response = requests.get('http://0.0.0.0:7777/dsl-info', params=parameters)
+                assert response.status_code == 200
+
+                content = response.json()
+
+                if item.postcode == '1321HS' and item.housenumber == '44':
+                    assert content['additions_v7'][0] == 'LFT'
+
+                if item.postcode == '1716KE' and item.housenumber == '38':
+                    assert content['additions_v7'][0] == 'BETO'
+                    assert content['additions_v7'][1] == 'CLUB'
