@@ -340,7 +340,7 @@ class SingleDsl(APIView):
         try:
             additions = tree.findall('Address')[0].findall('PossibleHouseNumberAdditions')[0].findall('Addition')
             additions = [x.text for x in additions if x.text != None]
-        except KeyError:
+        except (IndexError, KeyError):
             additions = None
 
         data = dict(
