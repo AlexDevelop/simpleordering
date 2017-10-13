@@ -62,17 +62,33 @@
                     </br>
                     {% for product in dsl_data.products %}
                         {% if forloop.first %}
-                            <span class="product headers">
-                                Network / Technology / Expected Down / Orderable Down / Expected Up / Orderable Up</br>
-                            </span>
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                      <th>Network</th>
+                                      <th>Technology</th>
+                                      <th>Expected Down</th>
+                                      <th>Orderable Down</th>
+                                      <th>Expected Up</th>
+                                      <th>Orderable Up</th>
+                                    </tr>
+                                </thead>
                         {% endif %}
-                        <span class="product">{{ product.network }}</span>
-                        <span class="product">{{ product.technology }}</span>
-                        <span class="product number">{{ product.expected_down }}</span>
-                        <span class="product number">{{ product.orderable_down }}</span>
-                        <span class="product number">{{ product.expected_up }}</span>
-                        <span class="product number">{{ product.orderable_up }}</span>
-                        </br>
+
+                      <tbody>
+                        <tr>
+                          <td>{{ product.network }}</td>
+                          <td>{{ product.technology }}</td>
+                          <td>{{ product.expected_down }}</td>
+                          <td>{{ product.orderable_down }}</td>
+                          <td>{{ product.expected_up }}</td>
+                          <td>{{ product.orderable_up }}</td>
+                        </tr>
+                        </tr>
+                      </tbody>
+                        {% if forloop.last %}
+                            </table>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
