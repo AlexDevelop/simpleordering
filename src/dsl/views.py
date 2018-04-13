@@ -273,8 +273,28 @@ class SingleDsl(APIView):
                 print(e)
                 return Response(e)
             return Response(data=data)
+        elif response_v8.status_code is 200:
+            data = {
+                "existing_dsl_service_id": None,
+                "name": None,
+                "length_last_distributor": None,
+                "length_mdf": None,
+                "PostalCode": None,
+                "City": None,
+                "Street": None,
+                "HouseNumber": None,
+                "HouseNumber_add": None,
+                "products": None,
+                "remarks": None,
+                "v8": response_v8_data,
+                "v8_debug": pqcc_response_copy,
+                "additions_v7": None,
+                "debug": clean_params(xmltodict.parse(response_v8.content))
+            }
+            return Response(data=data)
 
-        return Response('Something went wrong - V7: {} - V8: {}'.format(response_v7.status_code, response_v8.status_code))
+        if response_v8.status_code >= 400 and response_v7.status_code >= 400:
+            return Response('Something went wrong - V7: {} - V8: {}'.format(response_v7.status_code, response_v8.status_code))
 
     def retrieve_parse_xml(self, content):
 
