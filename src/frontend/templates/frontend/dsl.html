@@ -4,6 +4,8 @@
 
 {% load bootstrap3 %}
 
+{% load find_items_gracefully %}
+
 {% block bootstrap3_content %}
     <div class="container dsl">
         <form action="" method="GET">
@@ -20,21 +22,29 @@
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
 
-        {% if dsl_data %}
+        {% if dsl_data == 'Something went wrong - V7: 500 - V8: 500' or dsl_data == 'Something went wrong - V7: 404 - V8: 500' %}
+            <div style="color:red">Het informatie systeem (PQCC) ligt er waarschijnlijk uit of er is een verkeerde postcode/huisnummer combinatie geprobeerd.</div>
+        {% elif dsl_data %}
             <div class="dsl">
                 <div class="dsl-content">
 
-                    City: {{ dsl_data.City }} </br>
-                    Postalcode: {{ dsl_data.PostalCode }} </br>
-                    Street: {{ dsl_data.Street }} </br>
-                    Housenumber: {{ dsl_data.HouseNumber }} {{ dsl_data.HouseNumber_add }}</br>
-                    HVD: {{ dsl_data.name }} </br>
-                    ISRA Specs: {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.isra_specs }} </br>
-                    Length Last Distributor: {{ dsl_data.length_last_distributor }} meter</br>
-                    Length MDF: {{ dsl_data.length_mdf }} meter </br>
-                    Existing DSL Service ID: {% if dsl_data.existing_dsl_service_id != "None" %}<input type="text" class="copy_this" value="{{ dsl_data.existing_dsl_service_id }}"/>  <span class="copy_status"></span>{% endif %} </br>
+                    City: {{ dsl_data|get_data:"PqccResponse.Address.City" }} </br>
+                    Postalcode: {{ dsl_data|get_data:"PqccResponse.Address.PostalCode" }} </br>
+                    Street: {{ dsl_data|get_data:"PqccResponse.Address.Street"  }} </br>
+                    Housenumber: {{ dsl_data|get_data:"PqccResponse.Address.HouseNumber"  }}</br>
+                    HVD: 
+{{ dsl_data|get_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.cgb_name" }} 
+{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo,cgb_name__prepend" }} 
+</br>
+                    ISRA Specs: 
+{{ dsl_data|get_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.isra_specs" }} 
+{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo,isra_specs__prepend" }} 
+</br>
+                    Length Last Distributor: {{ dsl_data|get_data:"PqccResponse.Cgb.LengthLastDistributor" }} meter</br>
+                    Length MDF: {{ dsl_data|get_data:"PqccResponse.Cgb.LengthMdf" }} meter </br>
+                    Existing DSL Service ID: <input type="text" class="copy_this" value="{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.copperconnection,current_mdf_access_serviceid" }}"/>  <span class="copy_status"></span> </br>
                     {% if dsl_data.v8.possible_house_number_additions%}
-                        Possible extensions:
+                        Possible extensions (v8):
                         {% for possible_house_number_additions in dsl_data.v8.possible_house_number_additions %}
                             {% if forloop.last %}
                                 {{ possible_house_number_additions }} <br/><br/>
@@ -42,6 +52,17 @@
                                 {{ possible_house_number_additions }},
                             {% endif %}
                         {% endfor %}
+                    {% else %}
+                        {% if dsl_data.additions_v7 %}
+                            Possible extensions (v7):
+                            {% for possible_house_number_additions in dsl_data.additions_v7 %}
+                                {% if forloop.last %}
+                                    {{ possible_house_number_additions }} <br/><br/>
+                                {% else %}
+                                    {{ possible_house_number_additions }},
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% endif %}
                     {% for remark in dsl_data.remarks %}
                         Remark: {{ remark }} </br>
@@ -49,17 +70,33 @@
                     </br>
                     {% for product in dsl_data.products %}
                         {% if forloop.first %}
-                            <span class="product headers">
-                                Network / Technology / Expected Down / Orderable Down / Expected Up / Orderable Up</br>
-                            </span>
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                      <th>Network</th>
+                                      <th>Technology</th>
+                                      <th>Expected Down</th>
+                                      <th>Orderable Down</th>
+                                      <th>Expected Up</th>
+                                      <th>Orderable Up</th>
+                                    </tr>
+                                </thead>
                         {% endif %}
-                        <span class="product">{{ product.network }}</span>
-                        <span class="product">{{ product.technology }}</span>
-                        <span class="product number">{{ product.expected_down }}</span>
-                        <span class="product number">{{ product.orderable_down }}</span>
-                        <span class="product number">{{ product.expected_up }}</span>
-                        <span class="product number">{{ product.orderable_up }}</span>
-                        </br>
+
+                      <tbody>
+                        <tr>
+                          <td>{{ product.network }}</td>
+                          <td>{{ product.technology }}</td>
+                          <td>{{ product.expected_down }}</td>
+                          <td>{{ product.orderable_down }}</td>
+                          <td>{{ product.expected_up }}</td>
+                          <td>{{ product.orderable_up }}</td>
+                        </tr>
+                        </tr>
+                      </tbody>
+                        {% if forloop.last %}
+                            </table>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -73,14 +110,12 @@
                             {% if error.DescriptionNed %}{{ error.DescriptionNed }}{% else %}Geen beschrijving beschikbaar{% endif %} - {{ error.EnumName }} </br>
                         {% endfor %}
                     {% else %}
-                        DistributionPoint: {{ dsl_data.v8.deliverable_product.DistributionPoint }} </br>
+                        DistributionPoint(s): {{ dsl_data|get_and_join_data:"PqccResponse.DeliverableProducts.DeliverableProduct,DistributionPoint" }} </br>
                         {% if dsl_data.v8.existing_situation_copper.ExistingDslServiceId %} ExistingDslServiceId: {{ dsl_data.v8.existing_situation_copper.ExistingDslServiceId }} </br> {% endif %}
                         {% for item in dsl_data.v8.existing_situation_copper.copperconnection %}
                             {{ forloop.counter }} - Current_typeofconnection {{ item.current_typeofconnection }} </br>
                             {{ forloop.counter }} - Current_mdf_access_serviceid {{ item.current_mdf_access_serviceid }} </br>
                         {% endfor %}
-                        Length_last_distributor: {{ dsl_data.length_last_distributor }} </br>
-                        Length_mdf: {{ dsl_data.length_mdf }} </br>
                         {% for remark in dsl_data.v8.remarks %}
                             Remark(s): {{ remark.RemarkCode }} - {{ remark.RemarkTextNed }} </br>
                         {% endfor %}
