@@ -3,10 +3,11 @@ from django.contrib import admin
 from dsl.views import SingleDsl
 from frontend.views import DefaultFormsetView, DefaultFormView, DefaultFormByFieldView, \
     FormHorizontalView, FormInlineView, FormWithFilesView, PaginationView, MiscView, HomePageView, \
-    loginview, OverviewView, DslView
+    loginview, OverviewView, DslView, health
 from main import settings
 from order import views as OrderProductViews
 from rest_framework.routers import DefaultRouter
+from wordpress_auth.decorators import wordpress_login_required
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
@@ -36,6 +37,7 @@ urlpatterns = patterns('',
     url(r'^form_with_files/?$', FormWithFilesView.as_view(), name='form_with_files'),
     url(r'^pagination/?$', PaginationView.as_view(), name='pagination'),
     url(r'^misc/?$', MiscView.as_view(), name='misc'),
+    url(r'^health/?$', health, name='health'),
     url(r'^dsl-page/?$', DslView.as_view(), name='dsl'),
 
     # API Related
@@ -43,7 +45,7 @@ urlpatterns = patterns('',
     url(r'^/?$', DefaultFormsetView.as_view(), name='formset_default_success'),
     url(r'^', include(router.urls)),
     url(r'^admin/?', include(admin.site.urls)),
-    url(r'^dsl/?', SingleDsl.as_view(), name='dsl-api'),
+    url(r'^dsl/?', wordpress_login_required(SingleDsl.as_view()), name='dsl-api'),
 
 )
 

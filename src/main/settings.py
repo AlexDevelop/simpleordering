@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'dsl',
 
     'opbeat.contrib.django',
+    'wordpress_auth'
 )
 
 OPBEAT = {
@@ -80,6 +81,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wordpress_auth.middleware.WordPressAuthMiddleware',
 )
 
 
@@ -94,16 +96,10 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+DB_WP_NAME = ''
+DB_WP_USER = ''
+DB_WP_PASSWORD = ''
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'TEST': dict(),
-    }
-}
 
 # ######################## Locale and Languages settings ######################## #
 
@@ -255,3 +251,22 @@ try:
     from main.params import *
 except ImportError:
     pass
+
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TEST': dict(),
+    },
+    'wordpress': {  # must be named 'wordpress'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': DB_WP_NAME,
+        'USER': DB_WP_USER,
+        'PASSWORD': DB_WP_PASSWORD,
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
+    }
+}

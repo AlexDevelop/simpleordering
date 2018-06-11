@@ -10,7 +10,7 @@ from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import xml.etree.ElementTree as ET
-
+from wordpress_auth.decorators import wordpress_login_required
 from dsl.models import DslRequest
 
 
@@ -221,7 +221,8 @@ class SingleDsl(APIView):
     """
     #authentication_classes = (authentication.,)
     permission_classes = (permissions.AllowAny,)
-
+    
+    #@wordpress_login_required
     def get(self, request, format=None):
         try:
             housenumber = request.QUERY_PARAMS['housenumber']

@@ -27,22 +27,45 @@
         {% elif dsl_data %}
             <div class="dsl">
                 <div class="dsl-content">
-
-                    City: {{ dsl_data|get_data:"PqccResponse.Address.City" }} </br>
-                    Postalcode: {{ dsl_data|get_data:"PqccResponse.Address.PostalCode" }} </br>
-                    Street: {{ dsl_data|get_data:"PqccResponse.Address.Street"  }} </br>
-                    Housenumber: {{ dsl_data|get_data:"PqccResponse.Address.HouseNumber"  }}</br>
-                    HVD: 
-{{ dsl_data|get_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.cgb_name" }} 
-{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo,cgb_name__prepend" }} 
-</br>
-                    ISRA Specs: 
-{{ dsl_data|get_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.isra_specs" }} 
-{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo,isra_specs__prepend" }} 
-</br>
-                    Length Last Distributor: {{ dsl_data|get_data:"PqccResponse.Cgb.LengthLastDistributor" }} meter</br>
-                    Length MDF: {{ dsl_data|get_data:"PqccResponse.Cgb.LengthMdf" }} meter </br>
-                    Existing DSL Service ID: <input type="text" class="copy_this" value="{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.copperconnection,current_mdf_access_serviceid" }}"/>  <span class="copy_status"></span> </br>
+                  <table>
+                    <tr>
+                    <td>City: </td><td>{{ dsl_data|get_data:"PqccResponse.Address.City" }}</td>
+                  </tr>
+                  <tr>
+                    <td>Postalcode:</td></td><td> {{ dsl_data|get_data:"PqccResponse.Address.PostalCode" }}</td>
+                  </tr>
+                  <tr>
+                    <td>Street: </td><td>{{ dsl_data|get_data:"PqccResponse.Address.Street"  }} </td>
+                  </tr>
+                  <tr>
+                   <td>Housenumber:</td><td>{{ dsl_data|get_data:"PqccResponse.Address.HouseNumber"  }}</td>
+                   </tr>
+                   <tr>
+                     <td>HVD:</td>
+                     <td>
+{{ dsl_data|get_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.cgb_name" }}
+{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo,cgb_name__prepend" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ISRA Specs:</td>
+                      <td>
+{{ dsl_data|get_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.isra_specs" }}
+{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo,isra_specs__prepend" }}
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    Length Last Distributor:</td><td> {{ dsl_data|get_data:"PqccResponse.Cgb.LengthLastDistributor" }} meter</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Length MDF:</td><td>{{ dsl_data|get_data:"PqccResponse.Cgb.LengthMdf" }} meter </td>
+                  </tr>
+                  <tr>
+                    <td>Existing DSL Service ID:</td><td> <input type="text" class="copy_this" value="{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.copperconnection,current_mdf_access_serviceid" }}"/>  <span class="copy_status"></span> </td>
+                  </tr>
+                </table>
                     {% if dsl_data.v8.possible_house_number_additions%}
                         Possible extensions (v8):
                         {% for possible_house_number_additions in dsl_data.v8.possible_house_number_additions %}
@@ -127,7 +150,7 @@
                         {% endfor %}
                         </br>
                     Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/>LET OP: Indien aderparen zijn uitgelast is de AP nummering niet meer ok.</br></br>
-                        
+
                         {% if dsl_data.v8.total_aderparen == 1 %}
                             AP1{{ forloop.counter }}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_typeofconnection %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_typeofconnection }} {% endif %}
@@ -170,4 +193,3 @@
     </div>
 
 {% endblock %}
-

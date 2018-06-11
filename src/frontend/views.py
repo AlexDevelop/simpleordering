@@ -1,10 +1,11 @@
 import json
 
+import datetime
 from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.http import Http404, HttpResponseForbidden, HttpResponseBadRequest
+from django.http import Http404, HttpResponseForbidden, HttpResponseBadRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.generic import FormView, TemplateView
@@ -16,7 +17,7 @@ import requests
 from main.utils import TYPE_OF_ORDER_STRING
 from rest_framework.exceptions import APIException
 from rest_framework.reverse import reverse_lazy, reverse
-
+from wordpress_auth.decorators import wordpress_login_required
 from main.settings import PORT
 
 
@@ -261,26 +262,38 @@ class PaginationView(TemplateView):
 class MiscView(TemplateView):
     template_name = 'frontend/misc.html'
 
+from wordpress_auth.decorators import wordpress_login_required
+@wordpress_login_required
+def health(request):
+    now = datetime.datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)
+
+    
 
 class DslView(TemplateView):
     template_name = 'frontend/dsl.html'
     dsl_data = None
 
+    @wordpress_login_required
     @xframe_options_exempt
     def get(self, request, *args, **kwargs):
         if len(request.GET) > 0:
             protocol = 'https://' if request.is_secure() else 'http://'
             url = protocol + request.get_host() + reverse('dsl-api')
             response = requests.get(url, params=request.GET)
-            self.dsl_data = json.loads(response.content)
+            try:
+                self.dsl_data = json.loads(response.content)
+            except ValueError:
+                self.dsl_data = response.content
         default_response = super(DslView, self).get(request, *args, **kwargs)
         # if response:
         #     default_response.context_data['dsl_data-api'] = response.content
         return default_response
 
-    def get_context_data(self, **kwargs):
-        context = super(DslView, self).get_context_data(**kwargs)
-        if self.dsl_data:
-            context['dsl_data'] = self.dsl_data
-
-        return context
+    #def get_context_data(self, **kwargs):
+    #    context = super(DslView, self).get_context_data(**kwargs)
+    #    if self.dsl_data:
+    #        context['dsl_data'] = self.dsl_data
+#
+  #      return context

@@ -65,6 +65,7 @@ params.py
 
 # sqllite db
 *.sqlite3
+src/db.sqlite3
 
 # Static
 static/
