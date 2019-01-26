@@ -150,7 +150,7 @@ def parse_v8(doc):
         if response_v8['existing_situation_copper']:
             # Handle 001/002 etc ConnectionPoint Numbers (additional connections?)
             coper_connectionpointinfo = response_v8['existing_situation_copper'].get('coper_connectionpointinfo')
-            if coper_connectionpointinfo:
+            if coper_connectionpointinfo and type(coper_connectionpointinfo) == list:
                 for connectionpoint in coper_connectionpointinfo:
                     isra_specs = connectionpoint.get('isra_specs')
                     isra_spec_identifier = None
