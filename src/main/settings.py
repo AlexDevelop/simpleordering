@@ -62,7 +62,6 @@ INSTALLED_APPS = (
     'translation_manager',
     'dsl',
 
-    'opbeat.contrib.django',
     'wordpress_auth'
 )
 
@@ -73,7 +72,6 @@ OPBEAT = {
 }
 
 MIDDLEWARE_CLASSES = (
-    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

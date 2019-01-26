@@ -45,7 +45,7 @@ urlpatterns = patterns('',
     url(r'^/?$', DefaultFormsetView.as_view(), name='formset_default_success'),
     url(r'^', include(router.urls)),
     url(r'^admin/?', include(admin.site.urls)),
-    url(r'^dsl/?', wordpress_login_required(SingleDsl.as_view()), name='dsl-api'),
+    url(r'^dsl-info/?', SingleDsl.as_view(), name='dsl-api'),
 
 )
 

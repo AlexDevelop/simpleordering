@@ -291,9 +291,9 @@ class DslView(TemplateView):
         #     default_response.context_data['dsl_data-api'] = response.content
         return default_response
 
-    #def get_context_data(self, **kwargs):
-    #    context = super(DslView, self).get_context_data(**kwargs)
-    #    if self.dsl_data:
-    #        context['dsl_data'] = self.dsl_data
-#
-  #      return context
+    def get_context_data(self, **kwargs):
+        context = super(DslView, self).get_context_data(**kwargs)
+        if self.dsl_data:
+            context['dsl_data'] = self.dsl_data
+
+        return context
