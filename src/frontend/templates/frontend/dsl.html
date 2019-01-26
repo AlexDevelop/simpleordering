@@ -189,6 +189,17 @@
 
                 </div>
             </div>
+            <div>
+            {% for item in dsl_data.v8.isra_data %}
+                {{ item.name }} <br/>
+                Number of NL1 lines: {{ item.number_of_nl1_lines }} <br/>
+                Number of NL2 lines: {{ item.number_of_nl2_lines }} <br/>
+                {% for copperconection in item.copperconnection %}
+                    Type of connection and MDF Service ID: {{ copperconection.current_typeofconnection }} ({{ copperconection.current_mdf_access_serviceid }}) <br/>
+                {% endfor %}
+                 <br/>
+            {% endfor %}
+            </div>
         {% endif %}
     </div>
 

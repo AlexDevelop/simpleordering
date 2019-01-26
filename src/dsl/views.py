@@ -45,7 +45,7 @@ class DslOrder(object):
         response_v7 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
         return response_v7
 
-    def get_dslorder_v8(self, postcode, housenumber, housenumber_add=None):
+    def get_dslorder_v8(self, postcode, housenumber, housenumber_add='', connectionpoint=''):
         viewstate_gen = settings.VIEW_STATE_GEN_V8
         event_validation = settings.EVENT_VALIDATION_V8
         view_state = settings.VIEW_STATE_V8
@@ -54,17 +54,19 @@ class DslOrder(object):
         headers = self.headers
         headers['Referer'] = data_url
         headers['Upgrade-Insecure-Requests'] = 1
-        headers['postcode'] = postcode
-        headers['housenumber'] = housenumber
-        headers['housenumber_add'] = housenumber_add
+        # headers['postcode'] = postcode
+        # headers['housenumber'] = housenumber
+        # headers['housenumber_add'] = housenumber_add
+        # headers['connectionpoint'] = connectionpoint
 
         structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                               '&__VIEWSTATE={viewstate}' \
                               '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
-                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check'
+                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check&ConnectionPoint={connectionpoint}'
         post_data = structure_post_data.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
-            viewstate=view_state, eventval=event_validation, viewstate_gen=viewstate_gen)
+            viewstate=view_state, eventval=event_validation, viewstate_gen=viewstate_gen,
+            connectionpoint=connectionpoint)
 
         response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
         return response_v8
@@ -76,12 +78,12 @@ def clean_params(data_to_clean):
     new_data = type(data_to_clean)()
     for item in data_to_clean:
         if type(item) in (list, OrderedDict):
-            #print 'type(item) in (list, OrderedDict)'
+            # print 'type(item) in (list, OrderedDict)'
             item = clean_params(item)
 
         try:
             if type(data_to_clean[item]) == OrderedDict:
-                #print 'type(data_to_clean[item]) == OrderedDict'
+                # print 'type(data_to_clean[item]) == OrderedDict'
                 data_to_clean[item] = clean_params(data_to_clean[item])
         except TypeError:
             pass
@@ -126,8 +128,10 @@ def parse_v8(doc):
 
         response_v8['possible_house_number_additions'] = []
         if 'PossibleHouseNumberAdditions' in address:
-            if 'Addition' in address['PossibleHouseNumberAdditions'] and address['PossibleHouseNumberAdditions']['Addition'] is not None:
-                possible_house_number_additions = [x for x in address['PossibleHouseNumberAdditions']['Addition'] if x is not None]
+            if 'Addition' in address['PossibleHouseNumberAdditions'] and address['PossibleHouseNumberAdditions'][
+                'Addition'] is not None:
+                possible_house_number_additions = [x for x in address['PossibleHouseNumberAdditions']['Addition'] if
+                                                   x is not None]
                 response_v8['possible_house_number_additions'] = possible_house_number_additions
 
         existing_situation = pqcc_response['ExistingSituation']
@@ -142,6 +146,35 @@ def parse_v8(doc):
         response_v8['deliverable_product'] = clean_params(
             deliverable_products['DeliverableProduct']) if deliverable_products else None
         response_v8['existing_situation_copper'] = clean_params(existing_situation_copper)
+        isra_data = []
+        if response_v8['existing_situation_copper']:
+            # Handle 001/002 etc ConnectionPoint Numbers (additional connections?)
+            coper_connectionpointinfo = response_v8['existing_situation_copper'].get('coper_connectionpointinfo')
+            if coper_connectionpointinfo:
+                for connectionpoint in coper_connectionpointinfo:
+                    isra_specs = connectionpoint.get('isra_specs')
+                    isra_spec_identifier = None
+                    if isra_specs:
+                        try:
+                            isra_spec_identifier = isra_specs.split('/')[0]
+                        except IndexError:
+                            pass
+
+                    if isra_spec_identifier:
+                        response = DslOrder().get_dslorder_v8(postcode=address.get('@PostalCode'),
+                                                              housenumber=address.get('@HouseNumber'),
+                                                              connectionpoint=isra_spec_identifier)
+                        response_clean_isra = clean_params(xmltodict.parse(response.content))
+                        isra_item = response_clean_isra.get('PqccResponse').get('ExistingSituation').get(
+                            'ExistingSituationCopper').get('coper_connectionpointinfo')
+                        isra_data_item = OrderedDict()
+                        isra_data_item['name'] = isra_item.get('isra_specs')
+                        isra_data_item['number_of_nl1_lines'] = isra_item.get('number_of_nl1_lines')
+                        isra_data_item['number_of_nl2_lines'] = isra_item.get('number_of_nl2_lines')
+                        isra_data_item['copperconnection'] = [x for x in isra_item.get('copperconnection') if x['current_typeofconnection'] != 'Not in use']
+                        isra_data.append(isra_data_item)
+
+        response_v8['isra_data'] = isra_data
         response_v8['existing_situation_fiber'] = clean_params(existing_situation_fiber)
         response_v8['address'] = clean_params(address)
         if remarks:
@@ -155,8 +188,11 @@ def parse_v8(doc):
                 total_aderparen = 0
                 if type(_coper_connectionpointinfo) == list:
                     coper_connectionpointinfo = dict()
-                    coper_connectionpointinfo['copperconnection'] = [x['copperconnection'] for x in _coper_connectionpointinfo if 'copperconnection' in x]
-                    total_aderparen = sum([len(x['copperconnection']) for x in _coper_connectionpointinfo if 'copperconnection' in x])
+                    coper_connectionpointinfo['copperconnection'] = [x['copperconnection'] for x in
+                                                                     _coper_connectionpointinfo if
+                                                                     'copperconnection' in x]
+                    total_aderparen = sum(
+                        [len(x['copperconnection']) for x in _coper_connectionpointinfo if 'copperconnection' in x])
                     if total_aderparen == 0:
                         total_aderparen = len(_coper_connectionpointinfo)
                 elif type(_coper_connectionpointinfo) == OrderedDict:
@@ -179,7 +215,8 @@ def parse_v7(response_v8_data, response_v8, data):
     current_mdf_access_serviceid = None
     if response_v8_data and not response_v8_data['errors']:
 
-        existing_situation_copper = response_v8_data['existing_situation_copper'] if 'existing_situation_copper' in response_v8_data else None
+        existing_situation_copper = response_v8_data[
+            'existing_situation_copper'] if 'existing_situation_copper' in response_v8_data else None
         if existing_situation_copper:
             coper_connectionpointinfo = existing_situation_copper[
                 'coper_connectionpointinfo'] if 'coper_connectionpointinfo' in existing_situation_copper else None
@@ -219,10 +256,10 @@ class SingleDsl(APIView):
     * Requires token authentication.
     * Only admin users are able to access this view.
     """
-    #authentication_classes = (authentication.,)
+    # authentication_classes = (authentication.,)
     permission_classes = (permissions.AllowAny,)
-    
-    #@wordpress_login_required
+
+    # @wordpress_login_required
     def get(self, request, format=None):
         try:
             housenumber = request.QUERY_PARAMS['housenumber']
@@ -295,7 +332,8 @@ class SingleDsl(APIView):
             return Response(data=data)
 
         if response_v8.status_code >= 400 and response_v7.status_code >= 400:
-            return Response('Something went wrong - V7: {} - V8: {}'.format(response_v7.status_code, response_v8.status_code))
+            return Response(
+                'Something went wrong - V7: {} - V8: {}'.format(response_v7.status_code, response_v8.status_code))
 
     def retrieve_parse_xml(self, content):
 
