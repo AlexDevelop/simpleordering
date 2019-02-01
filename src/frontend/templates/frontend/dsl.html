@@ -195,7 +195,14 @@
                 Number of NL1 lines: {{ item.number_of_nl1_lines }} <br/>
                 Number of NL2 lines: {{ item.number_of_nl2_lines }} <br/>
                 {% for copperconection in item.copperconnection %}
-                    Type of connection and MDF Service ID: {{ copperconection.current_typeofconnection }} ({{ copperconection.current_mdf_access_serviceid }}) <br/>
+                    AP{{ forloop.counter }}
+                    {% if copperconection.current_typeofconnection %}- {{ copperconection.current_typeofconnection }} {% endif %}
+                    {% if copperconection.current_mdf_access_serviceid %}- {{ copperconection.current_mdf_access_serviceid }} {% endif %}
+                    {% if copperconection.current_sdf_access_serviceid %}- {{ copperconection.current_sdf_access_serviceid }} {% endif %}
+                    {% if copperconection.current_phonenumber %}- {{ copperconection.current_phonenumber }} {% endif %}
+                    {% if copperconection.current_mdf_access_serviceid and copperconection.current_phonenumber %}
+                        (shared line)
+                    {% endif %} </br>
                 {% endfor %}
                  <br/>
             {% endfor %}

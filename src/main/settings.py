@@ -16,6 +16,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Define the project (src) root
@@ -82,8 +83,6 @@ MIDDLEWARE_CLASSES = (
     'wordpress_auth.middleware.WordPressAuthMiddleware',
 )
 
-
-
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/api/orders/'
 
@@ -91,13 +90,11 @@ ROOT_URLCONF = 'main.urls'
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
-
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 DB_WP_NAME = ''
 DB_WP_USER = ''
 DB_WP_PASSWORD = ''
-
 
 # ######################## Locale and Languages settings ######################## #
 
@@ -133,7 +130,6 @@ LANGUAGES = (
     ('nl', _(u'Nederlands')),
     ('en', _(u'English')),
 )
-
 
 # ######################## End Locale and Languages settings ######################## #
 
@@ -245,6 +241,15 @@ EVENT_VALIDATION_V8 = '%2FwEWCwKT47RRAtThgskLAuy7588JAvaygKkNAon6lsMKAqXAvLcJAuj
 VIEW_STATE_V8 = '%2FwEPDwUKMTY5MDMxMTI0OA9kFgICAw9kFgYCAQ8WAh4JaW5uZXJodG1sBR1WZXJzaW9uIDguMCwgVGh1IDI5IFNlcCAxNjowNmQCIw8QDxYCHgdDaGVja2VkaGRkZGQCJQ8QDxYCHwFnZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUJU2hvd0RlYnVnBQ1Db3ZlcmFnZUNoZWNrBQ1Db3ZlcmFnZUNoZWNrBQZDb3BwZXIFBUZpYmVyBQVGaWJlcp69wAlEhiUEQF%2BXNV0UM6DeDmVV'
 VIEW_STATE_GEN_V8 = 'B1924A1F'
 
+WORDPRESS_DB = {  # must be named 'wordpress'
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': DB_WP_NAME,
+    'USER': DB_WP_USER,
+    'PASSWORD': DB_WP_PASSWORD,
+    'HOST': '127.0.0.1',
+    'PORT': 3306,
+}
+
 try:
     from main.params import *
 except ImportError:
@@ -259,12 +264,5 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'TEST': dict(),
     },
-    'wordpress': {  # must be named 'wordpress'
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DB_WP_NAME,
-        'USER': DB_WP_USER,
-        'PASSWORD': DB_WP_PASSWORD,
-        'HOST': '127.0.0.1',
-        'PORT': 3306,
-    }
+    'wordpress': WORDPRESS_DB
 }

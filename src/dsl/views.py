@@ -171,7 +171,7 @@ def parse_v8(doc):
                         isra_data_item['name'] = isra_item.get('isra_specs')
                         isra_data_item['number_of_nl1_lines'] = isra_item.get('number_of_nl1_lines')
                         isra_data_item['number_of_nl2_lines'] = isra_item.get('number_of_nl2_lines')
-                        isra_data_item['copperconnection'] = [x for x in isra_item.get('copperconnection') if x['current_typeofconnection'] != 'Not in use']
+                        isra_data_item['copperconnection'] = isra_item.get('copperconnection')
                         isra_data.append(isra_data_item)
 
         response_v8['isra_data'] = isra_data
