@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 import xml.etree.ElementTree as ET
 from wordpress_auth.decorators import wordpress_login_required
 from dsl.models import DslRequest
-
+from main import params
 
 class DslOrder(object):
     def __init__(self, event_validation=None, view_state=None):
@@ -50,7 +50,7 @@ class DslOrder(object):
         event_validation = settings.EVENT_VALIDATION_V8
         view_state = settings.VIEW_STATE_V8
 
-        data_url = self.data_url.format(8)
+        data_url = self.data_url.format(9)
         headers = self.headers
         headers['Referer'] = data_url
         headers['Upgrade-Insecure-Requests'] = 1
@@ -62,11 +62,11 @@ class DslOrder(object):
         structure_post_data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=' \
                               '&__VIEWSTATE={viewstate}' \
                               '&__VIEWSTATEGENERATOR={viewstate_gen}&__EVENTVALIDATION={eventval}' \
-                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check&ConnectionPoint={connectionpoint}'
+                              '&PQCCType=Copper&Postcode={postcode}&HouseNumber={housenumber}&Addition={addition}&PhoneNumber=&CheckButton=Check&ConnectionPoint={connectionpoint}&UserName={username}&Password={password}'
         post_data = structure_post_data.format(
             postcode=postcode, housenumber=housenumber, addition=housenumber_add,
             viewstate=view_state, eventval=event_validation, viewstate_gen=viewstate_gen,
-            connectionpoint=connectionpoint)
+            connectionpoint=connectionpoint, username=params.v9_username, password=params.v9_password)
 
         response_v8 = requests.post(url=data_url, data=post_data, headers=headers, verify=False)
         return response_v8

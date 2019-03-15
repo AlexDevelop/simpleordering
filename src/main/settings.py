@@ -264,5 +264,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'TEST': dict(),
     },
-    'wordpress': WORDPRESS_DB
+    'wordpress': {  # must be named 'wordpress'
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': DB_WP_NAME,
+    'USER': DB_WP_USER,
+    'PASSWORD': DB_WP_PASSWORD,
+    'HOST': '127.0.0.1',
+    'PORT': 3306,
+    }
 }
