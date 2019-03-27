@@ -62,9 +62,11 @@
                     <td>
                       Length MDF:</td><td>{{ dsl_data|get_data:"PqccResponse.Cgb.LengthMdf" }} meter </td>
                   </tr>
-                  <tr>
-                    <td>Existing DSL Service ID:</td><td> <input type="text" class="copy_this" value="{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.copperconnection,current_mdf_access_serviceid" }}"/>  <span class="copy_status"></span> </td>
-                  </tr>
+
+{#                  <tr>#}
+{#                    <td>Existing DSL Service ID:</td><td> <input type="text" class="copy_this" value="{{ dsl_data|get_and_join_data:"PqccResponse.ExistingSituation.ExistingSituationCopper.coper_connectionpointinfo.copperconnection,current_mdf_access_serviceid" }}"/>  <span class="copy_status"></span> </td>#}
+{#                  </tr>#}
+
                 </table>
                     {% if dsl_data.v8.possible_house_number_additions%}
                         Possible extensions (v8):
@@ -154,7 +156,8 @@
                         {% if dsl_data.v8.total_aderparen == 1 %}
                             AP1{{ forloop.counter }}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_typeofconnection %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_typeofconnection }} {% endif %}
-                                {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid }} {% endif %}
+                                {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid }}{% endif %}
+                                {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.future_mdf_access_serviceid %}- ({{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.future_mdf_access_serviceid }})*{% endif %}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_sdf_access_serviceid %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_sdf_access_serviceid }} {% endif %}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_phonenumber %}- {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_phonenumber }} {% endif %}
                                 {% if dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_mdf_access_serviceid and dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection.current_phonenumber %}
@@ -164,7 +167,8 @@
                             {% for item in dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.copperconnection %}
                                 AP{{ forloop.counter }}
                                 {% if item.current_typeofconnection %}- {{ item.current_typeofconnection }} {% endif %}
-                                {% if item.current_mdf_access_serviceid %}- {{ item.current_mdf_access_serviceid }} {% endif %}
+                                {% if item.current_mdf_access_serviceid %}- {{ item.current_mdf_access_serviceid }}{% endif %}
+                                {% if item.future_mdf_access_serviceid %}- ({{ item.future_mdf_access_serviceid }})*{% endif %}
                                 {% if item.current_sdf_access_serviceid %}- {{ item.current_sdf_access_serviceid }} {% endif %}
                                 {% if item.current_phonenumber %}- {{ item.current_phonenumber }} {% endif %}
                                 {% if item.current_mdf_access_serviceid and item.current_phonenumber %}
@@ -175,7 +179,8 @@
                                 {% for item in isra_spec.copperconnection %}
                                     AP{{ forloop.counter }}
                                     {% if item.current_typeofconnection %}- {{ item.current_typeofconnection }} {% endif %}
-                                    {% if item.current_mdf_access_serviceid %}- {{ item.current_mdf_access_serviceid }} {% endif %}
+                                    {% if item.current_mdf_access_serviceid %}- {{ item.current_mdf_access_serviceid }}{% endif %}
+                                    {% if item.future_mdf_access_serviceid %}- ({{ item.future_mdf_access_serviceid }})*{% endif %}
                                     {% if item.current_sdf_access_serviceid %}- {{ item.current_sdf_access_serviceid }} {% endif %}
                                     {% if item.current_phonenumber %}- {{ item.current_phonenumber }} {% endif %}
                                     {% if item.current_mdf_access_serviceid and item.current_phonenumber %}
@@ -197,7 +202,8 @@
                 {% for copperconection in item.copperconnection %}
                     AP{{ forloop.counter }}
                     {% if copperconection.current_typeofconnection %}- {{ copperconection.current_typeofconnection }} {% endif %}
-                    {% if copperconection.current_mdf_access_serviceid %}- {{ copperconection.current_mdf_access_serviceid }} {% endif %}
+                    {% if copperconection.current_mdf_access_serviceid %}- {{ copperconection.current_mdf_access_serviceid }}{% endif %}
+                    {% if copperconection.future_mdf_access_serviceid %}- ({{ copperconection.future_mdf_access_serviceid }})* {% endif %}
                     {% if copperconection.current_sdf_access_serviceid %}- {{ copperconection.current_sdf_access_serviceid }} {% endif %}
                     {% if copperconection.current_phonenumber %}- {{ copperconection.current_phonenumber }} {% endif %}
                     {% if copperconection.current_mdf_access_serviceid and copperconection.current_phonenumber %}
@@ -211,3 +217,4 @@
     </div>
 
 {% endblock %}
+
