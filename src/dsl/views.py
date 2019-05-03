@@ -294,7 +294,7 @@ class SingleDsl(APIView):
             return Response(data=data)
 
         if response_v8.status_code >= 400 and response_v7.status_code >= 400:
-            return Response('Something went wrong - V7: {} - V8: {}'.format(response_v7.status_code, response_v8.status_code))
+            return Response('Something went wrong')
 
     def retrieve_parse_xml(self, content):
 

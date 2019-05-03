@@ -22,7 +22,7 @@
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
 
-        {% if dsl_data == 'Something went wrong - V7: 500 - V8: 500' or dsl_data == 'Something went wrong - V7: 404 - V8: 500' %}
+        {% if dsl_data == 'Something went wrong' %}
             <div style="color:red">Het informatie systeem (PQCC) ligt er waarschijnlijk uit of er is een verkeerde postcode/huisnummer combinatie geprobeerd.</div>
         {% elif dsl_data %}
             <div class="dsl">
@@ -103,7 +103,7 @@
 
             <div class="dsl">
                 <div class="dsl-content">
-                    <h2>v8</h2>
+                    <h2>v9</h2>
                     {% if dsl_data.v8.errors %}
                         {{  dsl_data.v8.errors.DescriptionNed }}
                         {% for error in dsl_data.v8.errors %}
@@ -123,7 +123,7 @@
                         <h3>Aderparen</h3>
                         ISRA Specs: {{ dsl_data.v8.existing_situation_copper.coper_connectionpointinfo.isra_specs }}
                         {% for isra_spec in dsl_data.v8.existing_situation_copper.coper_connectionpointinfo %}
-                            <br/>{{ isra_spec.isra_specs }}
+                            {% if isra_spec.isra_specs %} <br/>{{ isra_spec.isra_specs }} {% endif %}
                         {% endfor %}
                         </br>
                     Aantal aderparen: {{ dsl_data.v8.total_aderparen }}<br/>LET OP: Indien aderparen zijn uitgelast is de AP nummering niet meer ok.</br></br>
